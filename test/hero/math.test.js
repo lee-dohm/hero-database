@@ -19,5 +19,13 @@ describe('HeroMath', function () {
     it('rounds down on a fractional part of 0.5 when direction is down', function () {
       expect(HeroMath.round(99.5, 'down')).to.equal(99)
     })
+
+    it('ignores direction when the fractional part is 0.6 or higher', function () {
+      expect(HeroMath.round(99.6, 'down')).to.equal(100)
+    })
+
+    it('ignores direction when the fractional part is less than 0.5', function () {
+      expect(HeroMath.round(99.4, 'up')).to.equal(99)
+    })
   })
 })
