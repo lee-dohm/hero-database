@@ -10,6 +10,10 @@ I've been a huge fan of [HERO Games][hero-games] and the HERO System since the o
 
 **Note:** If you like what you see here and want to help in a monetary fashion, go to the [HERO Games store][hero-games] and buy something! (The [Basic Rulebook][basic-rulebook] is only 15USD in PDF format.) I want to see HERO Games last a long, long time :grinning:
 
+## Ruleset
+
+This application is designed to work with the [HERO System 6th Edition rules][sixth-edition].
+
 ## Copyright
 
 The contents of this repository are copyright &copy; 2016 by [Lee Dohm](http://www.lee-dohm.com). See [LICENSE][license] for details.
@@ -21,3 +25,4 @@ The contents of this repository are copyright &copy; 2016 by [Lee Dohm](http://w
 [electron]: http://electron.atom.io
 [hero-games]: http://www.herogames.com/
 [license]: https://raw.githubusercontent.com/lee-dohm/hero-database/master/LICENSE.md
+[sixth-edition]: http://www.herogames.com/forums/store/category/2-hero-system-6th-edition/
