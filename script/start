@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# script/start: Starts the application.
+
+set -e
+
+cd "$(dirname "$0")/.."
+
+script/build
+
+./node_modules/.bin/electron lib/src/main/main.js "$@"

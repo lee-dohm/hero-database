@@ -1,0 +1,36 @@
+{
+  "name": "hero-database",
+  "version": "0.0.1",
+  "description": "Application for creating and storing Hero System characters",
+  "main": "src/main/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lee-dohm/hero-database.git"
+  },
+  "keywords": [
+    "hero",
+    "games",
+    "character",
+    "database"
+  ],
+  "author": "Lee Dohm <lee@lee-dohm.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lee-dohm/hero-database/issues"
+  },
+  "homepage": "https://github.com/lee-dohm/hero-database#readme",
+  "devDependencies": {
+    "babel-cli": "^6.11.4",
+    "babel-register": "^6.11.6",
+    "chai": "^3.5.0",
+    "electron-prebuilt-compile": "^1.4.4",
+    "mocha": "^3.0.2",
+    "standard": "^8.0.0-beta.5"
+  },
+  "dependencies": {
+    "yargs": "^5.0.0"
+  }
+}

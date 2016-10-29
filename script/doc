@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# script/doc: Generates the assets belonging to the documentation.
+
+set -e
+
+cd "$(dirname "$0")/.."
+
+# Generate doc assets
+math=`cat ./docs/assets/hex-formulae.tex`
+./node_modules/mathjax-node/bin/tex2svg "$math" > ./docs/assets/hex-formulae.svg
+convert ./docs/assets/hex-formulae.svg -resize 150% -sharpen 5 ./docs/assets/hex-formulae.png

@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# script/build: Build the application.
+
+set -e
+
+cd "$(dirname "$0")/.."
+
+script/bootstrap
+
+rm -rf lib
