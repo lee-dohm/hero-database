@@ -6,7 +6,7 @@ const movement = {
   swimming: {
     base: 4,
     multiplier: 0.5
-  }
+  },
   leaping: {
     base: 4,
     multiplier: 0.5
