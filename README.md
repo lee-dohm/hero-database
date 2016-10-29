@@ -8,7 +8,9 @@ An application for streamlining the HERO System character creation process and s
 
 I've been a huge fan of [HERO Games][hero-games] and the HERO System since the original [Champions game system][champions] came out in 1981! One of my earliest programming projects was a simulated die roller that would assist with skill rolls and perform damage calculations in exactly the way that the HERO System described. Later I would attempt several times as a teenager to create a character creation and database utility that would streamline the sometimes very complex process of building a character. At the time, my skills (and the technology available to me) weren't up to the task. Since then, every five to ten years or so, I give it another shot. This is the latest iteration. I've decided to build it [open source][license] using [Electron][electron].
 
-**Note:** If you like what you see here and want to help in a monetary fashion, go to the [HERO Games store][hero-games] and buy something! (The [Basic Rulebook][basic-rulebook] is only 15USD in PDF format.) I want to see HERO Games last a long, long time :grinning:
+## Support
+
+If you like what you see here and want to help in a monetary fashion, go to the [HERO Games store][hero-games] and buy something! (The [Basic Rulebook][basic-rulebook] is only 15USD in PDF format.) I want to see HERO Games last a long, long time :grinning:
 
 ## Ruleset
 
