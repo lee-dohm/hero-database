@@ -1,6 +1,6 @@
 import {expect} from 'chai'
 
-import HeroMath from '../../src/renderer/hero-math'
+import HeroMath from '../../src/hero/math'
 
 describe('HeroMath', function () {
   describe('round', function () {
