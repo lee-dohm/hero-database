@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/lee-dohm/hero-database#readme",
   "dependencies": {
+    "mersenne-twister": "^1.1.0",
     "yargs": "^5.0.0"
   },
   "devDependencies": {
@@ -37,8 +38,7 @@
     "env": {
       "mocha": true
     },
-    "globals": [
-    ],
+    "globals": [],
     "ignore": [
       "/lib"
     ]
