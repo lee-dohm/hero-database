@@ -3,7 +3,7 @@
  *
  * See: Character Types Guidelines Table - 6E1 34
  */
-export default const guidelines = {
+const guidelines = {
   normal: {
     standard: {
       totalPoints: 25,
@@ -66,3 +66,5 @@ export default const guidelines = {
     }
   }
 }
+
+export default guidelines
