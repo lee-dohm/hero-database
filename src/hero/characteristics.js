@@ -102,3 +102,5 @@ const characteristics = {
     description: "Indicates how hard it is to Knock Out the character"
   }
 }
+
+export default characteristics
