@@ -9,8 +9,8 @@ import CharacterEntryView from './character-entry-view'
  * Displays the contents of the database.
  */
 export default class DatabaseView {
-  constructor (database) {
-    this.database = database
+  constructor (props, children) {
+    this.props = props
 
     etch.initialize(this)
   }
@@ -22,7 +22,7 @@ export default class DatabaseView {
           <span className='title'>Characters</span>
         </header>
         {
-          this.database.map(({file, name}) => {
+          this.props.database.map(({file, name}) => {
             return <CharacterEntryView file={file} name={name} />
           })
         }

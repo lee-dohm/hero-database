@@ -1,3 +1,5 @@
+import fs from 'fs'
+
 /**
  * The hero database itself.
  *
@@ -6,7 +8,12 @@
 export default class Database {
   constructor (databasePath, heroEnv) {
     this.heroEnv = heroEnv
-
     this.databasePath = databasePath
+  }
+
+  create () {
+    if (!fs.existsSync(this.databasePath)) {
+      fs.mkdirSync(this.databasePath)
+    }
   }
 }

@@ -13,9 +13,9 @@ describe('DatabaseView', function () {
       {file: 'bar.character', name: 'Bar'}
     ]
 
-    view = new DatabaseView(database)
+    view = new DatabaseView({database: database})
 
-    waitsForPromise(done, () => { return view.update(database) })
+    waitsForPromise(done, () => { return view.update({database: database}) })
   })
 
   it('renders the view element', function () {
