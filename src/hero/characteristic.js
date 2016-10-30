@@ -1,3 +1,5 @@
+import {humanize, titleize} from 'underscore.string'
+
 import Format from './format'
 import HeroMath from './math'
 import Utilities from '../app/utilities'
@@ -8,8 +10,16 @@ export default class Characteristic {
     this.charName = charName
   }
 
+  get abbrev () {
+    return this.info.abbrev
+  }
+
   get cost () {
     return (this.value - this.info.base) * this.info.multiplier
+  }
+
+  get name () {
+    return titleize(humanize(this.charName))
   }
 
   get roll () {
@@ -20,6 +30,10 @@ export default class Characteristic {
 
   get value () {
     return this.character.characteristics[this.charName]
+  }
+
+  set value (val) {
+    this.character.characteristics[this.charName] = val
   }
 
   get info () {
