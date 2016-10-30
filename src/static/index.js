@@ -1,3 +1,7 @@
 import HeroEnvironment from '../renderer/hero-environment'
+import WorkspaceView from '../renderer/workspace-view'
 
-window.hero = new HeroEnvironment()
+let workspaceView = new WorkspaceView()
+window.hero = new HeroEnvironment(workspaceView)
+
+document.body.appendChild(workspaceView.element)

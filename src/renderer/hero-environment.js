@@ -11,9 +11,10 @@ export default class HeroEnvironment {
   /**
    * Creates a standard environment.
    */
-  constructor () {
+  constructor (workspaceView) {
     this.appPath = app.getAppPath()
     this.documentPath = path.join(app.getPath('documents'), 'hero-database')
+    this.workspaceView = workspaceView
   }
 
   /**
