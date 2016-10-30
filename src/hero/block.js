@@ -1,4 +1,4 @@
-import DeserializationException from './deserialization-exception'
+import DeserializationError from './deserialization-error'
 
 /**
  * Represents a block of information that can be serialized and deserialized.
@@ -17,7 +17,7 @@ export default class Block {
     let data = JSON.parse(json)
 
     if (data.type !== this.constructor.name) {
-      throw new DeserializationException(
+      throw new DeserializationError(
         `Block type doesn't match the class type: ${data.type} !== ${this.constructor.name}`,
         this,
         data)

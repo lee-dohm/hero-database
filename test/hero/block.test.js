@@ -1,7 +1,7 @@
 import {expect} from 'chai'
 
 import Block from '../../src/hero/block'
-import DeserializationException from '../../src/hero/deserialization-exception'
+import DeserializationError from '../../src/hero/deserialization-error'
 
 class TestBlock extends Block {
   constructor (data = {}) {
@@ -35,7 +35,7 @@ describe('Block', function () {
     it('throws an exception when the block type doesn\'t match', function () {
       let fn = () => { block.deserialize('{}') }
 
-      expect(fn).to.throw(DeserializationException)
+      expect(fn).to.throw(DeserializationError)
     })
   })
 })
