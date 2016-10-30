@@ -40,19 +40,19 @@ describe('CharacteristicsBlock', function () {
     })
 
     it('to an OCV of 3', function () {
-      expect(block.ocv).to.equal(3)
+      expect(block.offensiveCombatValue).to.equal(3)
     })
 
     it('to a DCV of 3', function () {
-      expect(block.dcv).to.equal(3)
+      expect(block.defensiveCombatValue).to.equal(3)
     })
 
     it('to a OMCV of 3', function () {
-      expect(block.omcv).to.equal(3)
+      expect(block.offensiveMentalCombatValue).to.equal(3)
     })
 
     it('to a DMCV of 3', function () {
-      expect(block.dmcv).to.equal(3)
+      expect(block.defensiveMentalCombatValue).to.equal(3)
     })
 
     it('to a speed of 2', function () {
