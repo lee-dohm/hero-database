@@ -8,12 +8,12 @@ describe('CampaignInfo', function () {
   it('can be serialized', function () {
     campaignInfo = new CampaignInfo()
 
-    expect(campaignInfo.serialize()).to.equal('{"name":"","genre":"","gameMaster":""}')
+    expect(campaignInfo.serialize()).to.equal('{"type":"CampaignInfo","name":"","genre":"","gameMaster":""}')
   })
 
   it('can be deserialized', function () {
     campaignInfo = new CampaignInfo()
-    campaignInfo.deserialize('{"name":"foo","genre":"bar","gameMaster":"baz"}')
+    campaignInfo.deserialize('{"type":"CampaignInfo","name":"foo","genre":"bar","gameMaster":"baz"}')
 
     expect(campaignInfo.name).to.equal('foo')
     expect(campaignInfo.genre).to.equal('bar')

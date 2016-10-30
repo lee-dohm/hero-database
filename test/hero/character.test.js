@@ -14,12 +14,12 @@ describe('Character', function () {
       expect(character.edition).to.equal('6E')
     })
 
-    it('has a campaign info block', function () {
-      expect(character.campaignInfo).to.exist
+    it('has a default name', function () {
+      expect(character.name).to.equal('Unnamed Character')
     })
 
-    it('has a character info block', function () {
-      expect(character.info).to.exist
+    it('has a campaign info block', function () {
+      expect(character.campaignInfo).to.exist
     })
   })
 })
