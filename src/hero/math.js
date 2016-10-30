@@ -4,6 +4,11 @@
  * Custom math library that follows the conventions described in the Hero System 6th Edition rules.
  */
 export default class HeroMath {
+  /**
+   * Returns the Characteristic Roll {Number}.
+   *
+   * See: "Characteristic Rolls" - 6E1 41
+   */
   static characteristicRoll (charValue) {
     return 9 + this.round(charValue / 5)
   }

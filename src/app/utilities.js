@@ -4,17 +4,20 @@ import path from 'path'
 
 /**
  * General utilities for the app.
- *
- * Usable in both the main and renderer processes.
  */
 export default class Utilities {
   /**
-   * Gets the named data file.
-   *
    * Returns the {Object} containing the information from the file.
    */
   static getDataFile (name) {
     return JSON.parse(fs.readFileSync(path.join(this.getDataPath(), `${name}.json`)))
+  }
+
+  /**
+   * Returns the {String} containing the path where Hero Database documents are stored.
+   */
+  static getDocumentPath () {
+    return path.join(app.getPath('documents'), 'hero-database')
   }
 
   static getAppPath () {
