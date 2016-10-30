@@ -2,6 +2,9 @@
 
 import etch from 'etch'
 
+/**
+ * Displays a Character entry in the {DatabaseView}.
+ */
 export default class CharacterEntryView {
   constructor ({file, name}) {
     this.file = file
