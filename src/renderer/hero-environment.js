@@ -3,6 +3,9 @@ import path from 'path'
 
 const {app} = require('electron').remote
 
+import Database from './database'
+import Workspace from './workspace'
+
 /**
  * Global utility class for storing information about the environment in which the application is
  * running.
@@ -11,10 +14,11 @@ export default class HeroEnvironment {
   /**
    * Creates a standard environment.
    */
-  constructor (workspaceView) {
+  constructor () {
     this.appPath = app.getAppPath()
     this.documentPath = path.join(app.getPath('documents'), 'hero-database')
-    this.workspaceView = workspaceView
+    this.database = new Database(this.documentPath, this)
+    this.workspace = new Workspace(this.database, this)
   }
 
   /**
@@ -52,5 +56,9 @@ export default class HeroEnvironment {
    */
   getDocumentPath () {
     return this.documentPath
+  }
+
+  start () {
+    this.workspace.attachViews()
   }
 }
