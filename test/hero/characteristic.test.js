@@ -2,14 +2,17 @@ import {expect} from 'chai'
 
 import Character from '../../src/hero/character'
 import Characteristic from '../../src/hero/characteristic'
+import HeroEnvironment from '../../src/renderer/hero-environment'
 
 describe('Characteristic', function () {
-  let char, character
+  let char, character, heroEnv
 
   beforeEach(function () {
-    character = new Character()
+    heroEnv = new HeroEnvironment()
+
+    character = new Character('Test Character', heroEnv)
     character.characteristics.strength = 15
-    char = new Characteristic(character, 'strength')
+    char = new Characteristic(character, 'strength', heroEnv)
   })
 
   it('returns the value of the characteristic', function () {
@@ -25,7 +28,7 @@ describe('Characteristic', function () {
   })
 
   it('does not return a characteristic roll if the characteristic is not primary', function () {
-    char = new Characteristic(character, 'stun')
+    char = new Characteristic(character, 'stun', heroEnv)
 
     expect(char.roll).to.not.exist
   })

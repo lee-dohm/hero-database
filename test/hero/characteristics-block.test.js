@@ -1,13 +1,18 @@
 import {expect} from 'chai'
 
 import CharacteristicsBlock from '../../src/hero/characteristics-block'
+import HeroEnvironment from '../../src/renderer/hero-environment'
 
 describe('CharacteristicsBlock', function () {
-  let block
+  let block, heroEnv
+
+  beforeEach(function () {
+    heroEnv = new HeroEnvironment()
+  })
 
   describe('defaults', function () {
     beforeEach(function () {
-      block = new CharacteristicsBlock()
+      block = new CharacteristicsBlock({}, heroEnv)
     })
 
     it('to a strength of 10', function () {
@@ -81,7 +86,7 @@ describe('CharacteristicsBlock', function () {
 
   describe('constructor', function () {
     it('allows you to override the defaults', function () {
-      block = new CharacteristicsBlock({stun: 300})
+      block = new CharacteristicsBlock({stun: 300}, heroEnv)
 
       expect(block.stun).to.equal(300)
     })

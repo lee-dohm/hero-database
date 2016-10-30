@@ -40,7 +40,9 @@
     "env": {
       "mocha": true
     },
-    "globals": [],
+    "globals": [
+      "hero"
+    ],
     "ignore": [
       "/lib"
     ]

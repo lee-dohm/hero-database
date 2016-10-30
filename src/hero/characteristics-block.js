@@ -1,5 +1,4 @@
 import Block from './block'
-import Utilities from '../app/utilities'
 
 /**
  * A block that represents information on the characteristics of the character.
@@ -10,8 +9,10 @@ export default class CharacteristicsBlock extends Block {
    *
    * * `overrides` - an {Object} containing values to override from the defaults
    */
-  constructor (overrides = {}) {
+  constructor (overrides = {}, heroEnv = hero) {
     super()
+
+    this.heroEnv = heroEnv
 
     this.strength = 10
     this.dexterity = 10
@@ -31,11 +32,11 @@ export default class CharacteristicsBlock extends Block {
     this.body = 10
     this.stun = 20
 
-    Object.assign(this, CharacteristicsBlock.getDefaultBaseCharacteristics(), overrides)
+    Object.assign(this, this.getDefaultBaseCharacteristics(), overrides)
   }
 
-  static getDefaultBaseCharacteristics () {
-    const defaults = Utilities.getDataFile('characteristics')
+  getDefaultBaseCharacteristics () {
+    const defaults = this.heroEnv.getData('characteristics')
     let defaultBases = {}
 
     for (let prop in defaults) {

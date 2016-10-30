@@ -2,7 +2,6 @@ import {humanize, titleize} from 'underscore.string'
 
 import Format from './format'
 import HeroMath from './math'
-import Utilities from '../app/utilities'
 
 /**
  * View model for characteristics.
@@ -11,7 +10,9 @@ export default class Characteristic {
   /**
    * Creates a view model for the `characteristic` on `character`.
    */
-  constructor (character, characteristic) {
+  constructor (character, characteristic, heroEnv = hero) {
+    this.heroEnv = heroEnv
+
     this.character = character
     this.charName = characteristic
   }
@@ -62,7 +63,7 @@ export default class Characteristic {
 
   get info () {
     if (!this.charInfo) {
-      let info = Utilities.getDataFile('characteristics')
+      let info = this.heroEnv.getData('characteristics')
       this.charInfo = info[this.charName]
     }
 

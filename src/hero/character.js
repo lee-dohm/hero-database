@@ -8,10 +8,12 @@ export default class Character {
   /**
    * Creates a default character.
    */
-  constructor (name = 'Unnamed Character') {
+  constructor (name = 'Unnamed Character', heroEnv = hero) {
+    this.heroEnv = heroEnv
+
     this.edition = '6E'
     this.name = name
     this.campaignInfo = new CampaignInfoBlock()
-    this.characteristics = new CharacteristicsBlock()
+    this.characteristics = new CharacteristicsBlock({}, this.heroEnv)
   }
 }
