@@ -10,6 +10,8 @@ export default class Block {
 
   /**
    * Deserialize the data from the supplied JSON.
+   *
+   * * `json` - {String} containing the serialized form of the object to copy
    */
   deserialize (json) {
     let data = JSON.parse(json)
@@ -21,11 +23,17 @@ export default class Block {
         data)
     }
 
+    for (let key in this) {
+      delete this[key]
+    }
+
     Object.assign(this, data)
   }
 
   /**
    * Serialize the data and return the serialized format.
+   *
+   * Returns a {String} containing the serialized form of this object.
    */
   serialize () {
     return JSON.stringify(this)
