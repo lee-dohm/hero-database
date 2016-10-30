@@ -4,34 +4,58 @@ import Format from './format'
 import HeroMath from './math'
 import Utilities from '../app/utilities'
 
+/**
+ * View model for characteristics.
+ */
 export default class Characteristic {
-  constructor (character, charName) {
+  /**
+   * Creates a view model for the `characteristic` on `character`.
+   */
+  constructor (character, characteristic) {
     this.character = character
-    this.charName = charName
+    this.charName = characteristic
   }
 
+  /**
+   * Returns a {String} containing the abbreviation of the characteristic
+   */
   get abbrev () {
     return this.info.abbrev
   }
 
+  /**
+   * Returns the cost of the characteristic in Character Points as a {Number}
+   */
   get cost () {
     return (this.value - this.info.base) * this.info.multiplier
   }
 
+  /**
+   * Returns the name of the characteristic formatted for display as a {String}
+   */
   get name () {
     return titleize(humanize(this.charName))
   }
 
+  /**
+   * Returns the characteristic roll as a {String}
+   */
   get roll () {
     if (this.info.primary) {
-      return Format.roll(9 + HeroMath.round(this.value / 5))
+      return Format.roll(HeroMath.characteristicRoll(this.value))
     }
   }
 
+  /**
+   * Returns the {Number} value of the characteristic
+   */
   get value () {
     return this.character.characteristics[this.charName]
   }
 
+  /**
+   * Sets the {Number} value of the characteristic
+   */
   set value (val) {
     this.character.characteristics[this.charName] = val
   }

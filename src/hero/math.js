@@ -4,6 +4,10 @@
  * Custom math library that follows the conventions described in the Hero System 6th Edition rules.
  */
 export default class HeroMath {
+  static characteristicRoll (charValue) {
+    return 9 + this.round(charValue / 5)
+  }
+
   /**
    * Public: Rounds the `number` according to the Hero System 6th Edition rules.
    *

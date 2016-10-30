@@ -28,4 +28,18 @@ describe('HeroMath', function () {
       expect(HeroMath.round(99.4, 'up')).to.equal(99)
     })
   })
+
+  describe('characteristicRoll', function () {
+    it('gives a roll of 11 for a value of 10', function () {
+      expect(HeroMath.characteristicRoll(10)).to.equal(11)
+    })
+
+    it('gives a roll of 12 for a value of 13', function () {
+      expect(HeroMath.characteristicRoll(13)).to.equal(12)
+    })
+
+    it('gives a roll of 12 for a value of 15', function () {
+      expect(HeroMath.characteristicRoll(15)).to.equal(12)
+    })
+  })
 })
