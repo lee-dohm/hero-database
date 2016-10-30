@@ -1,4 +1,5 @@
 import CampaignInfoBlock from './campaign-info-block'
+import CharacteristicsBlock from './characteristics-block'
 
 /**
  * Represents a HERO System character.
@@ -11,5 +12,6 @@ export default class Character {
     this.edition = '6E'
     this.name = name
     this.campaignInfo = new CampaignInfoBlock()
+    this.characteristics = new CharacteristicsBlock()
   }
 }

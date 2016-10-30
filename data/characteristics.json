@@ -3,37 +3,43 @@
     "abbrev": "STR",
     "base": 10,
     "multiplier": 1,
-    "description": "Indicates a character's lifting ability and base HTH damage"
+    "description": "Indicates a character's lifting ability and base HTH damage",
+    "primary": true
   },
   "dexterity": {
     "abbrev": "DEX",
     "base": 10,
     "multiplier": 2,
-    "description": "Determines who acts first in combat and provides DEX-based Skill Rolls"
+    "description": "Determines who acts first in combat and provides DEX-based Skill Rolls",
+    "primary": true
   },
   "constitution": {
     "abbrev": "CON",
     "base": 10,
     "multiplier": 1,
-    "description": "Determines if a character is Stunned in combat and provides CON Rolls"
+    "description": "Determines if a character is Stunned in combat and provides CON Rolls",
+    "primary": true
   },
   "intelligence": {
     "abbrev": "INT",
     "base": 10,
     "multiplier": 1,
-    "description": "Provides Perception Rolls and INT-based Skill Rolls"
+    "description": "Provides Perception Rolls and INT-based Skill Rolls",
+    "primary": true
   },
   "ego": {
     "abbrev": "EGO",
     "base": 10,
     "multiplier": 1,
-    "description": "Determines character's resistance to most Mental Powers, provides EGO Rolls"
+    "description": "Determines character's resistance to most Mental Powers, provides EGO Rolls",
+    "primary": true
   },
   "presence": {
     "abbrev": "PRE",
     "base": 10,
     "multiplier": 1,
-    "description": "Allows character to make Presence Attacks, provides PRE-based Skill Rolls"
+    "description": "Allows character to make Presence Attacks, provides PRE-based Skill Rolls",
+    "primary": true
   },
   "offensiveCombatValue": {
     "abbrev": "OCV",
