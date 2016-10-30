@@ -13,7 +13,7 @@ export default class HeroEnvironment {
    */
   constructor () {
     this.appPath = app.getAppPath()
-    this.documentPath = app.getPath('documents')
+    this.documentPath = path.join(app.getPath('documents'), 'hero-database')
   }
 
   /**
