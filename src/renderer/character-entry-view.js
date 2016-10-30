@@ -2,7 +2,7 @@
 
 import etch from 'etch'
 
-export default class CharacterFileView {
+export default class CharacterEntryView {
   constructor ({file, name}) {
     this.file = file
     this.name = name
@@ -12,7 +12,7 @@ export default class CharacterFileView {
 
   render () {
     return (
-      <div className='character-file-view'>{this.name}</div>
+      <div className='character-entry-view'>{this.name}</div>
     )
   }
 
