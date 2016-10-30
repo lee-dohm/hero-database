@@ -8,9 +8,9 @@ export default class CharacteristicsBlock extends Block {
   /**
    * Constructs a default set of characteristics.
    *
-   * * `defaults` - an {Object} containing values to override from the defaults
+   * * `overrides` - an {Object} containing values to override from the defaults
    */
-  constructor (defaults = {}) {
+  constructor (overrides = {}) {
     super()
 
     this.strength = 10
@@ -31,7 +31,7 @@ export default class CharacteristicsBlock extends Block {
     this.body = 10
     this.stun = 20
 
-    Object.assign(this, CharacteristicsBlock.getDefaultBaseCharacteristics(), defaults)
+    Object.assign(this, CharacteristicsBlock.getDefaultBaseCharacteristics(), overrides)
   }
 
   static getDefaultBaseCharacteristics () {
