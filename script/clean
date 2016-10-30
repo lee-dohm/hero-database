@@ -8,4 +8,5 @@ cd "$(dirname "$0")/.."
 
 script/bootstrap
 
+rm -rf node_modules
 rm -rf lib

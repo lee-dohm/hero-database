@@ -15,4 +15,5 @@ script/build
 export ELECTRON_PATH=./node_modules/.bin/electron
 export HERO_DATABASE_HOME=.
 
-./node_modules/.bin/electron-mocha --require babel-register --recursive --reporter dot
+./node_modules/.bin/electron-mocha --require babel-register --recursive --reporter dot --renderer test/hero
+./node_modules/.bin/electron-mocha --require babel-register --recursive --reporter dot --renderer test/renderer

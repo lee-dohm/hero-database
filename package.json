@@ -23,11 +23,13 @@
   },
   "homepage": "https://github.com/lee-dohm/hero-database#readme",
   "dependencies": {
+    "etch": "^0.8.0",
     "underscore.string": "^3.3.4",
     "yargs": "^5.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.11.4",
+    "babel-preset-react": "^6.16.0",
     "babel-register": "^6.11.6",
     "chai": "^3.5.0",
     "electron-mocha": "^3.1.1",
