@@ -8,10 +8,12 @@ describe('DatabaseView', function () {
   let database, view
 
   beforeEach(function (done) {
-    database = [
-      {file: 'foo.character', name: 'Foo'},
-      {file: 'bar.character', name: 'Bar'}
-    ]
+    database = {
+      items: [
+          {file: 'foo.character', name: 'Foo'},
+          {file: 'bar.character', name: 'Bar'}
+      ]
+    }
 
     view = new DatabaseView({database: database})
 

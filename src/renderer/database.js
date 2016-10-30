@@ -9,6 +9,8 @@ export default class Database {
   constructor (databasePath, heroEnv) {
     this.heroEnv = heroEnv
     this.databasePath = databasePath
+
+    this.items = []
   }
 
   create () {

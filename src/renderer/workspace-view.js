@@ -3,6 +3,8 @@
 
 import etch from 'etch'
 
+import DatabaseView from './database-view'
+
 export default class WorkspaceView {
   constructor (props, children) {
     this.props = props
@@ -14,8 +16,7 @@ export default class WorkspaceView {
   render () {
     return (
       <div className='workspace-view'>
-        <h1>Workspace View</h1>
-        {this.children}
+        <DatabaseView database={this.props.database} />
       </div>
     )
   }

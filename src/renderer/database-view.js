@@ -22,7 +22,7 @@ export default class DatabaseView {
           <span className='title'>Characters</span>
         </header>
         {
-          this.props.database.map(({file, name}) => {
+          this.props.database.items.map(({file, name}) => {
             return <CharacterEntryView file={file} name={name} />
           })
         }

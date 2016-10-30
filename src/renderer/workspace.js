@@ -8,7 +8,7 @@ export default class Workspace {
     this.heroEnv = heroEnv
 
     this.database = database
-    this.workspaceView = new WorkspaceView()
+    this.workspaceView = new WorkspaceView({database: this.database})
   }
 
   attachViews () {
