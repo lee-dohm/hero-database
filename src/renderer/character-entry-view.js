@@ -6,22 +6,20 @@ import etch from 'etch'
  * Displays a Character entry in the {DatabaseView}.
  */
 export default class CharacterEntryView {
-  constructor ({file, name}) {
-    this.file = file
-    this.name = name
+  constructor (props, children) {
+    this.props = props
 
     etch.initialize(this)
   }
 
   render () {
     return (
-      <div className='character-entry-view'>{this.name}</div>
+      <div className='character-entry-view'>{this.props.name}</div>
     )
   }
 
-  update ({file, name}) {
-    this.file = file
-    this.name = name
+  update (props) {
+    this.props = props
 
     return etch.update(this)
   }

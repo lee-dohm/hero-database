@@ -24,6 +24,7 @@
   "homepage": "https://github.com/lee-dohm/hero-database#readme",
   "dependencies": {
     "etch": "^0.8.0",
+    "event-kit": "^2.2.0",
     "underscore.string": "^3.3.4",
     "yargs": "^5.0.0"
   },
