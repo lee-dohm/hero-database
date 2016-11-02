@@ -1,5 +1,3 @@
-/** @babel */
-
 /**
  * Custom math library that follows the conventions described in the Hero System 6th Edition rules.
  */
