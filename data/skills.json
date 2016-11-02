@@ -1,0 +1,450 @@
+{
+  "acrobatics": {
+    "name": "acrobatics",
+    "type": "agility",
+    "characteristic": "dexterity",
+    "baseCost": 3,
+    "plusOneCost": 2,
+    "period": "all"
+  },
+  "acting": {
+    "name": "acting",
+    "type": "interaction",
+    "characteristic": "presence",
+    "baseCost": 3,
+    "plusOneCost": 2,
+    "period": "all"
+  },
+  "analyze": {
+    "name": "analyze",
+    "type": "intellect",
+    "characteristic": "intelligence",
+    "baseCost": 3,
+    "plusOneCost": 2,
+    "period": "all"
+  },
+  "animalHandler": {
+    "name": "animalHandler",
+    "type": "interaction",
+    "characteristic": "presence",
+    "baseCost": 2,
+    "plusOneCost": 2,
+    "period": "all"
+  },
+  "breakfall": {
+    "name": "breakfall",
+    "type": "agility",
+    "characteristic": "dexterity",
+    "baseCost": 3,
+    "plusOneCost": 2,
+    "period": "all"
+  },
+  "bribery": {
+    "name": "bribery",
+    "type": "interaction",
+    "characteristic": "presence",
+    "baseCost": 3,
+    "plusOneCost": 2,
+    "period": "all"
+  },
+  "bugging": {
+    "name": "bugging",
+    "type": "intellect",
+    "characteristic": "intelligence",
+    "baseCost": 3,
+    "plusOneCost": 2,
+    "period": ["modern", "future"]
+  },
+  "bureaucratics": {
+    "name": "bureaucratics",
+    "type": "interaction",
+    "characteristic": "presence",
+    "baseCost": 3,
+    "plusOneCost": 2,
+    "period": "all"
+  },
+  "charm": {
+    "name": "charm",
+    "type": "interaction",
+    "characteristic": "presence",
+    "baseCost": 3,
+    "plusOneCost": 2,
+    "period": "all"
+  },
+  "climbing": {
+    "name": "climbing",
+    "type": "agility",
+    "characteristic": "dexterity",
+    "baseCost": 3,
+    "plusOneCost": 2,
+    "period": "all"
+  },
+  "combatDriving": {
+    "name": "combatDriving",
+    "type": "agility",
+    "characteristic": "dexterity",
+    "baseCost": 3,
+    "plusOneCost": 2,
+    "period": "all"
+  },
+  "combatPiloting": {
+    "name": "combatPiloting",
+    "type": "agility",
+    "characteristic": "dexterity",
+    "baseCost": 3,
+    "plusOneCost": 2,
+    "period": ["modern", "future"]
+  },
+  "computerProgramming": {
+    "name": "computerProgramming",
+    "type": "intellect",
+    "characteristic": "intelligence",
+    "baseCost": 3,
+    "plusOneCost": 2,
+    "period": ["modern", "future"]
+  },
+  "concealment": {
+    "name": "concealment",
+    "type": "intellect",
+    "characteristic": "intelligence",
+    "baseCost": 3,
+    "plusOneCost": 2,
+    "period": "all"
+  },
+  "contortionist": {
+    "name": "contortionist",
+    "type": "agility",
+    "characteristic": "dexterity",
+    "baseCost": 3,
+    "plusOneCost": 2,
+    "period": "all"
+  },
+  "conversation": {
+    "name": "conversation",
+    "type": "interation",
+    "characteristic": "presence",
+    "baseCost": 3,
+    "plusOneCost": 2,
+    "period": "all"
+  },
+  "cramming": {
+    "name": "cramming",
+    "type": "intellect",
+    "characteristic": null,
+    "baseCost": 5,
+    "plusOneCost": null,
+    "period": "all"
+  },
+  "criminology": {
+    "name": "criminology",
+    "type": "intellect",
+    "characteristic": "intelligence",
+    "baseCost": 3,
+    "plusOneCost": 2,
+    "period": "all"
+  },
+  "cryptography": {
+    "name": "cryptography",
+    "type": "intellect",
+    "characteristic": "intelligence",
+    "baseCost": 3,
+    "plusOneCost": 2,
+    "period": "all"
+  },
+  "deduction": {
+    "name": "deduction",
+    "type": "intellect",
+    "characteristic": "intelligence",
+    "baseCost": 3,
+    "plusOneCost": 2,
+    "period": "all"
+  },
+  "demolitions": {
+    "name": "demolitions",
+    "type": "intellect",
+    "characteristic": "intelligence",
+    "baseCost": 3,
+    "plusOneCost": 2,
+    "period": ["modern", "future"]
+  },
+  "disguise": {
+    "name": "disguise",
+    "type": "intellect",
+    "characteristic": "intelligence",
+    "baseCost": 3,
+    "plusOneCost": 2,
+    "period": "all"
+  },
+  "electronics": {
+    "name": "electronics",
+    "type": "intellect",
+    "characteristic": "intelligence",
+    "baseCost": 3,
+    "plusOneCost": 2,
+    "period": ["modern", "future"]
+  },
+  "fastDraw": {
+    "name": "fastDraw",
+    "type": "agility",
+    "characteristic": "dexterity",
+    "baseCost": 3,
+    "plusOneCost": 2,
+    "period": "all"
+  },
+  "forensicMedicine": {
+    "name": "forensicMedicine",
+    "type": "intellect",
+    "characteristic": "intelligence",
+    "baseCost": 3,
+    "plusOneCost": 2,
+    "period": ["modern", "future"]
+  },
+  "forgery": {
+    "name": "forgery",
+    "type": "intellect",
+    "characteristic": "intelligence",
+    "baseCost": 2,
+    "plusOneCost": 2,
+    "period": "all"
+  },
+  "gambling": {
+    "name": "gambling",
+    "type": "intellect",
+    "characteristic": "intelligence",
+    "baseCost": 2,
+    "plusOneCost": 2,
+    "period": "all"
+  },
+  "highSociety": {
+    "name": "highSociety",
+    "type": "interaction",
+    "characteristic": "presence",
+    "baseCost": 3,
+    "plusOneCost": 2,
+    "period": "all"
+  },
+  "interrogation": {
+    "name": "interrogation",
+    "type": "interaction",
+    "characteristic": "presence",
+    "baseCost": 3,
+    "plusOneCost": 2,
+    "period": "all"
+  },
+  "inventor": {
+    "name": "inventor",
+    "type": "intellect",
+    "characteristic": "intelligence",
+    "baseCost": 3,
+    "plusOneCost": 2,
+    "period": "all"
+  },
+  "knowledgeSkill": {
+    "name": "knowledgeSkill",
+    "type": "background",
+    "characteristic": "base",
+    "baseCost": 2,
+    "plusOneCost": 1,
+    "period": "all"
+  },
+  "lipreading": {
+    "name": "lipreading",
+    "type": "intellect",
+    "characteristic": "intelligence",
+    "baseCost": 3,
+    "plusOneCost": 2,
+    "period": "all"
+  },
+  "lockpicking": {
+    "name": "lockpicking",
+    "type": "agility",
+    "characteristic": "dexterity",
+    "baseCost": 3,
+    "plusOneCost": 2,
+    "period": "all"
+  },
+  "mechanics": {
+    "name": "mechanics",
+    "type": "intellect",
+    "characteristic": "intelligence",
+    "baseCost": 3,
+    "plusOneCost": 2,
+    "period": ["modern", "future"]
+  },
+  "mimicry": {
+    "name": "mimicry",
+    "type": "intellect",
+    "characteristic": "intelligence",
+    "baseCost": 3,
+    "plusOneCost": 2,
+    "period": "all"
+  },
+  "navigation": {
+    "name": "navigation",
+    "type": "intellect",
+    "characteristic": "intelligence",
+    "baseCost": 2,
+    "plusOneCost": 2,
+    "period": "all"
+  },
+  "oratory": {
+    "name": "oratory",
+    "type": "interaction",
+    "characteristic": "presence",
+    "baseCost": 3,
+    "plusOneCost": 2,
+    "period": "all"
+  },
+  "paramedics": {
+    "name": "paramedics",
+    "type": "intellect",
+    "characteristic": "intelligence",
+    "baseCost": 3,
+    "plusOneCost": 2,
+    "period": "all"
+  },
+  "persuasion": {
+    "name": "persuasion",
+    "type": "interaction",
+    "characteristic": "presence",
+    "baseCost": 3,
+    "plusOneCost": 2,
+    "period": "all"
+  },
+  "professionalSkill": {
+    "name": "professionalSkill",
+    "type": "background",
+    "characteristic": "base",
+    "baseCost": 2,
+    "plusOneCost": 1,
+    "period": "all"
+  },
+  "riding": {
+    "name": "riding",
+    "type": "agility",
+    "characteristic": "dexterity",
+    "baseCost": 3,
+    "plusOneCost": 2,
+    "period": ["fantasy", "modern"]
+  },
+  "scienceSkill": {
+    "name": "scienceSkill",
+    "type": "background",
+    "characteristic": "base",
+    "baseCost": 2,
+    "plusOneCost": 1,
+    "period": "all"
+  },
+  "securitySystems": {
+    "name": "securitySystems",
+    "type": "intellect",
+    "characteristic": "intelligence",
+    "baseCost": 3,
+    "plusOneCost": 2,
+    "period": "all"
+  },
+  "shadowing": {
+    "name": "shadowing",
+    "type": "intellect",
+    "characteristic": "intelligence",
+    "baseCost": 3,
+    "plusOneCost": 2,
+    "period": "all"
+  },
+  "sleightOfHand": {
+    "name": "sleightOfHand",
+    "type": "agility",
+    "characteristic": "dexterity",
+    "baseCost": 3,
+    "plusOneCost": 2,
+    "period": "all"
+  },
+  "stealth": {
+    "name": "stealth",
+    "type": "agility",
+    "characteristic": "dexterity",
+    "baseCost": 3,
+    "plusOneCost": 2,
+    "period": "all"
+  },
+  "streetwise": {
+    "name": "streetwise",
+    "type": "interaction",
+    "characteristic": "presence",
+    "baseCost": 3,
+    "plusOneCost": 2,
+    "period": "all"
+  },
+  "survival": {
+    "name": "survival",
+    "type": "intellect",
+    "characteristic": "intelligence",
+    "baseCost": 2,
+    "plusOneCost": 2,
+    "period": "all"
+  },
+  "systemsOperation": {
+    "name": "systemsOperation",
+    "type": "intellect",
+    "characteristic": "intelligence",
+    "baseCost": 3,
+    "plusOneCost": 2,
+    "period": ["modern", "future"]
+  },
+  "tactics": {
+    "name": "tactics",
+    "type": "intellect",
+    "characteristic": "intelligence",
+    "baseCost": 3,
+    "plusOneCost": 2,
+    "period": "all"
+  },
+  "teamwork": {
+    "name": "teamwork",
+    "type": "agility",
+    "characteristic": "dexterity",
+    "baseCost": 3,
+    "plusOneCost": 2,
+    "period": "all"
+  },
+  "tracking": {
+    "name": "tracking",
+    "type": "intellect",
+    "characteristic": "intelligence",
+    "baseCost": 3,
+    "plusOneCost": 2,
+    "period": "all"
+  },
+  "trading": {
+    "name": "trading",
+    "type": "interaction",
+    "characteristic": "presence",
+    "baseCost": 3,
+    "plusOneCost": 2,
+    "period": "all"
+  },
+  "twoWeaponFighting": {
+    "name": "twoWeaponFighting",
+    "type": "combat",
+    "characteristic": null,
+    "baseCost": 10,
+    "plusOneCost": null,
+    "period": "all"
+  },
+  "ventriloquism": {
+    "name": "ventriloquism",
+    "type": "intellect",
+    "characteristic": "intelligence",
+    "baseCost": 3,
+    "plusOneCost": 2,
+    "period": "all"
+  },
+  "weaponSmith": {
+    "name": "weaponSmith",
+    "type": "intellect",
+    "characteristic": "intelligence",
+    "baseCost": 2,
+    "plusOneCost": 2,
+    "period": "all"
+  },
+}
