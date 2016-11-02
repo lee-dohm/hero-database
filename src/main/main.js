@@ -13,7 +13,8 @@ function createWindow () {
     webPreferences: {
       defaultEncoding: 'UTF-8',
       experimentalCanvasFeatures: true
-    }
+    },
+    show: false
   }
 
   mainWindow = new BrowserWindow(windowOptions)
@@ -22,6 +23,10 @@ function createWindow () {
   if (argv.dev) {
     mainWindow.webContents.openDevTools()
   }
+
+  mainWindow.once('ready-to-show', () => {
+    mainWindow.show()
+  })
 
   mainWindow.on('closed', () => {
     mainWindow = null
