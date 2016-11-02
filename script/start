@@ -8,4 +8,4 @@ cd "$(dirname "$0")/.."
 
 script/build
 
-./node_modules/.bin/electron lib/src/main/main.js "$@"
+./node_modules/.bin/electron src/main/main.js "$@"

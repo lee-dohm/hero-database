@@ -9,8 +9,3 @@ cd "$(dirname "$0")/.."
 script/bootstrap
 
 ./node_modules/.bin/standard
-./node_modules/.bin/babel --presets es2015 \
-                          --out-dir lib/src/ \
-                          --copy-files \
-                          --source-maps inline \
-                          src/
