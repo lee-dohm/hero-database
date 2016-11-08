@@ -14,8 +14,13 @@ export default class WorkspaceView {
 
   render () {
     return (
-      <div className='workspace-view'>
-        <DatabaseView database={this.props.database} />
+      <div id='workspace-view'>
+        <div id='sidebar'>
+          <DatabaseView database={this.props.database} />
+        </div>
+        <div id='editor'>
+          Test
+        </div>
       </div>
     )
   }
