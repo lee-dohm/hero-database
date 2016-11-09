@@ -17,14 +17,16 @@ export default class DatabaseView {
   render () {
     return (
       <div className='database-view'>
-        <header>
-          <span className='title'>Characters</span>
-        </header>
-        {
-          this.props.database.items.map(({file, name}) => {
-            return <CharacterEntryView file={file} name={name} />
-          })
-        }
+        <div className='title'>
+          Characters
+        </div>
+        <div className='characters list'>
+          {
+            this.props.database.items.map(({file, name}) => {
+              return <CharacterEntryView file={file} name={name} />
+            })
+          }
+        </div>
       </div>
     )
   }

@@ -21,6 +21,6 @@ describe('DatabaseView', function () {
   })
 
   it('renders the view element', function () {
-    expect(view.element.outerHTML).to.equal('<div class="database-view"><header><span class="title">Characters</span></header><div class="character-entry-view">Foo</div><div class="character-entry-view">Bar</div></div>')
+    expect(view.element.outerHTML).to.equal('<div class="database-view"><div class="title">Characters</div><div class="characters list"><div class="character-entry-view">Foo</div><div class="character-entry-view">Bar</div></div></div>')
   })
 })

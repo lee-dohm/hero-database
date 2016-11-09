@@ -1,10 +1,16 @@
 @import "ui-variables.less";
 
+html {
+  height: 100%;
+}
+
 body {
   background-color: @app-background-color;
   color: @text-color;
   font-family: @font-family;
   font-size: @font-size;
+  height: 100%;
+  margin: 5px;
 }
 
 section {
@@ -19,8 +25,25 @@ section {
 
 #sidebar {
   flex: 1 1 0px;
+  margin: 5px 0px 5px 5px;
+  height: 100%;
 }
 
 #editor {
-  flex: 3 3 0px
+  flex: 3 3 0px;
+  margin: 5px;
+}
+
+.database-view {
+  height: 100%;
+}
+
+.list {
+  border: solid 1px;
+  height: 100px;
+  width: 100%;
+}
+
+.title {
+  width: 100%;
 }
