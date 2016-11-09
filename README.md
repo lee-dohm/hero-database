@@ -12,6 +12,10 @@ I've been a huge fan of [HERO Games][hero-games] and the HERO System since the o
 
 If you like what you see here and want to help in a monetary fashion, go to the [HERO Games store][hero-games] and buy something! (The [Basic Rulebook][basic-rulebook] is only 15USD in PDF format.) I want to see HERO Games last a long, long time :grinning:
 
+## Hero Designer
+
+There is an official product from HERO Games called [Hero Designer][hero-designer] that already does what this application is planned to do and probably more. Hero Database isn't meant to be a competitor to Hero Designer, more of an alternative and an experiment for me.
+
 ## Ruleset
 
 This application is designed to work with the [HERO System 6th Edition rules][sixth-edition].
@@ -25,6 +29,7 @@ The contents of this repository are copyright &copy; 2016 by [Lee Dohm](http://w
 [basic-rulebook]: http://www.herogames.com/forums/store/product/77-hero-system-basic-rulebook-pdf/
 [champions]: https://en.wikipedia.org/wiki/Champions_(role-playing_game)
 [electron]: http://electron.atom.io
+[hero-designer]: http://www.herogames.com/forums/store/product/1-hero-designer/
 [hero-games]: http://www.herogames.com/
 [license]: https://raw.githubusercontent.com/lee-dohm/hero-database/master/LICENSE.md
 [sixth-edition]: http://www.herogames.com/forums/store/category/2-hero-system-6th-edition/
