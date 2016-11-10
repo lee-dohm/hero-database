@@ -1,7 +1,9 @@
 @import "ui-variables.less";
 
-html {
-  height: 100%;
+html, body, #workspace-view {
+  height: 100vh;
+  padding: 0;
+  margin: 0;
 }
 
 body {
@@ -9,24 +11,15 @@ body {
   color: @text-color;
   font-family: @font-family;
   font-size: @font-size;
-  height: 100%;
-  margin: 5px;
-}
-
-section {
-  display: flex;
 }
 
 #workspace-view {
   display: flex;
-  width: 100%;
-  height: 100%;
 }
 
 #sidebar {
   flex: 1 1 0px;
   margin: 5px 0px 5px 5px;
-  height: 100%;
 }
 
 #editor {
@@ -35,15 +28,12 @@ section {
 }
 
 .database-view {
+  display: flex;
+  flex-direction: column;
   height: 100%;
 }
 
 .list {
   border: solid 1px;
-  height: 100px;
-  width: 100%;
-}
-
-.title {
-  width: 100%;
+  flex-grow: 1;
 }
