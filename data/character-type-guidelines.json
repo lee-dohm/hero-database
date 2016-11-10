@@ -11,9 +11,9 @@
       "maxPerComplication": 20
     },
     "competent": {
-      "totalPoints": 25,
-      "matchingComplications": 15,
-      "maxPerComplication": 15
+      "totalPoints": 100,
+      "matchingComplications": 30,
+      "maxPerComplication": 20
     }
   },
   "heroic": {
