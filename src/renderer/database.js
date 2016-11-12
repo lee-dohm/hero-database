@@ -1,6 +1,8 @@
 import fs from 'fs'
 import path from 'path'
 
+import Record from './record'
+
 /**
  * The hero database itself.
  *
@@ -35,12 +37,12 @@ export default class Database {
           return reject(err)
         }
 
-        let paths = []
+        let records = []
         for (let p of files) {
-          paths.push(path.join(this.databasePath, p))
+          records.push(new Record(path.join(this.databasePath, p)))
         }
 
-        resolve(paths)
+        resolve(records)
       })
     })
   }

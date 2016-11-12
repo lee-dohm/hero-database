@@ -64,10 +64,13 @@ describe('Database', function () {
     })
   })
 
-  it('gets the list of items', function () {
+  it('gets the list of items', async function () {
     database = new Database(fixturePath('three-characters'), {})
-    let items = database.getItems()
+    let items = await database.getItems()
 
-    expect(items).to.eventually.have.lengthOf(3)
+    expect(items).to.have.lengthOf(3)
+    expect(items[0].name).to.equal('First')
+    expect(items[1].name).to.equal('Second')
+    expect(items[2].name).to.equal('Third')
   })
 })
