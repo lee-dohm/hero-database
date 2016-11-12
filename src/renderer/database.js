@@ -7,6 +7,14 @@ import fs from 'fs'
  */
 export default class Database {
   constructor (databasePath, heroEnv) {
+    if (!databasePath) {
+      throw new Error('Database path cannot be undefined')
+    }
+
+    if (!heroEnv) {
+      throw new Error('Hero environment cannot be undefined')
+    }
+
     this.heroEnv = heroEnv
     this.databasePath = databasePath
 
@@ -17,5 +25,9 @@ export default class Database {
     if (!fs.existsSync(this.databasePath)) {
       fs.mkdirSync(this.databasePath)
     }
+  }
+
+  getPath () {
+    return this.databasePath
   }
 }
