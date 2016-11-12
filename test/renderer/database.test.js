@@ -66,7 +66,8 @@ describe('Database', function () {
 
   it('gets the list of items', function () {
     database = new Database(fixturePath('three-characters'), {})
+    let items = database.getItems()
 
-    expect(database.getItems()).to.eventually.have.lengthOf(3)
+    expect(items).to.eventually.have.lengthOf(3)
   })
 })
