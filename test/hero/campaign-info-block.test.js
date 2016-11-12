@@ -1,4 +1,4 @@
-import {expect} from 'chai'
+import '../support'
 
 import CampaignInfoBlock from '../../src/hero/campaign-info-block'
 

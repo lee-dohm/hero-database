@@ -1,4 +1,4 @@
-import {expect} from 'chai'
+import '../support'
 
 import CharacteristicsBlock from '../../src/hero/characteristics-block'
 import HeroEnvironment from '../../src/renderer/hero-environment'

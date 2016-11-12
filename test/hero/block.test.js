@@ -1,4 +1,4 @@
-import {expect} from 'chai'
+import '../support'
 
 import Block from '../../src/hero/block'
 import DeserializationError from '../../src/hero/deserialization-error'

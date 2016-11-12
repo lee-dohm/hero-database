@@ -1,4 +1,4 @@
-import {expect} from 'chai'
+import '../support'
 
 import HeroMath from '../../src/hero/math'
 

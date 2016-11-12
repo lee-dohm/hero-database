@@ -1,8 +1,6 @@
-import {expect} from 'chai'
+import '../support'
 
 import CharacterEntryView from '../../src/renderer/character-entry-view'
-
-import {waitsForPromise} from './renderer-helpers'
 
 describe('CharacterEntryView', function () {
   let view
@@ -16,10 +14,8 @@ describe('CharacterEntryView', function () {
   })
 
   describe('when the view is updated', function () {
-    beforeEach(function (done) {
-      waitsForPromise(done, () => {
-        return view.update({file: 'foo', name: 'Bar'})
-      })
+    beforeEach(function () {
+      return view.update({file: 'foo', name: 'Bar'})
     })
 
     it('updates the inner text', function () {

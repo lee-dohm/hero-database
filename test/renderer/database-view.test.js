@@ -1,13 +1,11 @@
-import {expect} from 'chai'
+import '../support'
 
 import DatabaseView from '../../src/renderer/database-view'
-
-import {waitsForPromise} from './renderer-helpers'
 
 describe('DatabaseView', function () {
   let database, view
 
-  beforeEach(function (done) {
+  beforeEach(function () {
     database = {
       items: [
           {file: 'foo.character', name: 'Foo'},
@@ -17,7 +15,7 @@ describe('DatabaseView', function () {
 
     view = new DatabaseView({items: database.items})
 
-    waitsForPromise(done, () => { return view.update({items: database.items}) })
+    return view.update({items: database.items})
   })
 
   it('renders the view element', function () {
