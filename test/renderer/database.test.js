@@ -1,22 +1,28 @@
-import {expect} from 'chai'
+import '../support'
 import fs from 'fs'
-import os from 'os'
-import {rimraf} from 'rimraf'
+const rimraf = require('rimraf')
 import temp from 'temp'
 
 import Database from '../../src/renderer/database'
+import {fixturePath} from '../test-helpers'
 
 temp.track()
 
 describe('Database', function () {
   let database, tempPath
 
-  afterEach(function (done) {
-    if (tempPath && fs.existsSync(tempPath)) {
-      rimraf(tempPath, done)
-    } else {
-      done()
-    }
+  beforeEach(function () {
+    tempPath = temp.path('hero-database')
+  })
+
+  afterEach(function () {
+    return new Promise((resolve, reject) => {
+      if (tempPath && fs.existsSync(tempPath)) {
+        rimraf(tempPath, resolve)
+      } else {
+        resolve()
+      }
+    })
   })
 
   describe('constructor', function () {
@@ -33,29 +39,34 @@ describe('Database', function () {
     })
 
     it('throws an error when given an undefined hero environment', function () {
-      const fn = () => { database = new Database(os.tmpdir(), undefined) }
+      const fn = () => { database = new Database(tempPath, undefined) }
 
       expect(fn).to.throw()
     })
 
     it('initializes the database path', function () {
-      database = new Database(os.tmpdir(), {})
+      database = new Database(tempPath, {})
 
-      expect(database.getPath()).to.equal(os.tmpdir())
+      expect(database.getPath()).to.equal(tempPath)
     })
 
     it('initializes the hero environment', function () {
       let mockHeroEnv = {}
-      database = new Database(os.tmpdir(), mockHeroEnv)
+      database = new Database(tempPath, mockHeroEnv)
 
       expect(database.heroEnv).to.equal(mockHeroEnv)
     })
 
     it('creates the path if it does not exist', function () {
-      let tempPath = temp.path('hero-database')
       database = new Database(tempPath, {})
 
       expect(fs.existsSync(tempPath)).to.be.ok
     })
+  })
+
+  it('gets the list of items', function () {
+    database = new Database(fixturePath('three-characters'), {})
+
+    expect(database.getItems()).to.eventually.have.lengthOf(3)
   })
 })

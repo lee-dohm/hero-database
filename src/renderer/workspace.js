@@ -8,10 +8,12 @@ export default class Workspace {
     this.heroEnv = heroEnv
 
     this.database = database
-    this.workspaceView = new WorkspaceView({database: this.database})
   }
 
   attachViews () {
-    document.body.appendChild(this.workspaceView.element)
+    this.database.getItems().then((items) => {
+      this.workspaceView = new WorkspaceView({items: items})
+      document.body.appendChild(this.workspaceView.element)
+    })
   }
 }

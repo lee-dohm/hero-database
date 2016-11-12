@@ -15,9 +15,9 @@ describe('DatabaseView', function () {
       ]
     }
 
-    view = new DatabaseView({database: database})
+    view = new DatabaseView({items: database.items})
 
-    waitsForPromise(done, () => { return view.update({database: database}) })
+    waitsForPromise(done, () => { return view.update({items: database.items}) })
   })
 
   it('renders the view element', function () {
