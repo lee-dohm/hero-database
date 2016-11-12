@@ -18,6 +18,8 @@ export default class Database {
     this.heroEnv = heroEnv
     this.databasePath = databasePath
 
+    this.create()
+
     this.items = []
   }
 
