@@ -8,7 +8,7 @@ export default class HeroMath {
    * See: "Characteristic Rolls" - 6E1 41
    */
   static characteristicRoll (charValue) {
-    return 9 + this.round(charValue / 5)
+    return 9 + this.round(charValue / 5, 'up')
   }
 
   /**
@@ -23,6 +23,10 @@ export default class HeroMath {
    * See: "Character Points and Rounding" - 6E1 12
    */
   static round (number, direction) {
+    if (!direction) {
+      throw new Error('Direction parameter is required')
+    }
+
     let sign = 1
 
     if (number < 0) {
