@@ -64,15 +64,13 @@ describe('Database', function () {
     })
   })
 
-  it('gets the list of items', function (done) {
+  it('gets the list of items', async function () {
     database = new Database(fixturePath('three-characters'), {})
-    database.getItems().then((items) => {
-      expect(items).to.have.lengthOf(3)
-      expect(items[0].name).to.equal('First')
-      expect(items[1].name).to.equal('Second')
-      expect(items[2].name).to.equal('Third')
+    let items = await database.getItems()
 
-      done()
-    })
+    expect(items).to.have.lengthOf(3)
+    expect(items[0].name).to.equal('First')
+    expect(items[1].name).to.equal('Second')
+    expect(items[2].name).to.equal('Third')
   })
 })
