@@ -1,4 +1,6 @@
-import fs from 'fs'
+const promisify = require('promisify-node')
+const fs = promisify('fs')
+
 import path from 'path'
 
 import Record from './record'
@@ -30,21 +32,15 @@ export default class Database {
     }
   }
 
-  getItems () {
-    return new Promise((resolve, reject) => {
-      fs.readdir(this.databasePath, (err, files) => {
-        if (err) {
-          return reject(err)
-        }
+  async getItems () {
+    let files = await fs.readdir(this.databasePath)
 
-        let records = []
-        for (let p of files) {
-          records.push(new Record(path.join(this.databasePath, p)))
-        }
+    let records = []
+    for (let p of files) {
+      records.push(new Record(path.join(this.databasePath, p)))
+    }
 
-        resolve(records)
-      })
-    })
+    return records
   }
 
   getPath () {
