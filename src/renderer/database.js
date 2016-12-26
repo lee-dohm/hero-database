@@ -32,6 +32,18 @@ export default class Database {
     }
   }
 
+  async getItem (name) {
+    let records = await this.getItems()
+
+    for (let record of records) {
+      if (record.name === name) {
+        return record
+      }
+    }
+
+    throw new Error(`Record "${name}" not found`)
+  }
+
   async getItems () {
     let files = await fs.readdir(this.databasePath)
 

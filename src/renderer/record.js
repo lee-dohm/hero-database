@@ -4,6 +4,9 @@ import fs from 'fs'
  * Represents a record in the database.
  */
 export default class Record {
+  /**
+   * Builds a record from the given file path.
+   */
   constructor (filePath) {
     if (!filePath) {
       throw new Error('File path cannot be undefined')

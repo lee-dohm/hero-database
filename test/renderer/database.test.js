@@ -1,10 +1,13 @@
 import '../support'
+
 import fs from 'fs'
-const rimraf = require('rimraf')
+import path from 'path'
 import temp from 'temp'
 
 import Database from '../../src/renderer/database'
 import {fixturePath} from '../test-helpers'
+
+const rimraf = require('rimraf')
 
 temp.track()
 
@@ -64,13 +67,38 @@ describe('Database', function () {
     })
   })
 
-  it('gets the list of items', async function () {
-    database = new Database(fixturePath('three-characters'), {})
-    let items = await database.getItems()
+  describe('getItems', function () {
+    it('gets the list of items', async function () {
+      database = new Database(fixturePath('three-characters'), {})
+      let items = await database.getItems()
 
-    expect(items).to.have.lengthOf(3)
-    expect(items[0].name).to.equal('First')
-    expect(items[1].name).to.equal('Second')
-    expect(items[2].name).to.equal('Third')
+      expect(items).to.have.lengthOf(3)
+      expect(items[0].name).to.equal('First')
+      expect(items[1].name).to.equal('Second')
+      expect(items[2].name).to.equal('Third')
+    })
+  })
+
+  describe('getItem', function () {
+    it('gets a single item', async function () {
+      database = new Database(fixturePath('three-characters'), {})
+      let item = await database.getItem('First')
+
+      expect(item.name).to.equal('First')
+      expect(item.filePath).to.equal(path.join(fixturePath('three-characters'), 'first.character'))
+    })
+
+    it('throws an error if a record with the name is not found', async function () {
+      let caught = false
+      let database = new Database(fixturePath('three-characters'), {})
+
+      try {
+        await database.getItem('Not Found')
+      } catch (err) {
+        caught = true
+      }
+
+      expect(caught).to.be.ok
+    })
   })
 })
