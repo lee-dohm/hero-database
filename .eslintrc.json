@@ -2,8 +2,9 @@
     "extends": "standard",
     "installedESLint": true,
     "plugins": [
-        "standard",
-        "promise"
+        "promise",
+        "react",
+        "standard"
     ],
     "env": {
       "mocha": true,
@@ -11,5 +12,8 @@
     },
     "globals": {
       "hero": true
+    },
+    "rules": {
+      "react/jsx-uses-vars": "error"
     }
 }
