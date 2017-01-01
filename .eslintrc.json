@@ -1,19 +1,27 @@
 {
-    "extends": "standard",
-    "installedESLint": true,
-    "plugins": [
-        "promise",
-        "react",
-        "standard"
-    ],
-    "env": {
-      "mocha": true,
-      "jasmine": true
-    },
-    "globals": {
-      "hero": true
-    },
-    "rules": {
-      "react/jsx-uses-vars": "error"
-    }
+  "extends": [
+    "standard",
+    "plugin:import/errors"
+  ],
+  "installedESLint": true,
+  "plugins": [
+    "promise",
+    "react",
+    "standard"
+  ],
+  "env": {
+    "mocha": true,
+    "jasmine": true
+  },
+  "globals": {
+    "hero": true
+  },
+  "rules": {
+    "react/jsx-uses-vars": "error"
+  },
+  "settings": {
+    "import/core-modules": [
+      "electron"
+    ]
+  }
 }
