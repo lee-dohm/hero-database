@@ -3,7 +3,6 @@
     "standard",
     "plugin:import/errors"
   ],
-  "installedESLint": true,
   "plugins": [
     "promise",
     "react",
