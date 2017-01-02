@@ -46,12 +46,11 @@ export default class Database {
   }
 
   async getItems () {
-    let files = await fs.readdir(this.databasePath)
+    const files = await fs.readdir(this.databasePath)
 
-    let records = []
-    for (let p of files) {
-      records.push(new Record(path.join(this.databasePath, p)))
-    }
+    const records = await Promise.all(files.map((file) => {
+      return Record.load(path.join(this.databasePath, file))
+    }))
 
     return records
   }
