@@ -2,6 +2,7 @@ const promisify = require('promisify-node')
 const fs = promisify('fs')
 
 import path from 'path'
+import _ from 'underscore.string'
 
 import Record from './record'
 
@@ -57,5 +58,21 @@ export default class Database {
 
   getPath () {
     return this.databasePath
+  }
+
+  async setItem (item) {
+    let serialized = null
+
+    if (item.serialize) {
+      serialized = JSON.stringify(item.serialize(), null, 2)
+    } else {
+      serialized = JSON.stringify(item, null, 2)
+    }
+
+    return fs.writeFile(this.getPathForItem(item), serialized)
+  }
+
+  getPathForItem (item) {
+    return path.join(this.databasePath, `${_.trim(_.dasherize(item.name), '-')}.character`)
   }
 }

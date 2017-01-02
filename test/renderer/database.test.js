@@ -101,4 +101,60 @@ describe('Database', function () {
       expect(caught).to.be.ok
     })
   })
+
+  describe('setItem', function () {
+    beforeEach(function () {
+      database = new Database(tempPath, {})
+    })
+
+    it('sets a single item', async function () {
+      const item = { name: 'Test' }
+
+      await database.setItem(item)
+      const readItem = await database.getItem('Test')
+
+      expect(readItem).to.be.ok
+      expect(readItem.name).to.equal('Test')
+      expect(readItem.filePath).to.equal(path.join(tempPath, 'test.character'))
+    })
+
+    it('throws an error if given an undefined value', async function () {
+      let caught = false
+
+      try {
+        await database.setItem()
+      } catch (err) {
+        caught = true
+      }
+
+      expect(caught).to.be.ok
+    })
+
+    it('uses the serialize function on the object if it exists', async function () {
+      const item = {
+        name: 'Test',
+
+        serialize: function () {
+          return {
+            name: this.name,
+            serialized: true
+          }
+        }
+      }
+
+      await database.setItem(item)
+      const readItem = await database.getItem('Test')
+
+      expect(readItem.data.serialized).to.be.ok
+    })
+
+    it('dasherizes the name attribute to create the file name', async function () {
+      const item = { name: 'Something Long With Spaces' }
+
+      await database.setItem(item)
+      const readItem = await database.getItem('Something Long With Spaces')
+
+      expect(readItem.filePath).to.equal(path.join(tempPath, 'something-long-with-spaces.character'))
+    })
+  })
 })
