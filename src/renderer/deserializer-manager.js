@@ -12,6 +12,11 @@ export default class DeserializerManager {
     this.deserializers = {}
   }
 
+  /**
+   * Adds deserializers to the set.
+   *
+   * * `deserializers` List of deserializers to be added
+   */
   add (...deserializers) {
     this.validate(...deserializers)
 
@@ -20,6 +25,13 @@ export default class DeserializerManager {
     }
   }
 
+  /**
+   * Deserializes a state object into a "real" object.
+   *
+   * * `state` An {Object} containing serialized state
+   *
+   * Returns the deserialized {Object}.
+   */
   deserialize (state) {
     if (this.deserializers[state['__typeName']]) {
       return this.deserializers[state['__typeName']].deserialize(state, this.heroEnv)
@@ -28,10 +40,20 @@ export default class DeserializerManager {
     }
   }
 
+  /**
+   * Gets the deserializer for the type `name`.
+   *
+   * * `name` {String} of the type name
+   *
+   * Returns the deserializer for the given type.
+   */
   get (name) {
     return this.deserializers[name]
   }
 
+  /**
+   * Returns the {Number} of deserializers being managed.
+   */
   getCount () {
     return Object.keys(this.deserializers).length
   }
