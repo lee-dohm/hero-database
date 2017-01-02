@@ -2,12 +2,11 @@ import '../support'
 
 import fs from 'fs'
 import path from 'path'
+import rmfr from 'rmfr'
 import temp from 'temp'
 
 import Database from '../../src/renderer/database'
 import {fixturePath} from '../test-helpers'
-
-const rimraf = require('rimraf')
 
 temp.track()
 
@@ -18,14 +17,10 @@ describe('Database', function () {
     tempPath = temp.path('hero-database')
   })
 
-  afterEach(function () {
-    return new Promise((resolve, reject) => {
-      if (tempPath && fs.existsSync(tempPath)) {
-        rimraf(tempPath, resolve)
-      } else {
-        resolve()
-      }
-    })
+  afterEach(async function () {
+    if (tempPath && fs.existsSync(tempPath)) {
+      await rmfr(tempPath)
+    }
   })
 
   describe('constructor', function () {

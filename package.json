@@ -44,7 +44,7 @@
     "eslint-plugin-promise": "^3.4.0",
     "eslint-plugin-react": "^6.8.0",
     "eslint-plugin-standard": "^2.0.1",
-    "rimraf": "^2.5.4",
+    "rmfr": "^1.0.1",
     "temp": "^0.8.3"
   }
 }
