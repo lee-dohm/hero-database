@@ -11,4 +11,6 @@ script/build
 export ELECTRON_PATH=./node_modules/.bin/electron
 export HERO_DATABASE_HOME=.
 
+echo "==> Running tests..."
+
 ./node_modules/.bin/electron-mocha --renderer

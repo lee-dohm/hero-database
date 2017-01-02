@@ -6,4 +6,5 @@ set -e
 
 cd "$(dirname "$0")/.."
 
+echo "==> Linting JavaScript files..."
 ./node_modules/eslint/bin/eslint.js src/**/*.js test/**/*.js
