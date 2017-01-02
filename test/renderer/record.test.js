@@ -8,7 +8,7 @@ import Record from '../../src/renderer/record'
 describe('Record', function () {
   let record
 
-  describe('constructor', function () {
+  describe('load', function () {
     it('throws an error when given an undefined path', async function () {
       let caught = false
 
