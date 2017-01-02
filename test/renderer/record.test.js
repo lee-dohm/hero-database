@@ -2,6 +2,7 @@ import '../support'
 import fs from 'fs'
 import {fixturePath} from '../test-helpers'
 
+import InvalidRecordError from '../../src/renderer/invalid-record-error'
 import Record from '../../src/renderer/record'
 
 describe('Record', function () {
@@ -45,29 +46,31 @@ describe('Record', function () {
     })
 
     it('throws an error if the file does not contain valid JSON', async function () {
-      let caught = false
+      let err = null
 
       try {
         await Record.load(fixturePath('invalid.json'))
-      } catch (err) {
-        caught = true
+      } catch (e) {
+        err = e
       }
 
       expect(fs.existsSync(fixturePath('invalid.json'))).to.be.ok
-      expect(caught).to.be.ok
+      expect(err).to.be.ok
+      expect(err).to.be.instanceOf(SyntaxError)
     })
 
     it('throws an error if the record does not contain a name attribute', async function () {
-      let caught = false
+      let err = null
 
       try {
         await Record.load(fixturePath('no-name-attribute.json'))
-      } catch (err) {
-        caught = true
+      } catch (e) {
+        err = e
       }
 
       expect(fs.existsSync(fixturePath('no-name-attribute.json'))).to.be.ok
-      expect(caught).to.be.ok
+      expect(err).to.be.ok
+      expect(err).to.be.instanceOf(InvalidRecordError)
     })
   })
 })

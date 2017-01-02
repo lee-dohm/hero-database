@@ -1,3 +1,5 @@
+import InvalidRecordError from './invalid-record-error'
+
 const promisify = require('promisify-node')
 const fs = promisify('fs')
 
@@ -18,7 +20,7 @@ export default class Record {
     this.data = data
 
     if (!this.data.name) {
-      throw new Error(`Invalid record at ${this.filePath}: does not contain a name attribute`)
+      throw new InvalidRecordError('Does not contain the name attribute', this.filePath)
     }
 
     this.name = this.data.name
