@@ -4,6 +4,7 @@ import path from 'path'
 const {app} = require('electron').remote
 
 import Database from './database'
+import DeserializerManager from './deserializer-manager'
 import Workspace from './workspace'
 
 /**
@@ -17,7 +18,9 @@ export default class HeroEnvironment {
   constructor () {
     this.appPath = app.getAppPath()
     this.documentPath = path.join(app.getPath('documents'), 'hero-database')
+
     this.database = new Database(this.documentPath, this)
+    this.deserializers = new DeserializerManager(this)
     this.workspace = new Workspace(this.database, this)
   }
 
