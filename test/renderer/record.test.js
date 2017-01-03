@@ -9,18 +9,6 @@ describe('Record', function () {
   let record
 
   describe('load', function () {
-    it('throws an error when given an undefined path', async function () {
-      let caught = false
-
-      try {
-        await Record.load(undefined)
-      } catch (err) {
-        caught = true
-      }
-
-      expect(caught).to.be.ok
-    })
-
     it('stores the file path', async function () {
       record = await Record.load(fixturePath('simple-record.json'))
 
@@ -31,6 +19,18 @@ describe('Record', function () {
       record = await Record.load(fixturePath('simple-record.json'))
 
       expect(record.name).to.equal('foo')
+    })
+
+    it('throws an error when given an undefined path', async function () {
+      let caught = false
+
+      try {
+        await Record.load(undefined)
+      } catch (err) {
+        caught = true
+      }
+
+      expect(caught).to.be.ok
     })
 
     it('throws an error if the file does not exist', async function () {
