@@ -73,4 +73,27 @@ describe('Record', function () {
       expect(err).to.be.instanceOf(InvalidRecordError)
     })
   })
+
+  describe('deserialization', function () {
+    let heroEnv, manager
+
+    beforeEach(function () {
+      manager = {
+        deserialize: (state) => {
+          state.deserialized = true
+          return state
+        }
+      }
+
+      heroEnv = {
+        deserializers: manager
+      }
+    })
+
+    it('deserializes the record on load when supplied with a HeroEnvironment', async function () {
+      record = await Record.load(fixturePath('simple-record.json'), heroEnv)
+
+      expect(record.data.deserialized).to.be.ok
+    })
+  })
 })
