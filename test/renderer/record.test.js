@@ -1,6 +1,12 @@
 import '../support'
-import fs from 'fs'
 import {fixturePath} from '../test-helpers'
+
+const promisify = require('promisify-node')
+const fs = promisify('fs')
+
+import path from 'path'
+import rmfr from 'rmfr'
+import temp from 'temp'
 
 import InvalidRecordError from '../../src/renderer/invalid-record-error'
 import Record from '../../src/renderer/record'
@@ -94,6 +100,51 @@ describe('Record', function () {
       record = await Record.load(fixturePath('simple-record.json'), heroEnv)
 
       expect(record.data.deserialized).to.be.ok
+    })
+  })
+
+  describe('store', function () {
+    let tempPath
+
+    beforeEach(async function () {
+      tempPath = temp.path('hero-database')
+
+      await fs.mkdir(tempPath)
+    })
+
+    afterEach(async function () {
+      if (tempPath && fs.existsSync(tempPath)) {
+        await rmfr(tempPath)
+      }
+    })
+
+    it('writes the latest contents to the file path', async function () {
+      let characterPath = path.join(tempPath, 'test.character')
+      let record = new Record(characterPath, { name: 'Test' })
+
+      await record.store()
+      let data = JSON.parse(await fs.readFile(characterPath, 'utf8'))
+
+      expect(fs.existsSync(characterPath)).to.be.ok
+      expect(data.name).to.equal('Test')
+    })
+
+    it('calls the serialize function on the object if it exists', async function () {
+      let characterPath = path.join(tempPath, 'test.character')
+      let record = new Record(characterPath, {
+        name: 'Test',
+        serialize: () => {
+          return {
+            serialized: true
+          }
+        }
+      })
+
+      await record.store()
+      let data = JSON.parse(await fs.readFile(characterPath, 'utf8'))
+
+      expect(fs.existsSync(characterPath)).to.be.ok
+      expect(data.serialized).to.be.ok
     })
   })
 })

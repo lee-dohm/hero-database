@@ -30,4 +30,16 @@ export default class Record {
 
     this.name = this.data.name
   }
+
+  store () {
+    let data = null
+
+    if (this.data.serialize) {
+      data = this.data.serialize()
+    } else {
+      data = this.data
+    }
+
+    return fs.writeFile(this.filePath, JSON.stringify(data, null, 2))
+  }
 }
