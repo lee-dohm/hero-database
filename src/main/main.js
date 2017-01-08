@@ -28,6 +28,13 @@ function createWindow () {
     mainWindow.show()
   })
 
+  mainWindow.on('close', (e) => {
+    e.preventDefault()
+    mainWindow.hide()
+    console.log('Window hiddnen')
+    return false
+  })
+
   mainWindow.on('closed', () => {
     mainWindow = null
   })
