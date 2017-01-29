@@ -42,6 +42,21 @@ export default class Database {
   }
 
   /**
+   * Gets the path to the database.
+   */
+  getPath () {
+    return this.databasePath
+  }
+
+  getPathForRecord (item) {
+    return this.getPathForName(item.name)
+  }
+
+  getPathForName (name) {
+    return path.join(this.databasePath, `${_.trim(_.dasherize(name), '-')}.character`)
+  }
+
+  /**
    * Gets the single item from the database given its `name`.
    *
    * * `name` {String} containing the name of the item to retrieve from the database.
@@ -68,17 +83,25 @@ export default class Database {
   }
 
   /**
-   * Gets the path to the database.
+   * Creates a new record in the database.
+   *
+   * * `data` Either a {String} containing the name of the new record or an {Object} with a `name` attribute
+   *
+   * Returns a new {Record}.
    */
-  getPath () {
-    return this.databasePath
-  }
+  async newRecord (data) {
+    let record
 
-  getPathForRecord (item) {
-    return this.getPathForName(item.name)
-  }
+    if (data && data.name) {
+      record = new Record(this.getPathForName(data.name), data)
+    } else if (typeof data === 'string') {
+      record = new Record(this.getPathForName(data), {name: data})
+    } else {
+      throw new Error('data must be either an Object with a name attribute or a String')
+    }
 
-  getPathForName (name) {
-    return path.join(this.databasePath, `${_.trim(_.dasherize(name), '-')}.character`)
+    await record.store()
+
+    return record
   }
 }

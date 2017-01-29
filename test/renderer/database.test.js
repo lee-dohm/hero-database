@@ -96,4 +96,37 @@ describe('Database', function () {
       expect(caught).to.be.ok
     })
   })
+
+  describe('newRecord', function () {
+    it('creates a new record given an object', async function () {
+      database = new Database(tempPath, {})
+      const record = await database.newRecord({name: 'New Record'})
+
+      expect(record.name).to.equal('New Record')
+      expect(record.filePath).to.equal(path.join(tempPath, 'new-record.character'))
+      expect(record.data).to.deep.equal({name: 'New Record'})
+    })
+
+    it('creates a blank record if just a name is given', async function () {
+      database = new Database(tempPath, {})
+      const record = await database.newRecord('New Record')
+
+      expect(record.name).to.equal('New Record')
+      expect(record.filePath).to.equal(path.join(tempPath, 'new-record.character'))
+      expect(record.data).to.deep.equal({name: 'New Record'})
+    })
+
+    it('throws an error if no object or string is given', async function () {
+      let caught = false
+      database = new Database(tempPath, {})
+
+      try {
+        await database.newRecord()
+      } catch (err) {
+        caught = true
+      }
+
+      expect(caught).to.be.ok
+    })
+  })
 })
