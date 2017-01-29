@@ -76,16 +76,4 @@ export default class Database {
   getPathForName (name) {
     return path.join(this.databasePath, `${_.trim(_.dasherize(name), '-')}.character`)
   }
-
-  async setItem (item) {
-    let serialized = null
-
-    if (item.serialize) {
-      serialized = JSON.stringify(item.serialize(), null, 2)
-    } else {
-      serialized = JSON.stringify(item, null, 2)
-    }
-
-    return fs.writeFile(this.getPathForRecord(item), serialized)
-  }
 }
