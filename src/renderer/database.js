@@ -9,6 +9,11 @@ import Record from './record'
 /**
  * The hero database itself.
  *
+ * The database consists of {Record} objects. Every record is addressed by a human-readable name
+ * that is mapped to a file name by the {Database}. Every name in the database must be unique.
+ * **Please note:** Two human-readable names are considered equivalent if their mapped file names
+ * are equal to each other.
+ *
  * A single instance of this is always available as `hero.database`.
  */
 export default class Database {
