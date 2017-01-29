@@ -31,7 +31,7 @@ export default class Record {
     this.name = this.data.name
   }
 
-  store () {
+  async store () {
     let data = null
 
     if (this.data.serialize) {
