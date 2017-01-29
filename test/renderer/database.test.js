@@ -98,8 +98,11 @@ describe('Database', function () {
   })
 
   describe('newRecord', function () {
-    it('creates a new record given an object', async function () {
+    beforeEach(function () {
       database = new Database(tempPath, {})
+    })
+
+    it('creates a new record given an object', async function () {
       const record = await database.newRecord({name: 'New Record'})
 
       expect(record.name).to.equal('New Record')
@@ -108,7 +111,6 @@ describe('Database', function () {
     })
 
     it('creates a new record of the given type if given an object with enough info', async function () {
-      database = new Database(tempPath, {})
       const record = await database.newRecord({name: 'New Template', __typeName: 'template'})
 
       expect(record.name).to.equal('New Template')
@@ -117,7 +119,6 @@ describe('Database', function () {
     })
 
     it('creates a blank character record if just a name is given', async function () {
-      database = new Database(tempPath, {})
       const record = await database.newRecord('New Record')
 
       expect(record.name).to.equal('New Record')
@@ -127,7 +128,6 @@ describe('Database', function () {
 
     it('throws an error if no object or string is given', async function () {
       let caught = false
-      database = new Database(tempPath, {})
 
       try {
         await database.newRecord()
