@@ -34,15 +34,7 @@ export default class Database {
   }
 
   async getItem (name) {
-    let records = await this.getItems()
-
-    for (let record of records) {
-      if (record.name === name) {
-        return record
-      }
-    }
-
-    throw new Error(`Record "${name}" not found`)
+    return Record.load(this.getPathForName(name))
   }
 
   async getItems () {
@@ -59,6 +51,14 @@ export default class Database {
     return this.databasePath
   }
 
+  getPathForItem (item) {
+    return this.getPathForName(item.name)
+  }
+
+  getPathForName (name) {
+    return path.join(this.databasePath, `${_.trim(_.dasherize(name), '-')}.character`)
+  }
+
   async setItem (item) {
     let serialized = null
 
@@ -69,9 +69,5 @@ export default class Database {
     }
 
     return fs.writeFile(this.getPathForItem(item), serialized)
-  }
-
-  getPathForItem (item) {
-    return path.join(this.databasePath, `${_.trim(_.dasherize(item.name), '-')}.character`)
   }
 }
