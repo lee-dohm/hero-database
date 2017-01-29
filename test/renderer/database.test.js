@@ -107,7 +107,16 @@ describe('Database', function () {
       expect(record.data).to.deep.equal({name: 'New Record'})
     })
 
-    it('creates a blank record if just a name is given', async function () {
+    it('creates a new record of the given type if given an object with enough info', async function () {
+      database = new Database(tempPath, {})
+      const record = await database.newRecord({name: 'New Template', __typeName: 'template'})
+
+      expect(record.name).to.equal('New Template')
+      expect(record.filePath).to.equal(path.join(tempPath, 'new-template.template'))
+      expect(record.data).to.deep.equal({name: 'New Template', __typeName: 'template'})
+    })
+
+    it('creates a blank character record if just a name is given', async function () {
       database = new Database(tempPath, {})
       const record = await database.newRecord('New Record')
 

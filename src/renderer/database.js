@@ -49,22 +49,23 @@ export default class Database {
   }
 
   getPathForRecord (item) {
-    return this.getPathForName(item.name)
+    return this.getPathForName(item.name, item.__typeName)
   }
 
-  getPathForName (name) {
-    return path.join(this.databasePath, `${_.trim(_.dasherize(name), '-')}.character`)
+  getPathForName (name, type = 'character') {
+    return path.join(this.databasePath, `${_.trim(_.dasherize(name), '-')}.${type}`)
   }
 
   /**
    * Gets the single item from the database given its `name`.
    *
-   * * `name` {String} containing the name of the item to retrieve from the database.
+   * * `name` {String} containing the name of the item to retrieve from the database
+   * * `type` *(optional)* {String} containing the record type
    *
    * Returns the {Record} containing the item.
    */
-  async loadRecord (name) {
-    return Record.load(this.getPathForName(name), this.heroEnv)
+  async loadRecord (name, type) {
+    return Record.load(this.getPathForName(name, type), this.heroEnv)
   }
 
   /**
@@ -85,7 +86,8 @@ export default class Database {
   /**
    * Creates a new record in the database.
    *
-   * * `data` Either a {String} containing the name of the new record or an {Object} with a `name` attribute
+   * * `data` Either a {String} containing the name of the new record or an {Object} with a `name`
+   * and optional `__typeName` attribute
    *
    * Returns a new {Record}.
    */
@@ -93,7 +95,7 @@ export default class Database {
     let record
 
     if (data && data.name) {
-      record = new Record(this.getPathForName(data.name), data)
+      record = new Record(this.getPathForName(data.name, data.__typeName), data)
     } else if (typeof data === 'string') {
       record = new Record(this.getPathForName(data), {name: data})
     } else {
