@@ -43,7 +43,7 @@ export default class Database {
    *
    * Returns the {Record} containing the item.
    */
-  async getItem (name) {
+  async loadRecord (name) {
     return Record.load(this.getPathForName(name), this.heroEnv)
   }
 
@@ -52,7 +52,7 @@ export default class Database {
    *
    * Returns an {Array} of all {Record} objects contained in the database.
    */
-  async getItems () {
+  async loadAllRecords () {
     const files = await fs.readdir(this.databasePath)
 
     const records = await Promise.all(files.map((file) => {
@@ -69,7 +69,7 @@ export default class Database {
     return this.databasePath
   }
 
-  getPathForItem (item) {
+  getPathForRecord (item) {
     return this.getPathForName(item.name)
   }
 
@@ -86,6 +86,6 @@ export default class Database {
       serialized = JSON.stringify(item, null, 2)
     }
 
-    return fs.writeFile(this.getPathForItem(item), serialized)
+    return fs.writeFile(this.getPathForRecord(item), serialized)
   }
 }

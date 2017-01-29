@@ -62,10 +62,10 @@ describe('Database', function () {
     })
   })
 
-  describe('getItems', function () {
-    it('gets the list of items', async function () {
+  describe('loadAllRecords', function () {
+    it('loads the list of records', async function () {
       database = new Database(fixturePath('three-characters'), {})
-      const items = await database.getItems()
+      const items = await database.loadAllRecords()
 
       expect(items).to.have.lengthOf(3)
       expect(items[0].name).to.equal('First')
@@ -74,10 +74,10 @@ describe('Database', function () {
     })
   })
 
-  describe('getItem', function () {
-    it('gets a single item', async function () {
+  describe('loadRecord', function () {
+    it('loads a single record', async function () {
       database = new Database(fixturePath('three-characters'), {})
-      const item = await database.getItem('First')
+      const item = await database.loadRecord('First')
 
       expect(item.name).to.equal('First')
       expect(item.filePath).to.equal(path.join(fixturePath('three-characters'), 'first.character'))
@@ -88,7 +88,7 @@ describe('Database', function () {
       database = new Database(fixturePath('three-characters'), {})
 
       try {
-        await database.getItem('Not Found')
+        await database.loadRecord('Not Found')
       } catch (err) {
         caught = true
       }
@@ -106,7 +106,7 @@ describe('Database', function () {
       const item = { name: 'Test' }
 
       await database.setItem(item)
-      const readItem = await database.getItem('Test')
+      const readItem = await database.loadRecord('Test')
 
       expect(readItem).to.be.ok
       expect(readItem.name).to.equal('Test')
@@ -138,7 +138,7 @@ describe('Database', function () {
       }
 
       await database.setItem(item)
-      const readItem = await database.getItem('Test')
+      const readItem = await database.loadRecord('Test')
 
       expect(readItem.data.serialized).to.be.ok
     })
@@ -147,7 +147,7 @@ describe('Database', function () {
       const item = { name: 'Something Long With Spaces' }
 
       await database.setItem(item)
-      const readItem = await database.getItem('Something Long With Spaces')
+      const readItem = await database.loadRecord('Something Long With Spaces')
 
       expect(readItem.filePath).to.equal(path.join(tempPath, 'something-long-with-spaces.character'))
     })
