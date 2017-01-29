@@ -34,14 +34,14 @@ export default class Database {
   }
 
   async getItem (name) {
-    return Record.load(this.getPathForName(name))
+    return Record.load(this.getPathForName(name), this.heroEnv)
   }
 
   async getItems () {
     const files = await fs.readdir(this.databasePath)
 
     const records = await Promise.all(files.map((file) => {
-      return Record.load(path.join(this.databasePath, file))
+      return Record.load(path.join(this.databasePath, file), this.heroEnv)
     }))
 
     return records
