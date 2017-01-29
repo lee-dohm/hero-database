@@ -12,6 +12,9 @@ import Record from './record'
  * A single instance of this is always available as `hero.database`.
  */
 export default class Database {
+  /**
+   * Opens the database at the given path, creating it if necessary.
+   */
   constructor (databasePath, heroEnv) {
     if (!databasePath) {
       throw new Error('Database path cannot be undefined')
@@ -33,10 +36,22 @@ export default class Database {
     }
   }
 
+  /**
+   * Gets the single item from the database given its `name`.
+   *
+   * * `name` {String} containing the name of the item to retrieve from the database.
+   *
+   * Returns the {Record} containing the item.
+   */
   async getItem (name) {
     return Record.load(this.getPathForName(name), this.heroEnv)
   }
 
+  /**
+   * Gets all of the items from the database.
+   *
+   * Returns an {Array} of all {Record} objects contained in the database.
+   */
   async getItems () {
     const files = await fs.readdir(this.databasePath)
 
@@ -47,6 +62,9 @@ export default class Database {
     return records
   }
 
+  /**
+   * Gets the path to the database.
+   */
   getPath () {
     return this.databasePath
   }
