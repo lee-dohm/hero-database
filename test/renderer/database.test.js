@@ -138,4 +138,44 @@ describe('Database', function () {
       expect(caught).to.be.ok
     })
   })
+
+  describe('deleteRecord', function () {
+    beforeEach(async function () {
+      database = new Database(tempPath, {})
+      await database.newRecord('Record To Be Deleted')
+      await database.newRecord({name: 'Template To Be Deleted', __typeName: 'template'})
+    })
+
+    it('deletes the record with the given name', async function () {
+      await database.deleteRecord('Record To Be Deleted')
+
+      let caught = false
+
+      try {
+        await database.loadRecord('Record To Be Deleted')
+      } catch (err) {
+        caught = true
+      }
+
+      expect(caught).to.be.ok
+    })
+
+    it('deletes a record with the given name and type', async function () {
+      await database.deleteRecord('Template To Be Deleted', 'template')
+
+      let caught = false
+
+      try {
+        await database.loadRecord('Template To Be Deleted', 'template')
+      } catch (err) {
+        caught = true
+      }
+
+      expect(caught).to.be.ok
+    })
+
+    it('does not care if the named record does not exist', async function () {
+      await database.deleteRecord('Record That Does Not Exist')
+    })
+  })
 })

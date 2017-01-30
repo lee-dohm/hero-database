@@ -42,6 +42,22 @@ export default class Database {
   }
 
   /**
+   * Deletes the named record.
+   *
+   * * `name` {String} containing the name of the record to delete
+   * * `type` *(optional)* {String} containing the type of the record to delete
+   */
+  async deleteRecord (name, type) {
+    try {
+      await fs.unlink(this.getPathForName(name, type))
+    } catch (err) {
+      if (!err.message || !err.message.match(/ENOENT/)) {
+        throw err
+      }
+    }
+  }
+
+  /**
    * Gets the path to the database.
    */
   getPath () {
