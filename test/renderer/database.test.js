@@ -174,6 +174,12 @@ describe('Database', function () {
       expect(caught).to.be.ok
     })
 
+    it('deletes the record by moving it to the trash path', async function () {
+      await database.deleteRecord('Record To Be Deleted')
+
+      expect(fs.existsSync(path.join(tempPath, 'trash', 'record-to-be-deleted.character'))).to.be.ok
+    })
+
     it('does not care if the named record does not exist', async function () {
       await database.deleteRecord('Record That Does Not Exist')
     })

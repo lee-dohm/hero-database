@@ -42,19 +42,35 @@ export default class Database {
   }
 
   /**
-   * Deletes the named record.
+   * Deletes a record.
+   *
+   * Doesn't actually delete the named record but moves it to the `trash` folder within the database
+   * directory.
    *
    * * `name` {String} containing the name of the record to delete
    * * `type` *(optional)* {String} containing the type of the record to delete
    */
   async deleteRecord (name, type) {
+    if (!fs.existsSync(this.getTrashPath())) {
+      await fs.mkdir(this.getTrashPath())
+    }
+
+    let contents
+    let originalPath
+
     try {
-      await fs.unlink(this.getPathForName(name, type))
+      originalPath = this.getPathForName(name, type)
+      contents = await fs.readFile(originalPath)
     } catch (err) {
-      if (!err.message || !err.message.match(/ENOENT/)) {
+      if (err.message && err.message.match(/ENOENT/)) {
+        return
+      } else {
         throw err
       }
     }
+
+    await fs.writeFile(this.getPathForName(name, type, this.getTrashPath()), contents)
+    await fs.unlink(originalPath)
   }
 
   /**
@@ -68,8 +84,12 @@ export default class Database {
     return this.getPathForName(item.name, item.__typeName)
   }
 
-  getPathForName (name, type = 'character') {
-    return path.join(this.databasePath, `${_.trim(_.dasherize(name), '-')}.${type}`)
+  getPathForName (name, type = 'character', root = this.databasePath) {
+    return path.join(root, `${_.trim(_.dasherize(name), '-')}.${type}`)
+  }
+
+  getTrashPath () {
+    return path.join(this.databasePath, 'trash')
   }
 
   /**
