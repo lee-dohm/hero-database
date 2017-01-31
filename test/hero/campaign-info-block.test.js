@@ -5,21 +5,6 @@ import CampaignInfoBlock from '../../src/hero/campaign-info-block'
 describe('CampaignInfoBlock', function () {
   let block
 
-  it('can be serialized', function () {
-    block = new CampaignInfoBlock()
-
-    expect(block.serialize()).to.equal('{"type":"CampaignInfoBlock","name":"","genre":"","gameMaster":""}')
-  })
-
-  it('can be deserialized', function () {
-    block = new CampaignInfoBlock()
-    block.deserialize('{"type":"CampaignInfoBlock","name":"foo","genre":"bar","gameMaster":"baz"}')
-
-    expect(block.name).to.equal('foo')
-    expect(block.genre).to.equal('bar')
-    expect(block.gameMaster).to.equal('baz')
-  })
-
   describe('defaults', function () {
     beforeEach(function () {
       block = new CampaignInfoBlock()
@@ -35,6 +20,23 @@ describe('CampaignInfoBlock', function () {
 
     it('has an empty game master', function () {
       expect(block.gameMaster).to.equal('')
+    })
+  })
+
+  describe('serialization', function () {
+    beforeEach(function () {
+      block = new CampaignInfoBlock()
+      block.name = 'foo'
+      block.genre = 'bar'
+      block.gameMaster = 'baz'
+    })
+
+    it('works', function () {
+      const state = block.serialize()
+      const newBlock = CampaignInfoBlock.deserialize(state)
+
+      expect(newBlock).to.be.instanceof(CampaignInfoBlock)
+      expect(newBlock).to.deep.equal(block)
     })
   })
 })
