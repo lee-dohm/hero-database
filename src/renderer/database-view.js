@@ -10,7 +10,6 @@ import RecordView from './record-view'
 export default class DatabaseView {
   constructor (props, children) {
     this.props = props
-    this.heroEnv = this.props.heroEnv
     this.records = []
 
     etch.initialize(this)
