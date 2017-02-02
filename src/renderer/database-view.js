@@ -17,17 +17,12 @@ export default class DatabaseView {
 
   render () {
     return (
-      <div className='database-view'>
-        <div className='title'>
-          Records
-        </div>
-        <div className='records list'>
-          {
-            this.records.map((record) => {
-              return <RecordView record={record} />
-            })
-          }
-        </div>
+      <div className='database-view records list'>
+        {
+          this.records.map((record) => {
+            return <RecordView record={record} />
+          })
+        }
       </div>
     )
   }
