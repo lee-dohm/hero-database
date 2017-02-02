@@ -12,6 +12,6 @@ export default class Workspace {
     this.workspaceView = new WorkspaceView({heroEnv: this.heroEnv})
     document.body.appendChild(this.workspaceView.element)
 
-    return this.workspaceView.update()
+    return this.workspaceView.update({heroEnv: this.heroEnv})
   }
 }

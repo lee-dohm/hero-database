@@ -5,9 +5,8 @@ import etch from 'etch'
 import DatabaseView from './database-view'
 
 export default class WorkspaceView {
-  constructor (props, children) {
+  constructor (props) {
     this.props = props
-    this.children = children
 
     etch.initialize(this)
   }

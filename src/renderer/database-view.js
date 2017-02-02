@@ -3,6 +3,7 @@
 import etch from 'etch'
 
 import CharacterEntryView from './character-entry-view'
+import RecordView from './record-view'
 
 /**
  * Displays the contents of the database.
@@ -10,6 +11,7 @@ import CharacterEntryView from './character-entry-view'
 export default class DatabaseView {
   constructor (props, children) {
     this.props = props
+    this.records = []
 
     etch.initialize(this)
   }
@@ -21,13 +23,20 @@ export default class DatabaseView {
           Records
         </div>
         <div className='records list'>
+          {
+            this.records.map((record) => {
+              return <RecordView record={record} />
+            })
+          }
         </div>
       </div>
     )
   }
 
-  update (props) {
+  async update (props) {
     this.props = props
+
+    this.records = await this.props.database.loadAllRecords()
 
     return etch.update(this)
   }
