@@ -16,7 +16,7 @@ export default class WorkspaceView {
     return (
       <div id='workspace-view'>
         <div id='sidebar'>
-          <DatabaseView />
+          <DatabaseView database={this.props.heroEnv.database} />
         </div>
         <div id='editor'>
           Test

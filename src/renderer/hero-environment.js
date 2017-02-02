@@ -21,7 +21,7 @@ export default class HeroEnvironment {
 
     this.database = new Database(this.documentPath, this)
     this.deserializers = new DeserializerManager(this)
-    this.workspace = new Workspace(this.database, this)
+    this.workspace = new Workspace(this)
   }
 
   /**
