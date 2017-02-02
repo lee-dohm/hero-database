@@ -4,7 +4,7 @@
   "description": "Application for creating and storing Hero System characters",
   "main": "src/main/main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "ELECTRON_PATH=./node_modules/.bin/electron HERO_DATABASE_HOME=. ./node_modules/.bin/electron-mocha --renderer"
   },
   "repository": {
     "type": "git",
