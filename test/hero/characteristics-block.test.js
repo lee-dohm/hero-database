@@ -91,4 +91,19 @@ describe('CharacteristicsBlock', function () {
       expect(block.stun).to.equal(300)
     })
   })
+
+  describe('serialization', function () {
+    beforeEach(function () {
+      block = new CharacteristicsBlock({}, heroEnv)
+      block.stun = 300
+    })
+
+    it('works', function () {
+      const state = block.serialize()
+      const newBlock = CharacteristicsBlock.deserialize(state, heroEnv)
+
+      expect(newBlock).to.be.instanceof(CharacteristicsBlock)
+      expect(newBlock.stun).to.equal(300)
+    })
+  })
 })

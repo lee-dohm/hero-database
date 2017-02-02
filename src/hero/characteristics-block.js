@@ -1,20 +1,24 @@
-import Block from './block'
-
 /**
  * A block that represents information on the characteristics of the character.
  */
-export default class CharacteristicsBlock extends Block {
+export default class CharacteristicsBlock {
+  static deserialize (state, heroEnv) {
+    return new CharacteristicsBlock(state, heroEnv)
+  }
+
   /**
    * Constructs a default set of characteristics.
    *
-   * * `overrides` - an {Object} containing values to override from the defaults
+   * * `state` *(optional)* {Object} containing serialized state
    */
-  constructor (overrides = {}, heroEnv = hero) {
-    super()
-
+  constructor (state = {}, heroEnv = hero) {
     this.heroEnv = heroEnv
 
-    Object.assign(this, this.getDefaultBaseCharacteristics(), overrides)
+    Object.assign(this, this.getDefaultBaseCharacteristics(), state)
+  }
+
+  serialize () {
+    return Object.assign({}, this, {heroEnv: undefined})
   }
 
   getDefaultBaseCharacteristics () {
