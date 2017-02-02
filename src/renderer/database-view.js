@@ -2,7 +2,6 @@
 
 import etch from 'etch'
 
-import CharacterEntryView from './character-entry-view'
 import RecordView from './record-view'
 
 /**
