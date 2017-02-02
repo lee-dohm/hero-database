@@ -45,6 +45,7 @@ describe('Characteristic', function () {
     char.value = 42
 
     expect(char.value).to.equal(42)
+    expect(character.characteristics.strength).to.equal(42)
   })
 
   it('reflects the new value in the other properties after setting it', function () {
