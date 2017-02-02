@@ -1,5 +1,28 @@
 /**
  * A block that represents information on the characteristics of the character.
+ *
+ * The characteristics are each available as a property and are:
+ *
+ * * `strength`
+ * * `dexterity`
+ * * `constitution`
+ * * `intelligence`
+ * * `ego`
+ * * `presence`
+ * * `offensiveCombatValue`
+ * * `defensiveCombatValue`
+ * * `offensiveMentalCombatValue`
+ * * `defensiveMentalCombatValue`
+ * * `speed`
+ * * `physicalDefense`
+ * * `energyDefense`
+ * * `recovery`
+ * * `endurance`
+ * * `body`
+ * * `stun`
+ *
+ * See {6E1 40} for more information.
+ *
  */
 export default class CharacteristicsBlock {
   static deserialize (state, heroEnv) {
