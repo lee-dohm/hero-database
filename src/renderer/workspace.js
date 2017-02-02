@@ -10,10 +10,10 @@ export default class Workspace {
     this.database = database
   }
 
-  attachViews () {
-    this.database.getItems().then((items) => {
-      this.workspaceView = new WorkspaceView({items: items})
-      document.body.appendChild(this.workspaceView.element)
-    })
+  async attachViews () {
+    this.workspaceView = new WorkspaceView()
+    document.body.appendChild(this.workspaceView.element)
+
+    return this.workspaceView.update()
   }
 }

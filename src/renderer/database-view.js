@@ -18,14 +18,9 @@ export default class DatabaseView {
     return (
       <div className='database-view'>
         <div className='title'>
-          Characters
+          Records
         </div>
-        <div className='characters list'>
-          {
-            this.props.items.map(({file, name}) => {
-              return <CharacterEntryView file={file} name={name} />
-            })
-          }
+        <div className='records list'>
         </div>
       </div>
     )
@@ -38,8 +33,6 @@ export default class DatabaseView {
   }
 
   destroy () {
-    etch.destroy(this).then(() => {
-      this.disposable.dispose()
-    })
+    etch.destroy(this)
   }
 }

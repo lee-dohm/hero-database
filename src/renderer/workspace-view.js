@@ -16,7 +16,7 @@ export default class WorkspaceView {
     return (
       <div id='workspace-view'>
         <div id='sidebar'>
-          <DatabaseView items={this.props.items} />
+          <DatabaseView />
         </div>
         <div id='editor'>
           Test
