@@ -10,6 +10,7 @@ import RecordView from './record-view'
 export default class DatabaseView {
   constructor (props, children) {
     this.props = props
+    this.heroEnv = this.props.heroEnv
     this.records = []
 
     etch.initialize(this)
@@ -17,12 +18,17 @@ export default class DatabaseView {
 
   render () {
     return (
-      <div className='database-view records list'>
-        {
-          this.records.map((record) => {
-            return <RecordView record={record} />
-          })
-        }
+      <div className='database-view'>
+        <div className="records list">
+          {
+            this.records.map((record) => {
+              return <RecordView record={record} />
+            })
+          }
+        </div>
+        <button className="btn" type="button" onclick={this.onNewRecordClick.bind(this)}>
+          New Record
+        </button>
       </div>
     )
   }
@@ -33,6 +39,10 @@ export default class DatabaseView {
     this.records = await this.props.database.loadAllRecords()
 
     return etch.update(this)
+  }
+
+  async onNewRecordClick (e) {
+    e.preventDefault()
   }
 
   destroy () {
