@@ -42,6 +42,10 @@ describe('HeroMath', function () {
       expect(HeroMath.characteristicRoll(10)).to.equal(11)
     })
 
+    it('gives a roll of 11 for a value of 12', function () {
+      expect(HeroMath.characteristicRoll(12)).to.equal(11)
+    })
+
     it('gives a roll of 12 for a value of 13', function () {
       expect(HeroMath.characteristicRoll(13)).to.equal(12)
     })
