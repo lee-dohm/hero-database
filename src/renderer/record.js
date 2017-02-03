@@ -12,7 +12,9 @@ export default class Record {
       throw new Error('File path cannot be undefined')
     }
 
-    let state = JSON.parse(await fs.readFile(filePath, 'utf8'))
+    let text = await fs.readFile(filePath, 'utf8')
+    let state = JSON.parse(text)
+
     if (heroEnv && heroEnv.deserializers) {
       state = heroEnv.deserializers.deserialize(state)
     }

@@ -8,10 +8,22 @@ export default class Workspace {
     this.heroEnv = heroEnv
   }
 
+  /**
+   * Reloads the UI.
+   */
+  async reloadUI () {
+    await this.detachViews()
+    await this.attachViews()
+  }
+
   async attachViews () {
     this.workspaceView = new WorkspaceView({heroEnv: this.heroEnv})
     document.body.appendChild(this.workspaceView.element)
 
     return this.workspaceView.update({heroEnv: this.heroEnv})
+  }
+
+  async detachViews () {
+    this.workspaceView.destroy()
   }
 }

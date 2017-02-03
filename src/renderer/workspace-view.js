@@ -30,7 +30,7 @@ export default class WorkspaceView {
     return etch.update(this)
   }
 
-  destroy () {
-    etch.destroy(this)
+  async destroy () {
+    return etch.destroy(this)
   }
 }
