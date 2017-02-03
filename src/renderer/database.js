@@ -110,7 +110,8 @@ export default class Database {
    * Returns an {Array} of all {Record} objects contained in the database.
    */
   async loadAllRecords () {
-    const files = await fs.readdir(this.databasePath)
+    let files = await fs.readdir(this.databasePath)
+    files = files.filter((file) => { return !path.basename(file).startsWith('.') })
 
     const records = await Promise.all(files.map((file) => {
       return Record.load(path.join(this.databasePath, file), this.heroEnv)

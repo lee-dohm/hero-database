@@ -72,6 +72,14 @@ describe('Database', function () {
       expect(items[1].name).to.equal('Second')
       expect(items[2].name).to.equal('Third')
     })
+
+    it('does not load hidden files', async function () {
+      database = new Database(fixturePath('broken'), {})
+      const items = await database.loadAllRecords()
+
+      expect(items).to.have.lengthOf(1)
+      expect(items[0].name).to.equal('First')
+    })
   })
 
   describe('loadRecord', function () {
