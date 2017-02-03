@@ -37,7 +37,7 @@ export default class CharacteristicsBlock {
   constructor (state = {}, heroEnv = hero) {
     this.heroEnv = heroEnv
 
-    Object.assign(this, this.getDefaultBaseCharacteristics(), state)
+    Object.assign(this, this.getDefaultBaseCharacteristics(), state, {heroEnv: this.heroEnv})
   }
 
   serialize () {

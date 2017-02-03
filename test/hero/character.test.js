@@ -12,7 +12,7 @@ describe('Character', function () {
 
   describe('defaults', function () {
     beforeEach(function () {
-      character = new Character('Test Character', heroEnv)
+      character = new Character({name: 'Test Character'}, heroEnv)
     })
 
     it('represents a 6th edition character', function () {
@@ -25,6 +25,20 @@ describe('Character', function () {
 
     it('has a campaign info block', function () {
       expect(character.campaignInfo).to.exist
+    })
+  })
+
+  describe('serialization', function () {
+    beforeEach(function () {
+      character = new Character('Test Character', heroEnv)
+    })
+
+    it('works', function () {
+      const state = character.serialize()
+      const newCharacter = Character.deserialize(state, heroEnv)
+
+      expect(newCharacter).to.be.instanceof(Character)
+      expect(newCharacter).to.deep.equal(character)
     })
   })
 })
