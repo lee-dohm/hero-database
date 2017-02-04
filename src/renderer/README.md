@@ -2,7 +2,7 @@
 
 ## What Goes Here
 
-Everything that runs in the renderer process that isn't specifically HERO System logic.
+Everything that runs in the renderer process that isn't specifically HERO System logic or models.
 
 ## What Doesn't Go Here
 
