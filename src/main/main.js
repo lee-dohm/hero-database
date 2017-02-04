@@ -42,6 +42,7 @@ function parseArguments () {
   argv = require('yargs')
          .usage('Usage: $0 [options]')
          .alias('d', 'dev')
+         .alias('debug', 'dev')
          .argv
 }
 
