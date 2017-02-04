@@ -1,3 +1,5 @@
+import Model from './model'
+
 /**
  * A block that represents information on the characteristics of the character.
  *
@@ -24,7 +26,7 @@
  * See {6E1 40} for more information.
  *
  */
-export default class CharacteristicsBlock {
+export default class CharacteristicsBlock extends Model {
   static deserialize (state, heroEnv) {
     return new CharacteristicsBlock(state, heroEnv)
   }
@@ -35,7 +37,7 @@ export default class CharacteristicsBlock {
    * * `state` *(optional)* {Object} containing serialized state
    */
   constructor (state = {}, heroEnv = hero) {
-    this.heroEnv = heroEnv
+    super(heroEnv)
 
     Object.assign(this, this.getDefaultBaseCharacteristics(), state, {heroEnv: this.heroEnv})
   }
