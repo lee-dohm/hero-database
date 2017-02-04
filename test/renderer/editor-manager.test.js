@@ -84,10 +84,10 @@ describe('EditorManager', function () {
       expect(fn).to.throw()
     })
 
-    it('throws an error if there is no __typeName attribute on the data object', function () {
-      const fn = () => { manager.buildEditor({ data: {} }) }
+    it('returns a RecordEditor if there is no __typeName attribute on the data object', function () {
+      const editor = manager.buildEditor({ data: {} })
 
-      expect(fn).to.throw()
+      expect(editor).to.be.instanceof(RecordEditor)
     })
 
     it('returns a RecordEditor if there is no editor for the given record type', function () {

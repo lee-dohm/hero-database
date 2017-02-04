@@ -43,7 +43,7 @@ export default class EditorManager {
    * * `record` {Record} containing the data to create the editor for.
    */
   buildEditor (record) {
-    if (record.data && record.data['__typeName']) {
+    if (record.data) {
       const editor = this.get(`${record.data['__typeName']}Editor`)
 
       if (editor) {
