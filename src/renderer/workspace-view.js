@@ -3,6 +3,7 @@
 import etch from 'etch'
 
 import DatabaseView from './database-view'
+import PaneView from './pane-view'
 
 export default class WorkspaceView {
   constructor (props) {
@@ -18,7 +19,7 @@ export default class WorkspaceView {
           <DatabaseView database={this.props.heroEnv.database} />
         </div>
         <div id='editor'>
-          Test
+          <PaneView pane={this.props.heroEnv.pane}/>
         </div>
       </div>
     )

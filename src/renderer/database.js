@@ -1,6 +1,7 @@
 const promisify = require('promisify-node')
 const fs = promisify('fs')
 
+import {Emitter} from 'event-kit'
 import path from 'path'
 import _ from 'underscore.string'
 
@@ -29,6 +30,7 @@ export default class Database {
       throw new Error('Hero environment cannot be undefined')
     }
 
+    this.emitter = new Emitter()
     this.heroEnv = heroEnv
     this.databasePath = databasePath
 

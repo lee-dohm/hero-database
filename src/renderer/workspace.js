@@ -1,3 +1,4 @@
+import {Emitter} from 'event-kit'
 import WorkspaceView from './workspace-view'
 
 /**
@@ -5,7 +6,12 @@ import WorkspaceView from './workspace-view'
  */
 export default class Workspace {
   constructor (heroEnv) {
+    this.emitter = new Emitter()
     this.heroEnv = heroEnv
+  }
+
+  onDidLoadUI (callback) {
+    this.emitter.on('did-load-ui', callback)
   }
 
   /**
@@ -20,7 +26,9 @@ export default class Workspace {
     this.workspaceView = new WorkspaceView({heroEnv: this.heroEnv})
     document.body.appendChild(this.workspaceView.element)
 
-    return this.workspaceView.update({heroEnv: this.heroEnv})
+    await this.workspaceView.update({heroEnv: this.heroEnv})
+
+    this.emitter.emit('did-load-ui')
   }
 
   async detachViews () {
