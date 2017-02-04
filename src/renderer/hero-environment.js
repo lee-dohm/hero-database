@@ -4,6 +4,7 @@ import path from 'path'
 
 const {app} = require('electron').remote
 
+import Character from '../hero/character'
 import Database from './database'
 import DeserializerManager from './deserializer-manager'
 import Pane from './pane'
@@ -26,6 +27,8 @@ export default class HeroEnvironment {
     this.deserializers = new DeserializerManager(this)
     this.pane = new Pane(this)
     this.workspace = new Workspace(this)
+
+    this.addDefaultDeserializers()
   }
 
   /**
@@ -63,6 +66,10 @@ export default class HeroEnvironment {
    */
   getDocumentPath () {
     return this.documentPath
+  }
+
+  addDefaultDeserializers () {
+    this.deserializers.add(Character)
   }
 
   start () {

@@ -4,7 +4,7 @@ import DeserializerManager from '../../src/renderer/deserializer-manager'
 
 function buildDeserializer (typeName, fn = () => {}) {
   return {
-    '__typeName': typeName,
+    name: typeName,
     deserialize: fn
   }
 }
@@ -41,14 +41,14 @@ describe('DeserializerManager', function () {
       expect(manager.get('Bar')).to.equal(bar)
     })
 
-    it('throws an error when the deserializer has no __typeName', function () {
+    it('throws an error when the deserializer has no name', function () {
       const fn = () => { manager.add({ deserialize: () => {} }) }
 
       expect(fn).to.throw()
     })
 
     it('throws an error when the deserializer has no deserialize function', function () {
-      const fn = () => { manager.add({ '__typeName': 'Foo' }) }
+      const fn = () => { manager.add({ name: 'Foo' }) }
 
       expect(fn).to.throw()
     })
