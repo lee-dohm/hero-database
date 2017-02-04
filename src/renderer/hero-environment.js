@@ -5,6 +5,7 @@ import path from 'path'
 const {app} = require('electron').remote
 
 import Character from '../hero/character'
+import CharacterEditor from './character-editor'
 import Database from './database'
 import DeserializerManager from './deserializer-manager'
 import EditorManager from './editor-manager'
@@ -31,6 +32,7 @@ export default class HeroEnvironment {
     this.workspace = new Workspace(this)
 
     this.addDefaultDeserializers()
+    this.addDefaultEditors()
   }
 
   /**
@@ -64,6 +66,10 @@ export default class HeroEnvironment {
 
   addDefaultDeserializers () {
     this.deserializers.add(Character)
+  }
+
+  addDefaultEditors () {
+    this.editors.add(CharacterEditor)
   }
 
   getDataPath (file) {

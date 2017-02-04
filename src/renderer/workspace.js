@@ -1,6 +1,5 @@
 import {Emitter} from 'event-kit'
 
-import RecordEditor from './record-editor'
 import WorkspaceView from './workspace-view'
 
 /**
@@ -32,7 +31,7 @@ export default class Workspace {
    * Opens a record for editing.
    */
   async open (record) {
-    const editor = new RecordEditor(record)
+    const editor = this.heroEnv.editors.buildEditor(record)
     this.heroEnv.pane.setEditor(editor)
 
     this.emitter.emit('did-open', editor)

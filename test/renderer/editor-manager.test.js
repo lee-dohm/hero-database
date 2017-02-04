@@ -1,6 +1,7 @@
 import '../support'
 
 import EditorManager from '../../src/renderer/editor-manager'
+import RecordEditor from '../../src/renderer/record-editor'
 
 function buildEditor (name, fn = () => {}) {
   return {
@@ -89,10 +90,10 @@ describe('EditorManager', function () {
       expect(fn).to.throw()
     })
 
-    it('throws an error if there is no editor for the given record type', function () {
-      const fn = () => { manager.buildEditor({ data: { '__typeName': 'Bar' } }) }
+    it('returns a RecordEditor if there is no editor for the given record type', function () {
+      const editor = manager.buildEditor({ data: { '__typeName': 'Bar' } })
 
-      expect(fn).to.throw()
+      expect(editor).to.be.instanceof(RecordEditor)
     })
   })
 })

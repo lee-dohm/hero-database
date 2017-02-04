@@ -1,3 +1,5 @@
+import RecordEditor from './record-editor'
+
 /**
  * Manages the set of editors for record types.
  *
@@ -47,7 +49,7 @@ export default class EditorManager {
       if (editor) {
         return editor.edit(record, this.heroEnv)
       } else {
-        throw new Error(`No editor found for ${record.data['__typeName']}`)
+        return new RecordEditor(record, this.heroEnv)
       }
     } else {
       throw new Error(`${record} is not a Record`)
