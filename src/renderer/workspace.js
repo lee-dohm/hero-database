@@ -1,5 +1,6 @@
 import {Emitter} from 'event-kit'
 
+import PanelContainer from './panel-container'
 import WorkspaceView from './workspace-view'
 
 /**
@@ -9,7 +10,13 @@ export default class Workspace {
   constructor (heroEnv) {
     this.emitter = new Emitter()
     this.heroEnv = heroEnv
+
+    this.panelContainer = new PanelContainer({location: 'modal'})
   }
+
+  /**
+   * Section: Event Subscription
+   */
 
   /**
    * Called when a record has been opened for editing.
@@ -28,6 +35,10 @@ export default class Workspace {
   }
 
   /**
+   * Section: Opening
+   */
+
+  /**
    * Opens a record for editing.
    */
   async open (record) {
@@ -36,6 +47,10 @@ export default class Workspace {
 
     this.emitter.emit('did-open', editor)
   }
+
+  /**
+   * Section: Debugging
+   */
 
   /**
    * Reloads the UI.
