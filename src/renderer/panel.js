@@ -42,7 +42,7 @@ export default class Panel {
    */
 
   getView () {
-    return this.view
+    return this.view.render()
   }
 
   hide () {

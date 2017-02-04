@@ -1,5 +1,6 @@
 import {Emitter} from 'event-kit'
 
+import Panel from './panel'
 import PanelContainer from './panel-container'
 import WorkspaceView from './workspace-view'
 
@@ -49,6 +50,21 @@ export default class Workspace {
   }
 
   /**
+   * Section: Panels
+   */
+
+   /**
+    * Adds a modal panel to the workspace.
+    *
+    * * `options`
+    *   * `.view` An Etch view to display within the panel.
+    *   * `.visible` {Boolean} indicating whether the panel is visible to start. Defaults to `true`.
+    */
+  addModalPanel ({view, visible}) {
+    return this.panelContainer.addPanel(new Panel({view, visible}))
+  }
+
+  /**
    * Section: Debugging
    */
 
@@ -61,7 +77,7 @@ export default class Workspace {
   }
 
   async attachViews () {
-    this.workspaceView = new WorkspaceView({heroEnv: this.heroEnv})
+    this.workspaceView = new WorkspaceView({heroEnv: this.heroEnv, panelContainer: this.panelContainer})
     document.body.appendChild(this.workspaceView.element)
 
     await this.workspaceView.update({heroEnv: this.heroEnv})
