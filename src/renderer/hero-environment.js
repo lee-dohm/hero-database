@@ -44,21 +44,13 @@ export default class HeroEnvironment {
 
   /**
    * Returns an {Object} containing data that is bundled with the application.
+   *
+   * * `name` {String} name of the data to retrieve.
    */
   getData (name) {
     const dataPath = this.getDataPath(name)
 
     return JSON.parse(fs.readFileSync(dataPath))
-  }
-
-  getDataPath (file) {
-    let dataPath = path.join(this.getAppPath(), 'data')
-
-    if (file) {
-      dataPath = path.join(dataPath, `${file}.json`)
-    }
-
-    return dataPath
   }
 
   /**
@@ -70,6 +62,16 @@ export default class HeroEnvironment {
 
   addDefaultDeserializers () {
     this.deserializers.add(Character)
+  }
+
+  getDataPath (file) {
+    let dataPath = path.join(this.getAppPath(), 'data')
+
+    if (file) {
+      dataPath = path.join(dataPath, `${file}.json`)
+    }
+
+    return dataPath
   }
 
   start () {
