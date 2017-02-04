@@ -8,6 +8,16 @@
  *
  * The serialized state is expected to contain a `__typeName` attribute that is the same as the
  * deserializer's name.
+ *
+ * An instance of this class is always available as `hero.deserializers`.
+ *
+ * ## Examples
+ *
+ * ```
+ * hero.deserializers.add(Character)
+ *
+ * let character = hero.deserializers.deserialize(characterData)
+ * ```
  */
 export default class DeserializerManager {
   constructor (heroEnv) {

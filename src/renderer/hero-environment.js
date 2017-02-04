@@ -7,6 +7,7 @@ const {app} = require('electron').remote
 import Character from '../hero/character'
 import Database from './database'
 import DeserializerManager from './deserializer-manager'
+import EditorManager from './editor-manager'
 import Pane from './pane'
 import Workspace from './workspace'
 
@@ -25,6 +26,7 @@ export default class HeroEnvironment {
 
     this.database = new Database(this.documentPath, this)
     this.deserializers = new DeserializerManager(this)
+    this.editors = new EditorManager(this)
     this.pane = new Pane(this)
     this.workspace = new Workspace(this)
 
