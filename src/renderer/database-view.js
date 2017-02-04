@@ -2,6 +2,7 @@
 
 import etch from 'etch'
 
+import ButtonView from './button-view'
 import RecordListItemView from './record-list-item-view'
 
 /**
@@ -32,9 +33,7 @@ export default class DatabaseView {
             })
           }
         </ul>
-        <button className="btn" type="button" onclick={this.onNewRecordClick.bind(this)}>
-          New Record
-        </button>
+        <ButtonView label='New Record' onclick={this.onNewRecordClick.bind(this)} />
       </div>
     )
   }
