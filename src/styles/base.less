@@ -34,6 +34,24 @@ body {
 }
 
 .list {
+  background-color: @inset-panel-background-color;
+  border-color: @inset-panel-border-color;
   border: solid 1px;
   flex-grow: 1;
+  margin: 0px;
+  padding: 0px;
+}
+
+ul li.record {
+  cursor: default;
+  list-style-type: none;
+  line-height: @component-line-height;
+
+  &:hover {
+    background-color: @background-color-highlight;
+  }
+
+  &.selected {
+    background-color: @background-color-selected;
+  }
 }

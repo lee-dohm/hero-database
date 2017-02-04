@@ -2,7 +2,7 @@
 
 import etch from 'etch'
 
-import RecordView from './record-view'
+import RecordListItemView from './record-list-item-view'
 
 /**
  * Displays the contents of the database.
@@ -18,13 +18,20 @@ export default class DatabaseView {
   render () {
     return (
       <div className='database-view'>
-        <div className="records list">
+        <ul className="records list">
           {
             this.records.map((record) => {
-              return <RecordView heroEnv={this.props.heroEnv} record={record} />
+              return (
+                <RecordListItemView
+                  heroEnv={this.props.heroEnv}
+                  parent={this}
+                  record={record}
+                  selected={this.selected === record}
+                  />
+              )
             })
           }
-        </div>
+        </ul>
         <button className="btn" type="button" onclick={this.onNewRecordClick.bind(this)}>
           New Record
         </button>
@@ -40,11 +47,17 @@ export default class DatabaseView {
     return etch.update(this)
   }
 
+  destroy () {
+    etch.destroy(this)
+  }
+
   async onNewRecordClick (e) {
     e.preventDefault()
   }
 
-  destroy () {
-    etch.destroy(this)
+  async select (record) {
+    this.selected = record
+
+    return etch.update(this)
   }
 }
