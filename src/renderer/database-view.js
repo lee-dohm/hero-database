@@ -21,7 +21,7 @@ export default class DatabaseView {
         <div className="records list">
           {
             this.records.map((record) => {
-              return <RecordView record={record} />
+              return <RecordView heroEnv={this.props.heroEnv} record={record} />
             })
           }
         </div>

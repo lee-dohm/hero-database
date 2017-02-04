@@ -1,4 +1,6 @@
 import {Emitter} from 'event-kit'
+
+import RecordEditor from './record-editor'
 import WorkspaceView from './workspace-view'
 
 /**
@@ -10,8 +12,19 @@ export default class Workspace {
     this.heroEnv = heroEnv
   }
 
+  onDidOpen (callback) {
+    this.emitter.on('did-open', callback)
+  }
+
   onDidLoadUI (callback) {
     this.emitter.on('did-load-ui', callback)
+  }
+
+  async open (record) {
+    const editor = new RecordEditor(record)
+    this.heroEnv.pane.setEditor(editor)
+
+    this.emitter.emit('did-open', editor)
   }
 
   /**

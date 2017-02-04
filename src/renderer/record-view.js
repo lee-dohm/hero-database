@@ -3,17 +3,25 @@
 import etch from 'etch'
 
 export default class RecordView {
-  constructor ({record}, children) {
+  constructor ({heroEnv, record}, children) {
+    this.heroEnv = heroEnv
     this.record = record
 
     etch.initialize(this)
   }
 
-  render () {
-    return <div className="record">{this.record.name}</div>
+  onClick (e) {
+    e.preventDefault()
+
+    this.heroEnv.workspace.open(this.record)
   }
 
-  update ({record}) {
+  render () {
+    return <div className="record" onclick={this.onClick.bind(this)}>{this.record.name}</div>
+  }
+
+  update ({heroEnv, record}) {
+    this.heroEnv = heroEnv
     this.record = record
 
     return etch.update(this)

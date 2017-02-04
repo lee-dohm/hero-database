@@ -16,10 +16,10 @@ export default class WorkspaceView {
     return (
       <div id='workspace-view'>
         <div id='sidebar'>
-          <DatabaseView database={this.props.heroEnv.database} />
+          <DatabaseView database={this.props.heroEnv.database} heroEnv={this.props.heroEnv} />
         </div>
         <div id='editor'>
-          <PaneView pane={this.props.heroEnv.pane}/>
+          <PaneView heroEnv={this.props.heroEnv} pane={this.props.heroEnv.pane}/>
         </div>
       </div>
     )
