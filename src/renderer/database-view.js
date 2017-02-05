@@ -3,6 +3,7 @@
 import etch from 'etch'
 
 import ButtonView from './button-view'
+import NewRecordDialogView from './new-record-dialog-view'
 import RecordListItemView from './record-list-item-view'
 
 /**
@@ -52,6 +53,8 @@ export default class DatabaseView {
 
   async onNewRecordClick (e) {
     e.preventDefault()
+
+    this.props.heroEnv.workspace.addModalPanel({view: new NewRecordDialogView()})
   }
 
   async select (record) {

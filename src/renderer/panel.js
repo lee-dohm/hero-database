@@ -30,11 +30,11 @@ export default class Panel {
    */
 
   onDidChangeVisible (callback) {
-    this.emitter.on('did-change-visible', callback)
+    return this.emitter.on('did-change-visible', callback)
   }
 
   onDidDestroy (callback) {
-    this.emitter.on('did-destroy', callback)
+    return this.emitter.on('did-destroy', callback)
   }
 
   /**
@@ -42,7 +42,7 @@ export default class Panel {
    */
 
   getView () {
-    return this.view.render()
+    return this.view
   }
 
   hide () {
