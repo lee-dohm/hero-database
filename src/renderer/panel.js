@@ -5,12 +5,10 @@ export default class Panel {
    * Section: Construction and Destruction
    */
 
-  constructor ({view, visible}) {
+  constructor ({childView, visible}) {
     this.emitter = new Emitter()
 
-    if (view) {
-      this.view = view({panel: this})
-    }
+    this.childView = childView
 
     if (visible) {
       this.visible = visible
@@ -20,7 +18,6 @@ export default class Panel {
   }
 
   destroy () {
-    this.hide()
     this.emitter.emit('did-destroy', this)
     this.emitter.dispose()
   }
@@ -41,17 +38,22 @@ export default class Panel {
    * Section: Panel Details
    */
 
-  getView () {
-    return this.view
+  getChildView () {
+    return this.childView
   }
 
   hide () {
+    console.log('Panel.hide start')
+
     let wasVisible = this.visible
     this.visible = false
 
     if (wasVisible) {
+      console.log(`Emit did-change-visible: ${this.visible}`)
       this.emitter.emit('did-change-visible', this.visible)
     }
+
+    console.log('Panel.hide end')
   }
 
   show () {

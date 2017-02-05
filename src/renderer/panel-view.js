@@ -3,9 +3,13 @@
 import etch from 'etch'
 
 export default class PanelView {
-  constructor (props, children) {
-    this.props = props
-    this.children = children
+  constructor ({childView, panel}) {
+    this.panel = panel
+
+    const View = childView
+    this.childView = (
+      <View panel={this.panel} />
+    )
 
     etch.initialize(this)
   }
@@ -13,14 +17,13 @@ export default class PanelView {
   render () {
     return (
       <div className='panel-view'>
-        {this.children}
+        {this.childView}
       </div>
     )
   }
 
-  update (props, children) {
-    this.props = props
-    this.children = children
+  update (props) {
+    this.props = Object.assign({}, this, props)
 
     return etch.update(this)
   }

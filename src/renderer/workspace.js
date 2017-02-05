@@ -61,7 +61,7 @@ export default class Workspace {
     *   * `.visible` {Boolean} indicating whether the panel is visible to start. Defaults to `true`.
     */
   addModalPanel ({view, visible}) {
-    return this.panelContainer.addPanel(new Panel({view, visible}))
+    return this.panelContainer.addPanel(new Panel({childView: view, visible: visible}))
   }
 
   /**

@@ -2,6 +2,8 @@
 
 import etch from 'etch'
 
+import PanelView from './panel-view'
+
 export default class PanelContainerView {
   constructor (props, children) {
     this.props = props
@@ -34,11 +36,9 @@ export default class PanelContainerView {
 
   onUpdatePanels () {
     const panels = this.props.panelContainer.getPanels()
-    const views = panels.map((panel) => {
-      return panel.getView().render()
+    this.children = panels.map((panel) => {
+      return <PanelView childView={panel.getChildView()} panel={panel} />
     })
-
-    this.children = views
 
     return etch.update(this)
   }
