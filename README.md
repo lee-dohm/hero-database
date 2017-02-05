@@ -22,7 +22,7 @@ This application is designed to work with the [HERO System 6th Edition rules][si
 
 ## Copyright
 
-The contents of this repository are copyright &copy; 2016 by [Lee Dohm](http://www.lee-dohm.com). See [LICENSE][license] for details.
+The contents of this repository are copyright &copy; 2016-2017 by [Lee Dohm](http://www.lee-dohm.com). See [LICENSE][license] for details.
 
 "HERO System", "HERO Games", and the Hex Man logo are trademarks of [DOJ Inc., dba "Hero Games"][hero-games].
 
