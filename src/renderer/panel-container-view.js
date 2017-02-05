@@ -15,7 +15,7 @@ export default class PanelContainerView {
 
   render () {
     return (
-      <div className='panel-container-view'>
+      <div className={this.getClassName()}>
         {this.children}
       </div>
     )
@@ -41,5 +41,15 @@ export default class PanelContainerView {
     this.children = views
 
     return etch.update(this)
+  }
+
+  getClassName () {
+    let className = 'panel-container-view'
+
+    if (this.props.panelContainer && this.props.panelContainer.isModal()) {
+      className += ' modal'
+    }
+
+    return className
   }
 }

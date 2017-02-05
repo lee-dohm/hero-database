@@ -80,7 +80,7 @@ export default class Workspace {
     this.workspaceView = new WorkspaceView({heroEnv: this.heroEnv, panelContainer: this.panelContainer})
     document.body.appendChild(this.workspaceView.element)
 
-    await this.workspaceView.update({heroEnv: this.heroEnv})
+    await this.workspaceView.update({heroEnv: this.heroEnv, panelContainer: this.panelContainer})
 
     this.emitter.emit('did-load-ui')
   }
