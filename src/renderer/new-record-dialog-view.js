@@ -5,9 +5,8 @@ import etch from 'etch'
 import ButtonView from './button-view'
 
 export default class NewRecordDialogView {
-  constructor (props, children) {
+  constructor (props) {
     this.props = props
-    this.children = children
 
     etch.initialize(this)
   }
@@ -15,23 +14,41 @@ export default class NewRecordDialogView {
   render () {
     return (
       <div className='new-record-dialog-view dialog'>
-        <input type='text' placeholder="Character's name" />
-        <select>
-          <option value='character'>Character</option>
-        </select>
-        <ButtonView label='Ok' />
+        <div>
+          <input type='text' placeholder="Character's name" />
+        </div>
+        <div>
+          <select>
+            <option value='character'>Character</option>
+          </select>
+        </div>
+        <div>
+          <ButtonView label='Cancel' onclick={this.onClickCancel.bind(this)} />
+          <ButtonView label='Ok' onclick={this.onClickOk.bind(this)} />
+        </div>
       </div>
     )
   }
 
   update (props, children) {
     this.props = props
-    this.children = children
 
     return etch.update(this)
   }
 
   destroy () {
     etch.destroy(this)
+  }
+
+  onClickCancel (e) {
+    e.preventDefault()
+
+    this.props.panel.hide()
+  }
+
+  onClickOk (e) {
+    e.preventDefault()
+
+    this.props.panel.hide()
   }
 }

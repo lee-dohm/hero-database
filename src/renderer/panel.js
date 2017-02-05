@@ -9,7 +9,7 @@ export default class Panel {
     this.emitter = new Emitter()
 
     if (view) {
-      this.view = view
+      this.view = view({panel: this})
     }
 
     if (visible) {

@@ -54,7 +54,7 @@ export default class DatabaseView {
   async onNewRecordClick (e) {
     e.preventDefault()
 
-    this.props.heroEnv.workspace.addModalPanel({view: new NewRecordDialogView()})
+    this.props.heroEnv.workspace.addModalPanel({view: NewRecordDialogView})
   }
 
   async select (record) {
