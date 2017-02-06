@@ -1,29 +1,19 @@
 /** @jsx etch.dom */
 
 import etch from 'etch'
-import {CompositeDisposable} from 'event-kit'
 
 import ButtonView from './button-view'
 
 export default class NewRecordDialogView {
   constructor (props) {
-    this.subscriptions = new CompositeDisposable()
     this.props = props
-
-    this.subscriptions.add(this.props.panel.onDidChangeVisible(this.handleOnDidChangeVisible.bind(this)))
 
     etch.initialize(this)
   }
 
-  async handleOnDidChangeVisible (visible) {
-    this.hidden = !visible
-
-    return etch.update(this)
-  }
-
   render () {
     return (
-      <div className={this.getClassName()}>
+      <div className='new-record-dialog-view dialog'>
         <div>
           <input type='text' placeholder="Character's name" />
         </div>
@@ -40,16 +30,6 @@ export default class NewRecordDialogView {
     )
   }
 
-  getClassName () {
-    let className = 'new-record-dialog-view dialog'
-
-    if (this.hidden) {
-      className += ' hidden'
-    }
-
-    return className
-  }
-
   update (props) {
     this.props = props
 
@@ -57,16 +37,15 @@ export default class NewRecordDialogView {
   }
 
   destroy () {
-    this.subscriptions.dispose()
-
     etch.destroy(this)
   }
 
   onClickCancel (e) {
-    this.props.panel.hide()
+    this.props.panel.destroy()
   }
 
   onClickOk (e) {
     this.props.panel.hide()
+    this.props.panel.destroy()
   }
 }
