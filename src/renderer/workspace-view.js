@@ -14,15 +14,19 @@ export default class WorkspaceView {
   }
 
   render () {
+    const {heroEnv, panelContainer} = this.props
+    const database = heroEnv.database
+    const pane = heroEnv.pane
+
     return (
       <div id='workspace-view'>
         <div id='sidebar'>
-          <DatabaseView database={this.props.heroEnv.database} heroEnv={this.props.heroEnv} />
+          <DatabaseView database={database} heroEnv={heroEnv} />
         </div>
         <div id='editor'>
-          <PaneView heroEnv={this.props.heroEnv} pane={this.props.heroEnv.pane}/>
+          <PaneView heroEnv={heroEnv} pane={pane}/>
         </div>
-        <PanelContainerView panelContainer={this.props.panelContainer} />
+        <PanelContainerView heroEnv={heroEnv} panelContainer={panelContainer} />
       </div>
     )
   }

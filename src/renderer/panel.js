@@ -5,10 +5,11 @@ export default class Panel {
    * Section: Construction and Destruction
    */
 
-  constructor ({childView, visible}) {
+  constructor ({childView, heroEnv, visible}) {
     this.emitter = new Emitter()
 
     this.childView = childView
+    this.heroEnv = heroEnv
 
     if (visible) {
       this.visible = visible

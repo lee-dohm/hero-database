@@ -56,12 +56,14 @@ export default class Workspace {
    /**
     * Adds a modal panel to the workspace.
     *
-    * * `options`
-    *   * `.view` An Etch view to display within the panel.
+    * * `props`
+    *   * `.childView` An Etch view to display within the panel.
     *   * `.visible` {Boolean} indicating whether the panel is visible to start. Defaults to `true`.
     */
-  addModalPanel ({view, visible}) {
-    return this.panelContainer.addPanel(new Panel({childView: view, visible: visible}))
+  addModalPanel (props) {
+    let panelProps = Object.assign({visible: true}, props, {heroEnv: this.heroEnv})
+
+    return this.panelContainer.addPanel(new Panel(panelProps))
   }
 
   /**

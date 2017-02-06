@@ -1,4 +1,7 @@
 {
   "presets": ["es2016-node5", "react"],
-  "plugins": ["transform-async-to-generator"]
+  "plugins": [
+    "transform-async-to-generator",
+    "transform-object-rest-spread"
+  ]
 }

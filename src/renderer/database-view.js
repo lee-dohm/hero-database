@@ -18,6 +18,8 @@ export default class DatabaseView {
   }
 
   render () {
+    const {heroEnv} = this.props
+
     return (
       <div className='database-view'>
         <ul className="records list">
@@ -25,7 +27,7 @@ export default class DatabaseView {
             this.records.map((record) => {
               return (
                 <RecordListItemView
-                  heroEnv={this.props.heroEnv}
+                  heroEnv={heroEnv}
                   parent={this}
                   record={record}
                   selected={this.selected === record}
@@ -41,7 +43,6 @@ export default class DatabaseView {
 
   async update (props) {
     this.props = props
-
     this.records = await this.props.database.loadAllRecords()
 
     return etch.update(this)
@@ -52,9 +53,9 @@ export default class DatabaseView {
   }
 
   async onNewRecordClick (e) {
-    e.preventDefault()
+    const {heroEnv} = this.props
 
-    this.props.heroEnv.workspace.addModalPanel({view: NewRecordDialogView})
+    heroEnv.workspace.addModalPanel({childView: NewRecordDialogView})
   }
 
   async select (record) {
