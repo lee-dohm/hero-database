@@ -16,9 +16,7 @@ export default class NewRecordDialogView {
   }
 
   async handleOnDidChangeVisible (visible) {
-    console.log('NewRecordDialogView onDidChangeVisible handler start')
     this.hidden = !visible
-    console.log(`hidden = ${this.hidden}`)
 
     return etch.update(this)
   }
@@ -69,9 +67,6 @@ export default class NewRecordDialogView {
   }
 
   onClickOk (e) {
-    console.log('NewRecordDialogView.onClickOk start')
-
     this.props.panel.hide()
-    console.log('NewRecordDialogView.onClickOk end')
   }
 }

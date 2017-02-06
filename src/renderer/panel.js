@@ -43,17 +43,12 @@ export default class Panel {
   }
 
   hide () {
-    console.log('Panel.hide start')
-
     let wasVisible = this.visible
     this.visible = false
 
     if (wasVisible) {
-      console.log(`Emit did-change-visible: ${this.visible}`)
       this.emitter.emit('did-change-visible', this.visible)
     }
-
-    console.log('Panel.hide end')
   }
 
   show () {
