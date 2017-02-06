@@ -105,13 +105,13 @@ describe('Database', function () {
     })
   })
 
-  describe('newRecord', function () {
+  describe('createRecord', function () {
     beforeEach(function () {
       database = new Database(tempPath, {})
     })
 
     it('creates a new record given an object', async function () {
-      const record = await database.newRecord({name: 'New Record'})
+      const record = await database.createRecord({name: 'New Record'})
 
       expect(record.name).to.equal('New Record')
       expect(record.filePath).to.equal(path.join(tempPath, 'new-record.character'))
@@ -119,7 +119,7 @@ describe('Database', function () {
     })
 
     it('creates a new record of the given type if given an object with enough info', async function () {
-      const record = await database.newRecord({name: 'New Template', __typeName: 'template'})
+      const record = await database.createRecord({name: 'New Template', __typeName: 'template'})
 
       expect(record.name).to.equal('New Template')
       expect(record.filePath).to.equal(path.join(tempPath, 'new-template.template'))
@@ -127,7 +127,7 @@ describe('Database', function () {
     })
 
     it('creates a blank character record if just a name is given', async function () {
-      const record = await database.newRecord('New Record')
+      const record = await database.createRecord('New Record')
 
       expect(record.name).to.equal('New Record')
       expect(record.filePath).to.equal(path.join(tempPath, 'new-record.character'))
@@ -138,7 +138,7 @@ describe('Database', function () {
       let caught = false
 
       try {
-        await database.newRecord()
+        await database.createRecord()
       } catch (err) {
         caught = true
       }
@@ -150,8 +150,8 @@ describe('Database', function () {
   describe('deleteRecord', function () {
     beforeEach(async function () {
       database = new Database(tempPath, {})
-      await database.newRecord('Record To Be Deleted')
-      await database.newRecord({name: 'Template To Be Deleted', __typeName: 'template'})
+      await database.createRecord('Record To Be Deleted')
+      await database.createRecord({name: 'Template To Be Deleted', __typeName: 'template'})
     })
 
     it('deletes the record with the given name', async function () {

@@ -37,6 +37,22 @@ export default class Database {
     this.create()
   }
 
+  onDidCreateRecord (callback) {
+    this.emitter.on('did-create-record', callback)
+  }
+
+  onDidDeleteRecord (callback) {
+    this.emitter.on('did-delete-record', callback)
+  }
+
+  onDidLoadRecord (callback) {
+    this.emitter.on('did-load-record', callback)
+  }
+
+  onDidLoadAllRecords (callback) {
+    this.emitter.on('did-load-all-records', callback)
+  }
+
   create () {
     if (!fs.existsSync(this.databasePath)) {
       fs.mkdirSync(this.databasePath)
@@ -73,6 +89,8 @@ export default class Database {
 
     await fs.writeFile(this.getPathForName(name, type, this.getTrashPath()), contents)
     await fs.unlink(originalPath)
+
+    this.emitter.emit('did-delete-record', originalPath)
   }
 
   /**
@@ -103,7 +121,11 @@ export default class Database {
    * Returns the {Record} containing the item.
    */
   async loadRecord (name, type) {
-    return Record.load(this.getPathForName(name, type), this.heroEnv)
+    const record = await Record.load(this.getPathForName(name, type), this.heroEnv)
+
+    this.emitter.emit('did-load-record', record)
+
+    return record
   }
 
   /**
@@ -119,6 +141,8 @@ export default class Database {
       return Record.load(path.join(this.databasePath, file), this.heroEnv)
     }))
 
+    this.emitter.emit('did-load-all-records', records)
+
     return records
   }
 
@@ -130,7 +154,7 @@ export default class Database {
    *
    * Returns a new {Record}.
    */
-  async newRecord (data) {
+  async createRecord (data) {
     let record
 
     if (data && data.name) {
@@ -142,6 +166,8 @@ export default class Database {
     }
 
     await record.store()
+
+    this.emitter.emit('did-create-record', record)
 
     return record
   }
