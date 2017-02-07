@@ -37,7 +37,7 @@ export default class PanelContainerView {
   onUpdatePanels () {
     const panels = this.props.panelContainer.getPanels()
     this.children = panels.map((panel) => {
-      return <PanelView childView={panel.getChildView()} panel={panel} />
+      return <PanelView childView={panel.getChildView()} heroEnv={this.props.heroEnv} panel={panel} />
     })
 
     return etch.update(this)

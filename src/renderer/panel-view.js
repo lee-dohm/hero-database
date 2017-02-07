@@ -4,7 +4,7 @@ import etch from 'etch'
 import {CompositeDisposable} from 'event-kit'
 
 export default class PanelView {
-  constructor ({childView, panel}) {
+  constructor ({childView, heroEnv, panel}) {
     this.subscriptions = new CompositeDisposable()
 
     this.panel = panel
@@ -12,7 +12,7 @@ export default class PanelView {
 
     const View = childView
     this.childView = (
-      <View panel={this.panel} />
+      <View heroEnv={heroEnv} panel={this.panel} />
     )
 
     this.addEventHandlers()

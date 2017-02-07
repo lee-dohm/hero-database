@@ -15,7 +15,7 @@ export default class NewRecordDialogView {
     return (
       <div className='new-record-dialog-view dialog'>
         <div>
-          <input type='text' placeholder="Character's name" />
+          <input type='text' placeholder="Character's name" ref='name' />
         </div>
         <div>
           <select>
@@ -46,6 +46,9 @@ export default class NewRecordDialogView {
 
   onClickOk (e) {
     this.props.panel.hide()
+
+    this.props.heroEnv.database.createRecord(this.refs.name.value)
+
     this.props.panel.destroy()
   }
 }

@@ -38,19 +38,19 @@ export default class Database {
   }
 
   onDidCreateRecord (callback) {
-    this.emitter.on('did-create-record', callback)
+    return this.emitter.on('did-create-record', callback)
   }
 
   onDidDeleteRecord (callback) {
-    this.emitter.on('did-delete-record', callback)
+    return this.emitter.on('did-delete-record', callback)
   }
 
   onDidLoadRecord (callback) {
-    this.emitter.on('did-load-record', callback)
+    return this.emitter.on('did-load-record', callback)
   }
 
   onDidLoadAllRecords (callback) {
-    this.emitter.on('did-load-all-records', callback)
+    return this.emitter.on('did-load-all-records', callback)
   }
 
   create () {

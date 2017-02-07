@@ -1,6 +1,7 @@
 /** @jsx etch.dom */
 
 import etch from 'etch'
+import {CompositeDisposable} from 'event-kit'
 
 import ButtonView from './button-view'
 import NewRecordDialogView from './new-record-dialog-view'
@@ -13,6 +14,8 @@ export default class DatabaseView {
   constructor (props, children) {
     this.props = props
     this.records = []
+
+    this.handleEvents()
 
     etch.initialize(this)
   }
@@ -42,13 +45,15 @@ export default class DatabaseView {
   }
 
   async update (props) {
-    this.props = props
+    this.props = Object.assign({}, this.props, props)
     this.records = await this.props.database.loadAllRecords()
 
     return etch.update(this)
   }
 
   destroy () {
+    this.subscriptions.dispose()
+
     etch.destroy(this)
   }
 
@@ -56,6 +61,20 @@ export default class DatabaseView {
     const {heroEnv} = this.props
 
     heroEnv.workspace.addModalPanel({childView: NewRecordDialogView})
+  }
+
+  handleEvents () {
+    const {heroEnv} = this.props
+    this.subscriptions = new CompositeDisposable()
+
+    this.subscriptions.add(heroEnv.database.onDidCreateRecord(this.handleRecordUpdates.bind(this)))
+    this.subscriptions.add(heroEnv.database.onDidDeleteRecord(this.handleRecordUpdates.bind(this)))
+  }
+
+  async handleRecordUpdates () {
+    this.records = await this.props.database.loadAllRecords()
+
+    return etch.update(this)
   }
 
   async select (record) {
