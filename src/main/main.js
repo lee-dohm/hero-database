@@ -60,7 +60,8 @@ function parseArguments () {
 app.on('ready', main)
 
 // Typical applications on macOS will remain running when the last window is closed.
-// Since this is a game, we're opting for exit on last window close semantics.
+// Since this is intended to be a single-window app, we're opting for exit on last window close
+// semantics.
 app.on('window-all-closed', () => {
   app.quit()
 })
