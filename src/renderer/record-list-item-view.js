@@ -4,17 +4,17 @@ import etch from 'etch'
 
 export default class RecordListItemView {
   constructor (props) {
-    this.props = props
+    this.updateProps(props)
 
     etch.initialize(this)
   }
 
   render () {
-    return <li className={this.getClassName()} onclick={this.onClick.bind(this)}>{this.props.record.name}</li>
+    return <li className={this.getClassName()} on={{click: this.onClick}}>{this.record.name}</li>
   }
 
   update (props) {
-    this.props = props
+    this.updateProps(props)
 
     return etch.update(this)
   }
@@ -26,17 +26,27 @@ export default class RecordListItemView {
   onClick (e) {
     e.preventDefault()
 
-    this.props.heroEnv.workspace.open(this.props.record)
-    this.props.parent.select(this.props.record)
+    this.heroEnv.workspace.open(this.record)
+    this.parent.select(this.record)
   }
 
   getClassName () {
     let className = 'record'
 
-    if (this.props.selected) {
+    if (this.selected) {
       className += ' selected'
     }
 
     return className
+  }
+
+  updateProps (props) {
+    const {heroEnv, parent, record, selected} = props
+
+    this.props = props
+    this.heroEnv = heroEnv
+    this.parent = parent
+    this.record = record
+    this.selected = selected
   }
 }
