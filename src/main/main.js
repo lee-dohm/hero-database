@@ -35,6 +35,16 @@ function createWindow () {
 
 function main () {
   parseArguments()
+
+  if (argv.version) {
+    const metadata = require('../../package.json')
+
+    console.log(`Hero Database: v${metadata.version}`)
+    console.log(`     Electron: v${process.versions.electron}`)
+
+    app.quit()
+  }
+
   createWindow()
 }
 
@@ -43,6 +53,7 @@ function parseArguments () {
          .usage('Usage: $0 [options]')
          .alias('d', 'dev')
          .alias('debug', 'dev')
+         .alias('v', 'version')
          .argv
 }
 
