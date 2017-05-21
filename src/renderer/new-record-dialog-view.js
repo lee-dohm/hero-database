@@ -6,7 +6,7 @@ import ButtonView from './button-view'
 
 export default class NewRecordDialogView {
   constructor (props) {
-    this.props = props
+    this.updateProps(props)
 
     etch.initialize(this)
   }
@@ -31,7 +31,7 @@ export default class NewRecordDialogView {
   }
 
   update (props) {
-    this.props = props
+    this.updateProps(props)
 
     return etch.update(this)
   }
@@ -41,14 +41,21 @@ export default class NewRecordDialogView {
   }
 
   onClickCancel (e) {
-    this.props.panel.destroy()
+    this.panel.destroy()
   }
 
   onClickOk (e) {
-    this.props.panel.hide()
+    this.panel.hide()
 
-    this.props.heroEnv.database.createRecord(this.refs.name.value)
+    this.heroEnv.database.createRecord(this.refs.name.value)
 
-    this.props.panel.destroy()
+    this.panel.destroy()
+  }
+
+  updateProps (props) {
+    const {panel, heroEnv} = props
+    this.props = props
+    this.panel = panel
+    this.heroEnv = heroEnv
   }
 }
