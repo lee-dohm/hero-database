@@ -39,7 +39,7 @@ export default class CharacteristicsBlock extends Model {
   constructor (state = {}, heroEnv = hero) {
     super(heroEnv)
 
-    Object.assign(this, this.getDefaultBaseCharacteristics(), state, {heroEnv: this.heroEnv})
+    Object.assign(this, this.getDefaultBaseCharacteristics(), state, {heroEnv})
   }
 
   serialize () {
