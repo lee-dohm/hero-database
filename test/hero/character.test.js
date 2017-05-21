@@ -26,6 +26,10 @@ describe('Character', function () {
     it('has a campaign info block', function () {
       expect(character.campaignInfo).to.exist
     })
+
+    it('has a characteristics block', function () {
+      expect(character.characteristics).to.exist
+    })
   })
 
   describe('serialization', function () {

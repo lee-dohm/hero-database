@@ -16,29 +16,10 @@ export default class Character extends Model {
   constructor (state, heroEnv = hero) {
     super(heroEnv)
 
-    if (state.edition) {
-      this.edition = state.edition
-    } else {
-      this.edition = '6E'
-    }
-
-    if (state.name) {
-      this.name = state.name
-    } else {
-      this.name = 'Unnamed Character'
-    }
-
-    if (state.campaignInfo) {
-      this.campaignInfo = CampaignInfoBlock.deserialize(state.campaignInfo, this.heroEnv)
-    } else {
-      this.campaignInfo = new CampaignInfoBlock({}, this.heroEnv)
-    }
-
-    if (state.characteristics) {
-      this.characteristics = CharacteristicsBlock.deserialize(state.characteristics, this.heroEnv)
-    } else {
-      this.characteristics = new CharacteristicsBlock({}, this.heroEnv)
-    }
+    this.edition = state.edition || '6E'
+    this.name = state.name || 'Unnamed Character'
+    this.campaignInfo = CampaignInfoBlock.deserialize(state.campaignInfo, this.heroEnv) || new CampaignInfoBlock({}, this.heroEnv)
+    this.characteristics = CharacteristicsBlock.deserialize(state.characteristics, this.heroEnv) || new CharacteristicsBlock({}, this.heroEnv)
   }
 
   serialize () {
