@@ -3,6 +3,7 @@
 import etch from 'etch'
 
 import ButtonView from './button-view'
+import Character from '../hero/character'
 
 export default class NewRecordDialogView {
   constructor (props) {
@@ -47,7 +48,8 @@ export default class NewRecordDialogView {
   onClickOk (e) {
     this.panel.hide()
 
-    this.heroEnv.database.createRecord(this.refs.name.value)
+    const character = new Character({name: this.refs.name.value}, this.heroEnv)
+    this.heroEnv.database.createRecord(character)
 
     this.panel.destroy()
   }

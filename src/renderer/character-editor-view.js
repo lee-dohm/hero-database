@@ -14,6 +14,7 @@ export default class CharacterEditorView {
 
     return (
       <div class='character-editor-view'>
+        <div>Character Name</div>
         <input type='text' value={record.name} />
       </div>
     )
