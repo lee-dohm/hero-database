@@ -2,6 +2,8 @@
 
 import etch from 'etch'
 
+import CharacteristicsListView from './characteristics-list-view'
+
 export default class CharacterEditorView {
   constructor (props) {
     this.props = props
@@ -14,8 +16,9 @@ export default class CharacterEditorView {
 
     return (
       <div class='character-editor-view'>
-        <div>Character Name</div>
+        <div>Name</div>
         <input type='text' value={record.name} />
+        <CharacteristicsListView characteristics={record.data.characteristics} info={this.getInfo()}/>
       </div>
     )
   }
@@ -28,5 +31,9 @@ export default class CharacterEditorView {
 
   destroy () {
     etch.destroy(this)
+  }
+
+  getInfo () {
+    return this.props.heroEnv.getData('characteristics')
   }
 }

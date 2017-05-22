@@ -16,7 +16,7 @@ export default class CharacterEditor {
 
   getView () {
     if (!this.view) {
-      this.view = new CharacterEditorView({ editor: this, record: this.record })
+      this.view = new CharacterEditorView({ editor: this, heroEnv: this.heroEnv, record: this.record })
     }
 
     return this.view

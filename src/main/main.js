@@ -41,6 +41,7 @@ function main () {
 
     console.log(`Hero Database: v${metadata.version}`)
     console.log(`     Electron: v${process.versions.electron}`)
+    console.log(`         Node: v${process.versions.node}`)
 
     app.quit()
   }
