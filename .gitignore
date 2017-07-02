@@ -1,5 +1,5 @@
-lib/
+/lib/
 node_modules
 npm-debug.log
 .cache
-docs/
+/docs/
