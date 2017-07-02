@@ -7,7 +7,7 @@ set -e
 cd "$(dirname "$0")/.."
 
 ./node_modules/.bin/jsdoc \
-  --configure .jsdoc.conf \
+  --configure .jsdoc.conf.json \
   --destination ./docs/ \
   --template ./node_modules/ink-docstrap/template \
   --readme README.md \
