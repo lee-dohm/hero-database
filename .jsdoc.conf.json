@@ -1,6 +1,7 @@
 {
     "plugins": [
       "node_modules/jsdoc-babel",
+      "./doc-plugins/hero",
       "plugins/markdown"
     ],
     "templates": {
