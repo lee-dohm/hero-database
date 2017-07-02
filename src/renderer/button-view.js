@@ -2,25 +2,50 @@
 
 import etch from 'etch'
 
+/**
+ * Renders a standard button.
+ */
 export default class ButtonView {
-  constructor (props) {
-    this.props = props
+  /**
+   * Buids the button view.
+   *
+   * @param {Object} props Properties for the button
+   * @param {String} props.label Label text
+   * @param {Function} props.onclick Function to call when clicked
+   */
+  constructor ({label, onclick}) {
+    this.label = label
+    this.onclick = onclick
 
     etch.initialize(this)
   }
 
+  /**
+   * Renders the button.
+   */
   render () {
     return (
-      <button className='btn' type='button' onclick={this.props.onclick}>{this.props.label}</button>
+      <button className='btn' type='button' onclick={this.onclick}>{this.label}</button>
     )
   }
 
-  update (props) {
-    this.props = props
+  /**
+   * Redraws the button.
+   *
+   * @param {Object} props Properties for the button
+   * @param {String} props.label Label text
+   * @param {Function} props.onclick Function to call when clicked
+   */
+  update ({label, onclick}) {
+    this.label = label
+    this.onclick = onclick
 
     return etch.update(this)
   }
 
+  /**
+   * Destroys the button.
+   */
   destroy () {
     etch.destroy(this)
   }

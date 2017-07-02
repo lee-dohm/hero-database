@@ -1,0 +1,16 @@
+/**
+ * Represents an editor for a specific record type.
+ *
+ * @interface Editor
+ * @property {String} name Name of the type this editor is capable of representing
+ */
+
+/**
+ * Creates an editor for the record.
+ *
+ * @function
+ * @name Editor.edit
+ * @param {Record} record Record to be edited
+ * @param {HeroEnvironment} heroEnv Application environment
+ * @returns {Editor} Editor for the record
+ */

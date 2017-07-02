@@ -1,0 +1,13 @@
+/**
+ * An object that can be used to clean up at the appropriate time by calling
+ * {@link Disposable#dispose}.
+ *
+ * @interface Disposable
+ */
+
+/**
+ * Disposes of the controlled resource.
+ *
+ * @function
+ * @name Disposable#dispose
+ */

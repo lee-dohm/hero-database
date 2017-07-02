@@ -36,7 +36,9 @@ export default class HeroEnvironment {
   }
 
   /**
-   * Returns the {String} path in which the application is installed.
+   * Returns the path in which the application is installed.
+   *
+   * @returns {String} Installation path of the application
    */
   getAppPath () {
     if (process.env.HERO_DATABASE_HOME) {
@@ -51,6 +53,13 @@ export default class HeroEnvironment {
    *
    * * `name` {String} name of the data to retrieve.
    */
+
+  /**
+   * Gets static application data.
+   *
+   * @param {String} name Name of the piece of data to retrieve.
+   * @return {Object} Data
+   */
   getData (name) {
     const dataPath = this.getDataPath(name)
 
@@ -59,6 +68,11 @@ export default class HeroEnvironment {
 
   /**
    * Returns the {String} path to where the application will store its documents.
+   */
+  /**
+   * Gets the path where the application will store its documents.
+   *
+   * @return {String} Application data path
    */
   getDocumentPath () {
     return this.documentPath

@@ -1,0 +1,29 @@
+/**
+ * Represents a view that is displayed within the UI.
+ *
+ * @interface View
+ * @see [Etch](https://github.com/atom/etch)
+ */
+
+/**
+ * Renders the view.
+ *
+ * @function
+ * @name View#render
+ */
+
+/**
+ * Redraws the view with updated information.
+ *
+ * @function
+ * @name View#update
+ * @param {Object} props Properties for the view
+ * @param {View[]} children Child views of the view
+ */
+
+/**
+ * Destroys the view.
+ *
+ * @function
+ * @name View#destroy
+ */

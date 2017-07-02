@@ -4,13 +4,26 @@ import etch from 'etch'
 
 import CharacteristicsListView from './characteristics-list-view'
 
+/**
+ * Renders the character editor view.
+ */
 export default class CharacterEditorView {
+  /**
+   * Builds the character editor view.
+   *
+   * @param {Object} props Properties for the character editor
+   * @param {Record} props.record Character record to edit
+   * @param {HeroEnvironment} props.heroEnv Application environment
+   */
   constructor (props) {
     this.props = props
 
     etch.initialize(this)
   }
 
+  /**
+   * Renders the character editor view.
+   */
   render () {
     const record = this.props.record
 
@@ -23,12 +36,22 @@ export default class CharacterEditorView {
     )
   }
 
+  /**
+   * Redraws the character editor view.
+   *
+   * @param {Object} props Properties for the character editor
+   * @param {Record} props.record Character record to edit
+   * @param {HeroEnvironment} props.heroEnv Application environment
+   */
   update (props) {
     this.props = props
 
     return etch.update(this)
   }
 
+  /**
+   * Destroys the character editor view.
+   */
   destroy () {
     etch.destroy(this)
   }

@@ -3,12 +3,12 @@ import RecordEditor from './record-editor'
 /**
  * Manages the set of editors for record types.
  *
- * An editor is an Object that handles editing of a particular type of record. This includes
- * creating the editor view when the editor is set to the active editor in the {Pane}. An editor can
- * be any object with a `name` attribute and an `edit` function. A common approach is to register a
- * constructor as the editor by adding an `edit` class method. When your `edit` method is called it
- * will be passed the {Record} containing the data as the first argument and the {HeroEnvironment}
- * as the second argument.
+ * An {@link Editor} is an Object that handles editing of a particular type of record. This includes
+ * creating the editor view when the editor is set to the active editor in the {@link Pane}. An
+ * editor can be any object with a `name` property and an `edit` function. A common approach is to
+ * register a constructor as the editor by adding an `edit` class method. When your `edit` method is
+ * called it will be passed the {@link Record} containing the data as the first argument and the
+ * {@link HeroEnvironment} as the second argument.
  *
  * An instance of this class is always available as `hero.editors`.
  *
@@ -28,6 +28,8 @@ export default class EditorManager {
 
   /**
    * Adds one or more editors.
+   *
+   * @param {Object[]} editors Editors to register
    */
   add (...editors) {
     this.validate(...editors)
@@ -40,7 +42,8 @@ export default class EditorManager {
   /**
    * Builds an editor for the given record.
    *
-   * * `record` {Record} containing the data to create the editor for.
+   * @param {Record} record Record to be edited
+   * @returns {Object} Editor for the record
    */
   buildEditor (record) {
     if (record.data) {

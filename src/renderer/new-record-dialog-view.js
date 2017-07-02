@@ -5,13 +5,25 @@ import etch from 'etch'
 import ButtonView from './button-view'
 import Character from '../hero/character'
 
+/**
+ * View for the new record dialog.
+ */
 export default class NewRecordDialogView {
+  /**
+   * Builds the view.
+   * @param {Object} props Properties for the view
+   * @param {Panel} props.panel Parent panel for the dialog
+   * @param {HeroEnvironment} props.heroEnv Application environment
+   */
   constructor (props) {
     this.updateProps(props)
 
     etch.initialize(this)
   }
 
+  /**
+   * Renders the view.
+   */
   render () {
     return (
       <div className='new-record-dialog-view dialog'>
@@ -31,12 +43,22 @@ export default class NewRecordDialogView {
     )
   }
 
+  /**
+   * Redraws the view with new information.
+   *
+   * @param {Object} props Properties for the view
+   * @param {Panel} props.panel Parent panel for the dialog
+   * @param {HeroEnvironment} props.heroEnv Application environment
+   */
   update (props) {
     this.updateProps(props)
 
     return etch.update(this)
   }
 
+  /**
+   * Destroys the view.
+   */
   destroy () {
     etch.destroy(this)
   }

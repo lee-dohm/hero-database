@@ -4,13 +4,26 @@ import etch from 'etch'
 
 import CharacteristicView from './characteristic-view'
 
+/**
+ * Displays the characteristics list.
+ */
 export default class CharacteristicsListView {
+  /**
+   * Builds the characteristics list.
+   *
+   * @param {Object} props Properties for the view
+   * @param {CharacteristicsBlock} props.characteristics Characteristics values
+   * @param {Object} props.info Characteristics information table
+   */
   constructor (props) {
     this.updateProps(props)
 
     etch.initialize(this)
   }
 
+  /**
+   * Renders the characteristics list.
+   */
   render () {
     return (
       <div className='characteristics-list-view'>
@@ -36,12 +49,22 @@ export default class CharacteristicsListView {
     )
   }
 
+  /**
+   * Redraws the characteristics list with updated information.
+   *
+   * @param {Object} props Properties for the characteristics list
+   * @param {CharacteristicsBlock} props.characteristics Characteristics values
+   * @param {Object} props.info Characteristics information table
+   */
   update (props) {
     this.updateProps(props)
 
     return etch.update(this)
   }
 
+  /**
+   * Destroys the characteristics list.
+   */
   destroy () {
     etch.destroy(this)
   }

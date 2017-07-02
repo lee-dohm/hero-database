@@ -2,13 +2,26 @@
 
 import etch from 'etch'
 
+/**
+ * View for a single characteristic.
+ */
 export default class CharacteristicView {
+  /**
+   * Builds the view.
+   *
+   * @param {Object} props Properties for the view
+   * @param {String} props.name Name of the characteristic
+   * @param {String} props.value Value of the characteristic
+   */
   constructor (props) {
     this.updateProps(props)
 
     etch.initialize(this)
   }
 
+  /**
+   * Renders the view.
+   */
   render () {
     return (
       <div className='characteristic-view row'>
@@ -18,12 +31,22 @@ export default class CharacteristicView {
     )
   }
 
+  /**
+   * Redraws the view with updated information.
+   *
+   * @param {Object} props Properties for the view
+   * @param {String} props.name Name of the characteristic
+   * @param {String} props.value Value of the characteristic
+   */
   update (props) {
     this.updateProps(props)
 
     return etch.update(this)
   }
 
+  /**
+   * Destroys the view.
+   */
   destroy () {
     etch.destroy(this)
   }

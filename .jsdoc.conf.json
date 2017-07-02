@@ -5,7 +5,7 @@
       "./doc-plugins/markdown"
     ],
     "templates": {
-      "theme": "cosmo",
+      "theme": "cerulean",
       "systemName": "Hero Database"
     },
     "opts": {

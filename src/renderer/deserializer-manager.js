@@ -1,10 +1,11 @@
 /**
  * Manages the set of deserializers used for serialized state.
  *
- * A deserializer is any object that has a `name` attribute and a `deserialize` function. A
+ * A {@link Deserializer} is any object that has a `name` attribute and a `deserialize` function. A
  * common approach is to register a constructor as the deserializer for its instances by adding a
  * `deserialize` class method. When your deserialize method is called it will be passed the
- * serialized state as the first argument and the {HeroEnvironment} object as the second argument.
+ * serialized state as the first argument and the {@link HeroEnvironment} object as the second
+ * argument.
  *
  * The serialized state is expected to contain a `__typeName` attribute that is the same as the
  * deserializer's name.
@@ -13,7 +14,7 @@
  *
  * ## Examples
  *
- * ```
+ * ```javascript
  * hero.deserializers.add(Character)
  *
  * let character = hero.deserializers.deserialize(characterData)
@@ -28,7 +29,7 @@ export default class DeserializerManager {
   /**
    * Adds deserializers to the set.
    *
-   * * `deserializers` List of deserializers to be added
+   * @param {Object[]} deserializers Deserializers to add
    */
   add (...deserializers) {
     this.validate(...deserializers)
@@ -41,9 +42,8 @@ export default class DeserializerManager {
   /**
    * Deserializes a state object into a "real" object.
    *
-   * * `state` An {Object} containing serialized state
-   *
-   * Returns the deserialized {Object}.
+   * @param {Object} state Serialized object state
+   * @return {Object} Deserialized object state
    */
   deserialize (state) {
     if (this.deserializers[state['__typeName']]) {
@@ -54,11 +54,10 @@ export default class DeserializerManager {
   }
 
   /**
-   * Gets the deserializer for the type `name`.
+   * Gets the deserializer for the named type.
    *
-   * * `name` {String} of the type name
-   *
-   * Returns the deserializer for the given type.
+   * @param {String} name Name of the type to get the deserializer for
+   * @return {Object} Deserializer for the named type
    */
   get (name) {
     return this.deserializers[name]
@@ -66,6 +65,12 @@ export default class DeserializerManager {
 
   /**
    * Returns the {Number} of deserializers being managed.
+   */
+
+  /**
+   * Returns the number of deserializers being managed.
+   *
+   * @return {Number} Count of deserializers being managed
    */
   getCount () {
     return Object.keys(this.deserializers).length

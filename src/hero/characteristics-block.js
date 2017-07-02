@@ -23,10 +23,16 @@ import Model from './model'
  * * `body`
  * * `stun`
  *
- * See {6E1 40} for more information.
- *
+ * @hero 6E1 40 Characteristics
  */
 export default class CharacteristicsBlock extends Model {
+  /**
+   * Deserializes the info block.
+   *
+   * @param {Object} state Serialized information
+   * @param {HeroEnvironment} heroEnv Application environment
+   * @return {CharacteristicsBlock} Deserialized info block
+   */
   static deserialize (state, heroEnv) {
     return new CharacteristicsBlock(state, heroEnv)
   }
@@ -34,7 +40,8 @@ export default class CharacteristicsBlock extends Model {
   /**
    * Constructs a default set of characteristics.
    *
-   * * `state` *(optional)* {Object} containing serialized state
+   * @param {Object} [state] Initial values
+   * @param {HeroEnvironment} [heroEnv] Application environment
    */
   constructor (state = {}, heroEnv = hero) {
     super(heroEnv)
@@ -42,6 +49,11 @@ export default class CharacteristicsBlock extends Model {
     Object.assign(this, this.getDefaultBaseCharacteristics(), state, {heroEnv})
   }
 
+  /**
+   * Serializes the info block for storage on disk.
+   *
+   * @return {Object} Serialized information
+   */
   serialize () {
     return Object.assign({}, this, {heroEnv: undefined})
   }

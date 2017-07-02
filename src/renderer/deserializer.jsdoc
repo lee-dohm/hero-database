@@ -1,0 +1,16 @@
+/**
+ * Represents a deserializer for a specific record type.
+ *
+ * @interface Deserializer
+ * @property {String} name Name of the type this deserializer is capable of handling
+ */
+
+/**
+ * Deserializes the record state.
+ *
+ * @function
+ * @name Deserializer.deserialize
+ * @param {Object} state Serialized record state
+ * @param {HeroEnvironment} heroEnv Application environment
+ * @returns {Object} Deserialized record
+ */

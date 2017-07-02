@@ -1,18 +1,22 @@
 /**
- * Custom math library that follows the conventions described in the Hero System 6th Edition rules.
+ * Custom math library that follows the conventions described in the HERO System 6th Edition rules.
  */
 export default class HeroMath {
   /**
-   * Returns the Characteristic Roll {Number}.
+   * Determines the number to roll or less from a characteristic using the standard HERO formula.
    *
-   * See: "Characteristic Rolls" - 6E1 41
+   * The standard formula is `9 + (CHAR/5)`.
+   *
+   * @param {Number} charValue Value for the characteristic
+   * @return {Number} Number to roll or less on `3d6`
+   * @hero 6E1 41 Characteristic Rolls
    */
   static characteristicRoll (charValue) {
     return 9 + this.round(charValue / 5, 'up')
   }
 
   /**
-   * Public: Rounds the `number` according to the Hero System 6th Edition rules.
+   * Rounds the number according to the HERO System 6th Edition rules.
    *
    * It always rounds numbers with a fractional part starting with `0.4` down (toward zero) and a
    * fractional part starting with `0.6` up (away from zero). Numbers with a fractional part
@@ -20,7 +24,10 @@ export default class HeroMath {
    * indicates which direction would be more advantageous to the player. Pass `'up'` for away from
    * zero and `'down'` for towards zero.
    *
-   * See: "Character Points and Rounding" - 6E1 12
+   * @param {Number} number Number to round
+   * @param {String} direction Direction to round on `0.5`
+   * @return {Number} Rounded number
+   * @hero 6E1 12 Character Points and Rounding
    */
   static round (number, direction) {
     if (!direction) {
