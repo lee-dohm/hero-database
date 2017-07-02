@@ -1,7 +1,0 @@
-#!/bin/sh
-
-# script/doc: Generates any assets belonging to the documentation.
-
-set -e
-
-cd "$(dirname "$0")/.."
