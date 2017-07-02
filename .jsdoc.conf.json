@@ -2,14 +2,11 @@
     "plugins": [
       "node_modules/jsdoc-babel",
       "./doc-plugins/hero",
-      "plugins/markdown"
+      "./doc-plugins/markdown"
     ],
     "templates": {
       "theme": "cosmo",
       "systemName": "Hero Database"
-    },
-    "markdown": {
-      "parser": "gfm"
     },
     "opts": {
       "destination": "./docs/",
