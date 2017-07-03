@@ -74,7 +74,8 @@ export default class CharacteristicsListView {
   renderCharacteristic (name) {
     return (
       <CharacteristicView
-        name={this.info[name].abbrev}
+        info={this.info[name]}
+        name={name}
         value={this.characteristics[name]}
         />
     )

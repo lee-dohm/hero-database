@@ -14,7 +14,7 @@ export default class PaneView {
 
   render () {
     return (
-      <div id='pane-view'>
+      <div className='grid-container' id='pane-view'>
         {this.children}
       </div>
     )

@@ -30,6 +30,7 @@ export default class Character extends Model {
     this.name = state.name || 'Unnamed Character'
     this.campaignInfo = CampaignInfoBlock.deserialize(state.campaignInfo, this.heroEnv) || new CampaignInfoBlock({}, this.heroEnv)
     this.characteristics = CharacteristicsBlock.deserialize(state.characteristics, this.heroEnv) || new CharacteristicsBlock({}, this.heroEnv)
+    this.characteristicInfo = this.heroEnv.getData('characteristics')
   }
 
   /**

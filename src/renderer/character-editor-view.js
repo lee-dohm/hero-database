@@ -29,12 +29,23 @@ export default class CharacterEditorView {
     const record = this.props.record
 
     return (
-      <div className='character-editor-view'>
-        <GroupView label='Character Info'>
-          <div>Name</div>
-          <input type='text' value={record.name} />
-        </GroupView>
-        <CharacteristicsListView characteristics={record.data.characteristics} info={this.getInfo()}/>
+      <div className='character-editor-view grid-container'>
+        <div className='row'>
+          <div className='col-12'>
+            <GroupView label='Character Info'>
+              <div>Name</div>
+              <input type='text' value={record.name} />
+            </GroupView>
+          </div>
+        </div>
+        <div className='row'>
+          <div className='col-3'>
+            <CharacteristicsListView
+              characteristics={record.data.characteristics}
+              info={record.data.characteristicInfo}/>
+          </div>
+          <div className='col-9' />
+        </div>
       </div>
     )
   }
@@ -57,9 +68,5 @@ export default class CharacterEditorView {
    */
   destroy () {
     etch.destroy(this)
-  }
-
-  getInfo () {
-    return this.props.heroEnv.getData('characteristics')
   }
 }
