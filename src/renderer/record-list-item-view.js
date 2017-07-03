@@ -1,6 +1,7 @@
 /** @jsx etch.dom */
 
 import etch from 'etch'
+import {shell} from 'electron'
 
 export default class RecordListItemView {
   constructor (props) {
@@ -26,8 +27,12 @@ export default class RecordListItemView {
   onClick (e) {
     e.preventDefault()
 
-    this.heroEnv.workspace.open(this.record)
-    this.parent.select(this.record)
+    if (e.altKey) {
+      shell.showItemInFolder(this.record.filePath)
+    } else {
+      this.heroEnv.workspace.open(this.record)
+      this.parent.select(this.record)
+    }
   }
 
   getClassName () {
