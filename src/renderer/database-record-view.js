@@ -3,7 +3,7 @@
 import etch from 'etch'
 import {shell} from 'electron'
 
-export default class RecordListItemView {
+export default class DatabaseRecordView {
   constructor (props) {
     this.updateProps(props)
 

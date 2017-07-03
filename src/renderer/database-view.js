@@ -4,8 +4,8 @@ import etch from 'etch'
 import {CompositeDisposable} from 'event-kit'
 
 import ButtonView from './button-view'
+import DatabaseRecordView from './database-record-view'
 import NewRecordDialogView from './new-record-dialog-view'
-import RecordListItemView from './record-list-item-view'
 
 /**
  * Displays the contents of the database.
@@ -29,7 +29,7 @@ export default class DatabaseView {
           {
             this.records.map((record) => {
               return (
-                <RecordListItemView
+                <DatabaseRecordView
                   heroEnv={heroEnv}
                   parent={this}
                   record={record}
