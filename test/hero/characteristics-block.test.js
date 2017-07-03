@@ -106,4 +106,29 @@ describe('CharacteristicsBlock', function () {
       expect(newBlock.stun).to.equal(300)
     })
   })
+
+  describe('calculating cost', function () {
+    beforeEach(function () {
+      block = new CharacteristicsBlock({}, heroEnv)
+    })
+
+    it('returns zero for default values', function () {
+      expect(block.getTotalCost()).to.equal(0)
+    })
+
+    it('calculates the cost of a single characteristic', function () {
+      block.strength = 20
+
+      expect(block.getTotalCost()).to.equal(10)
+    })
+
+    it('calculates the total cost of multiple characteristics', function () {
+      block.strength = 20
+      block.dexterity = 20
+      block.constitution = 20
+      block.intelligence = 20
+
+      expect(block.getTotalCost()).to.equal(10 + 20 + 10 + 10)
+    })
+  })
 })

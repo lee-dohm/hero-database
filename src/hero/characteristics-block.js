@@ -58,6 +58,22 @@ export default class CharacteristicsBlock extends Model {
     return Object.assign({}, this, {heroEnv: undefined})
   }
 
+  /**
+   * Calculates the total cost of the characteristics.
+   *
+   * @return {Number} Total cost of characteristics in Character Points.
+   */
+  getTotalCost () {
+    const info = this.heroEnv.getData('characteristics')
+    let total = 0
+
+    for (let char in info) {
+      total += (this[char] - info[char].base) * info[char].multiplier
+    }
+
+    return total
+  }
+
   getDefaultBaseCharacteristics () {
     const defaults = this.heroEnv.getData('characteristics')
     let defaultBases = {}

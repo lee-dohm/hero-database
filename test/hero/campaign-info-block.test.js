@@ -39,4 +39,12 @@ describe('CampaignInfoBlock', function () {
       expect(newBlock).to.deep.equal(block)
     })
   })
+
+  describe('calculating cost', function () {
+    it('returns null', function () {
+      block = new CampaignInfoBlock()
+
+      expect(block.getTotalCost()).to.equal(null)
+    })
+  })
 })

@@ -5,10 +5,10 @@
  */
 
 /**
- * Calculates the cost of the block.
+ * Calculates the total cost of the block.
  *
  * @function
- * @name Block#calculateCost
+ * @name Block#getTotalCost
  * @returns {null|Number} Total cost of the block in Character Points or `null` if cost doesn't
  *                        apply.
  */

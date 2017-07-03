@@ -49,4 +49,15 @@ export default class CampaignInfoBlock extends Model {
   serialize () {
     return Object.assign({}, this, {heroEnv: undefined})
   }
+
+  /**
+   * Calculates the cost of the block.
+   *
+   * Always returns `null` since the contents of this block is all informational.
+   *
+   * @return {null}
+   */
+  getTotalCost () {
+    return null
+  }
 }
