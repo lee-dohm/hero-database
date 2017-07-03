@@ -1,0 +1,14 @@
+/**
+ * A block of information on a character sheet.
+ *
+ * @interface Block
+ */
+
+/**
+ * Calculates the cost of the block.
+ *
+ * @function
+ * @name Block#calculateCost
+ * @returns {null|Number} Total cost of the block in Character Points or `null` if cost doesn't
+ *                        apply.
+ */
