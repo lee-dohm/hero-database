@@ -59,6 +59,18 @@ export default class CharacteristicsBlock extends Model {
   }
 
   /**
+   * Gets the cost of an individual characteristic.
+   *
+   * @param {String} char Name of the characteristic
+   * @return {Number} Cost of the characteristic at its current value
+   */
+  getCost (char) {
+    const info = this.heroEnv.getData('characteristics')
+
+    return (this[char] - info[char].base) * info[char].multiplier
+  }
+
+  /**
    * Calculates the total cost of the characteristics.
    *
    * @return {Number} Total cost of characteristics in Character Points.
@@ -68,7 +80,7 @@ export default class CharacteristicsBlock extends Model {
     let total = 0
 
     for (let char in info) {
-      total += (this[char] - info[char].base) * info[char].multiplier
+      total += this.getCost(char)
     }
 
     return total
