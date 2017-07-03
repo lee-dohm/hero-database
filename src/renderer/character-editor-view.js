@@ -3,6 +3,7 @@
 import etch from 'etch'
 
 import CharacteristicsListView from './characteristics-list-view'
+import GroupView from './group-view'
 
 /**
  * Renders the character editor view.
@@ -29,8 +30,10 @@ export default class CharacterEditorView {
 
     return (
       <div className='character-editor-view'>
-        <div>Name</div>
-        <input type='text' value={record.name} />
+        <GroupView label='Character Info'>
+          <div>Name</div>
+          <input type='text' value={record.name} />
+        </GroupView>
         <CharacteristicsListView characteristics={record.data.characteristics} info={this.getInfo()}/>
       </div>
     )
