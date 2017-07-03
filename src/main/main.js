@@ -8,8 +8,8 @@ let mainWindow
 
 function createWindow () {
   let windowOptions = {
-    height: 600,
-    width: 800,
+    height: 1000,
+    width: 1500,
     webPreferences: {
       defaultEncoding: 'UTF-8',
       experimentalCanvasFeatures: true
