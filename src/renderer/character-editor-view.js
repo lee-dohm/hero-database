@@ -28,7 +28,7 @@ export default class CharacterEditorView {
     const record = this.props.record
 
     return (
-      <div class='character-editor-view'>
+      <div className='character-editor-view'>
         <div>Name</div>
         <input type='text' value={record.name} />
         <CharacteristicsListView characteristics={record.data.characteristics} info={this.getInfo()}/>

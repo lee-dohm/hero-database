@@ -11,7 +11,7 @@ export default class RecordEditorView {
 
   render () {
     return (
-      <div class='record-editor-view'>
+      <div className='record-editor-view'>
         {this.renderRecord()}
       </div>
     )
