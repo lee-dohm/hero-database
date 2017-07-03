@@ -31,6 +31,18 @@
     "plusOneCost": 2,
     "period": "all"
   },
+  "autofire": {
+    "name": "autofire",
+    "type": "combat",
+    "characteristic": null,
+    "cost": {
+      "accurateSprayfire": 5,
+      "concentratedSprayfire": 5,
+      "rapidAutofire": 5,
+      "skipoverSprayfire": 5
+    },
+    "period": ["modern", "future"]
+  },
   "breakfall": {
     "name": "breakfall",
     "type": "agility",
@@ -95,6 +107,20 @@
     "plusOneCost": 2,
     "period": ["modern", "future"]
   },
+  "combatSkillLevels": {
+    "name": "combatSkillLevels",
+    "type": "combat",
+    "characteristic": null,
+    "cost": {
+      "+1 OCV with a single attack": 2,
+      "+1 with a Small Group of attacks": 3,
+      "+1 with a Large Group of attacks": 5,
+      "+1 with all HTH Combat": 8,
+      "+1 with all Ranged Combat": 8,
+      "+1 with all Attacks": 10
+    },
+    "period": "all"
+  }
   "computerProgramming": {
     "name": "computerProgramming",
     "type": "intellect",
