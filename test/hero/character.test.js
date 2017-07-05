@@ -30,6 +30,26 @@ describe('Character', function () {
     it('has a characteristics block', function () {
       expect(character.characteristics).to.exist
     })
+
+    it('has a skills block', function () {
+      expect(character.skills).to.exist
+    })
+
+    it('has a perks block', function () {
+      expect(character.perks).to.exist
+    })
+
+    it('has a talents block', function () {
+      expect(character.talents).to.exist
+    })
+
+    it('has a powers block', function () {
+      expect(character.powers).to.exist
+    })
+
+    it('has a complications block', function () {
+      expect(character.complications).to.exist
+    })
   })
 
   describe('serialization', function () {
