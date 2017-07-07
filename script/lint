@@ -14,3 +14,6 @@ for f in data/*.json; do
   BASENAME=$(basename $f .json)
   ./node_modules/.bin/ajv validate -s data/$BASENAME.schema -d data/$BASENAME.json
 done
+
+echo "==> Validating licenses of dependencies..."
+./node_modules/.bin/licensee --errors-only
