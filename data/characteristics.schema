@@ -1,0 +1,81 @@
+{
+  "id": "/data/characteristics.schema",
+  "description": "Definition of characteristics",
+  "definitions": {
+    "characteristic": {
+      "type": "object",
+      "required": ["abbrev", "base", "multiplier", "description"],
+      "properties": {
+        "abbrev": {
+          "type": "string"
+        },
+        "base": {
+          "type": "integer"
+        },
+        "multiplier": {
+          "type": "number"
+        },
+        "description": {
+          "type": "string"
+        },
+        "primary": {
+          "type": "boolean"
+        }
+      }
+    }
+  },
+  "type": "object",
+  "properties": {
+    "strength": {
+      "$ref": "#/definitions/characteristic"
+    },
+    "dexterity": {
+      "$ref": "#/definitions/characteristic"
+    },
+    "constitution": {
+      "$ref": "#/definitions/characteristic"
+    },
+    "intelligence": {
+      "$ref": "#/definitions/characteristic"
+    },
+    "ego": {
+      "$ref": "#/definitions/characteristic"
+    },
+    "presence": {
+      "$ref": "#/definitions/characteristic"
+    },
+    "offensiveCombatValue": {
+      "$ref": "#/definitions/characteristic"
+    },
+    "defensiveCombatValue": {
+      "$ref": "#/definitions/characteristic"
+    },
+    "offensiveMentalCombatValue": {
+      "$ref": "#/definitions/characteristic"
+    },
+    "defensiveMentalCombatValue": {
+      "$ref": "#/definitions/characteristic"
+    },
+    "speed": {
+      "$ref": "#/definitions/characteristic"
+    },
+    "physicalDefense": {
+      "$ref": "#/definitions/characteristic"
+    },
+    "energyDefense": {
+      "$ref": "#/definitions/characteristic"
+    },
+    "recovery": {
+      "$ref": "#/definitions/characteristic"
+    },
+    "endurance": {
+      "$ref": "#/definitions/characteristic"
+    },
+    "body": {
+      "$ref": "#/definitions/characteristic"
+    },
+    "stun": {
+      "$ref": "#/definitions/characteristic"
+    }
+  }
+}

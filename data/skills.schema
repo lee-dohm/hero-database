@@ -1,0 +1,101 @@
+{
+  "id": "/data/skills.schema",
+  "description": "Definition of skills",
+  "definitions": {
+    "nullableInteger": {
+      "oneOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "nullableString": {
+      "oneOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  },
+  "type": "array",
+  "items": {
+    "oneOf": [
+      {
+        "type": "object",
+        "required": ["name", "type", "characteristic", "period", "baseCost", "plusOneCost"],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "characteristic": {
+            "$ref": "#/definitions/nullableString"
+          },
+          "period": {
+            "oneOf": [
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              {
+                "type": "string",
+                "enum": ["all"]
+              }
+            ]
+          },
+          "baseCost": {
+            "type": "integer"
+          },
+          "plusOneCost": {
+            "$ref": "#/definitions/nullableInteger"
+          }
+        }
+      },
+      {
+        "type": "object",
+        "required": ["name", "type", "characteristic", "period", "cost"],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "characteristic": {
+            "$ref": "#/definitions/nullableString"
+          },
+          "period": {
+            "oneOf": [
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              {
+                "type": "string",
+                "enum": ["all"]
+              }
+            ]
+          },
+          "cost": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

@@ -8,3 +8,9 @@ cd "$(dirname "$0")/.."
 
 echo "==> Linting JavaScript files..."
 ./node_modules/eslint/bin/eslint.js src/**/*.js test/**/*.js
+
+echo "==> Validating JSON data files..."
+for f in data/*.json; do
+  BASENAME=$(basename $f .json)
+  ./node_modules/.bin/ajv validate -s data/$BASENAME.schema -d data/$BASENAME.json
+done

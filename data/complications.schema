@@ -1,0 +1,37 @@
+{
+  "id": "/data/complications.schema",
+  "description": "Definition of complications",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["name", "reference"],
+    "properties": {
+      "name": {
+        "description": "Name of the complication",
+        "type": "string"
+      },
+      "reference": {
+        "description": "Location in the rulebook",
+        "type": "string",
+        "pattern": "^6E[12] \\d+$"
+      },
+      "abbreviation": {
+        "description": "Abbreviated name of the complication",
+        "type": "string"
+      }
+    },
+    "additionalProperties": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": {
+            "type": "integer"
+          }
+        },
+        {
+          "type": "integer"
+        }
+      ]
+    }
+  }
+}

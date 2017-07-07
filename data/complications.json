@@ -1,0 +1,122 @@
+[
+  {
+    "name": "accidentalChange",
+    "reference": "6E1 418",
+    "circumstances": {
+      "Uncommon Circumstance": 5,
+      "Common Circumstance": 10,
+      "Very Common Circumstance": 15
+    },
+    "chanceToChange": {
+      "8-": 0,
+      "11-": 5,
+      "14-": 10,
+      "Always": 15
+    }
+  },
+  {
+    "name": "dependence",
+    "reference": "6E1 419",
+    "easeToObtain": {
+      "Very Common or Easy to Obtain": 5,
+      "Common or Difficult to Obtain": 10,
+      "Uncommon or Extremely Difficult to Obtain": 15
+    },
+    "effect": {
+      "1d6 Damage": 5,
+      "2d6 Damage": 10,
+      "3d6 Damage": 15,
+      "Power Activation: 14-": 5,
+      "Power Activation: 11-": 10,
+      "Incompetence: -1 to Skill Rolls per time increment": 5,
+      "Weakness: -3 to Characteristics per time increment": 5
+    },
+    "timeBeforeEffect": {
+      "segment": 25,
+      "phase": 20,
+      "turn": 15,
+      "1 minute": 10,
+      "5 minutes": 5,
+      "20 minutes": 0,
+      "1 hour": -5,
+      "6 hours": -10,
+      "1 day": -15,
+      "addiction": 5
+    }
+  },
+  {
+    "name": "dependentNonPlayerCharacter",
+    "abbreviation": "DNPC",
+    "reference": "6E1 420",
+    "capability": {
+      "Incompetent (-20 character points or lower)": 10,
+      "Normal": 5,
+      "Slightly Less Powerful than the Character": 0,
+      "As Powerful as the Character": -5
+    },
+    "usefulNoncombatPositionOrSkills": -5,
+    "unawareOfCharactersSecretIdentity": 5
+  },
+  {
+    "name": "distinctiveFeatures",
+    "reference": "6E1 421",
+    "concealability": {
+      "Easily Concealed": 5,
+      "Concealable": 10,
+      "Not Concealable": 15
+    },
+    "reaction": {
+      "Noticed and Recognizable": 0,
+      "Major Reaction": 5,
+      "Extreme Reaction": 10
+    },
+    "sensing": {
+      "Detectable by Commonly-Used Senses": 0,
+      "Detectable by Uncommonly-Used Senses": -5,
+      "Detectable only by Unusual Senses": -10
+    },
+    "notDistinctiveInSomeCulturesOrSocieties": -5
+  },
+  {
+    "name": "enraged",
+    "reference": "6E1 422",
+    "frequency": {
+      "Uncommon": 5,
+      "Common": 10,
+      "Very Common": 15
+    },
+    "berserk": 10,
+    "chanceToBecomeEnraged": {
+      "8-": 0,
+      "11-": 5,
+      "14-": 10
+    },
+    "chanceToRecover": {
+      "14-": 0,
+      "11-": 5,
+      "8-": 10
+    }
+  },
+  {
+    "name": "hunted",
+    "reference": "6E1 423",
+    "capabilities": {
+      "Less Powerful": 5,
+      "As Powerful": 10,
+      "More Powerful": 15
+    },
+    "hunterHasExtensiveNoncombatInfluence": 5,
+    "limitedToGeographicArea": -5,
+    "characterHasPublicIdentity": 5,
+    "frequencyOfAppearance": {
+      "Infrequently": 0,
+      "Frequently": 5,
+      "Very Frequently": 10
+    },
+    "motivation": {
+      "Watched": -10,
+      "Mildly Punish": -5,
+      "Harshly Punish": 0
+    }
+  }
+]

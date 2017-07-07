@@ -1,63 +1,79 @@
-{
-  "normal": {
-    "standard": {
-      "totalPoints": 25,
-      "matchingComplications": 15,
-      "maxPerComplication": 15
-    },
-    "skilled": {
-      "totalPoints": 50,
-      "matchingComplications": 25,
-      "maxPerComplication": 20
-    },
-    "competent": {
-      "totalPoints": 100,
-      "matchingComplications": 30,
-      "maxPerComplication": 20
-    }
+[
+  {
+    "category": "normal",
+    "name": "standard",
+    "totalPoints": 25,
+    "matchingComplications": 15,
+    "maxPerComplication": 15
   },
-  "heroic": {
-    "standard": {
-      "totalPoints": 175,
-      "matchingComplications": 50,
-      "maxPerComplication": 25
-    },
-    "powerful": {
-      "totalPoints": 225,
-      "matchingComplications": 50,
-      "maxPerComplication": 25
-    },
-    "veryPowerful": {
-      "totalPoints": 275,
-      "matchingComplications": 50,
-      "maxPerComplication": 30
-    }
+  {
+    "category": "normal",
+    "name": "skilled",
+    "totalPoints": 50,
+    "matchingComplications": 25,
+    "maxPerComplication": 20
   },
-  "superheroic": {
-    "lowPowered": {
-      "totalPoints": 300,
-      "matchingComplications": 60,
-      "maxPerComplication": 35
-    },
-    "standard": {
-      "totalPoints": 400,
-      "matchingComplications": 75,
-      "maxPerComplication": 40
-    },
-    "highPowered": {
-      "totalPoints": 500,
-      "matchingComplications": 75,
-      "maxPerComplication": 40
-    },
-    "veryHighPowered": {
-      "totalPoints": 650,
-      "matchingComplications": 100,
-      "maxPerComplication": 50
-    },
-    "cosmicallyPowerful": {
-      "totalPoints": 9999,
-      "matchingComplications": 9999,
-      "maxPerComplication": 9999
-    }
+  {
+    "category": "normal",
+    "name": "competent",
+    "totalPoints": 100,
+    "matchingComplications": 30,
+    "maxPerComplication": 20
+  },
+  {
+    "category": "heroic",
+    "name": "standard",
+    "totalPoints": 175,
+    "matchingComplications": 50,
+    "maxPerComplication": 25
+  },
+  {
+    "category": "heroic",
+    "name": "powerful",
+    "totalPoints": 225,
+    "matchingComplications": 50,
+    "maxPerComplication": 25
+  },
+  {
+    "category": "heroic",
+    "name": "veryPowerful",
+    "totalPoints": 275,
+    "matchingComplications": 50,
+    "maxPerComplication": 30
+  },
+  {
+    "category": "superheroic",
+    "name": "lowPowered",
+    "totalPoints": 300,
+    "matchingComplications": 60,
+    "maxPerComplication": 35
+  },
+  {
+    "category": "superheroic",
+    "name": "standard",
+    "totalPoints": 400,
+    "matchingComplications": 75,
+    "maxPerComplication": 40
+  },
+  {
+    "category": "superheroic",
+    "name": "highPowered",
+    "totalPoints": 500,
+    "matchingComplications": 75,
+    "maxPerComplication": 40
+  },
+  {
+    "category": "superheroic",
+    "name": "veryHighPowered",
+    "totalPoints": 650,
+    "matchingComplications": 100,
+    "maxPerComplication": 50
+  },
+  {
+    "category": "superheroic",
+    "name": "cosmicallyPowerful",
+    "totalPoints": "infinity",
+    "matchingComplications": "infinity",
+    "maxPerComplication": "infinity"
   }
-}
+]

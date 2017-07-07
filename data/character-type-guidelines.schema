@@ -1,0 +1,46 @@
+{
+  "id": "/data/character-type-guidelines.schema",
+  "description": "Guidelines for the character types allowable in a campaign",
+  "definitions": {
+    "limit": {
+      "oneOf": [
+        {
+          "type": "integer",
+          "minimum": 0
+        },
+        {
+          "type": "string",
+          "enum": ["infinity"]
+        }
+      ]
+    }
+  },
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["name", "category", "totalPoints", "matchingComplications", "maxPerComplication"],
+    "properties": {
+      "name": {
+        "description": "Name of the guideline",
+        "type": "string"
+      },
+      "category": {
+        "description": "Category the guideline belongs to",
+        "type": "string"
+      },
+      "totalPoints": {
+        "description": "Total number of character points allowed",
+        "$ref": "#/definitions/limit"
+      },
+      "matchingComplications": {
+        "description": "Character points allowed from complications",
+        "$ref": "#/definitions/limit"
+      },
+      "maxPerComplication": {
+        "description": "Maximum character points allowed from a single complication",
+        "$ref": "#/definitions/limit"
+      }
+    },
+    "additionalProperties": false
+  }
+}
