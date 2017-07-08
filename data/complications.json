@@ -18,9 +18,9 @@
     "name": "dependence",
     "reference": "6E1 419",
     "easeToObtain": {
-      "Very Common or Easy to Obtain": 5,
-      "Common or Difficult to Obtain": 10,
-      "Uncommon or Extremely Difficult to Obtain": 15
+      "Very Common": 5,
+      "Common": 10,
+      "Uncommon": 15
     },
     "effect": {
       "1d6 Damage": 5,
@@ -40,22 +40,22 @@
       "20 minutes": 0,
       "1 hour": -5,
       "6 hours": -10,
-      "1 day": -15,
-      "addiction": 5
-    }
+      "1 day": -15
+    },
+    "addiction": 5
   },
   {
     "name": "dependentNonPlayerCharacter",
     "abbreviation": "DNPC",
     "reference": "6E1 420",
     "capability": {
-      "Incompetent (-20 character points or lower)": 10,
+      "Incompetent": 10,
       "Normal": 5,
-      "Slightly Less Powerful than the Character": 0,
-      "As Powerful as the Character": -5
+      "Slightly Less Powerful": 0,
+      "As Powerful": -5
     },
     "usefulNoncombatPositionOrSkills": -5,
-    "unawareOfCharactersSecretIdentity": 5
+    "unawareOfSecretIdentity": 5
   },
   {
     "name": "distinctiveFeatures",
@@ -70,10 +70,10 @@
       "Major Reaction": 5,
       "Extreme Reaction": 10
     },
-    "sensing": {
-      "Detectable by Commonly-Used Senses": 0,
-      "Detectable by Uncommonly-Used Senses": -5,
-      "Detectable only by Unusual Senses": -10
+    "detectable": {
+      "Common Senses": 0,
+      "Uncommon Senses": -5,
+      "Unusual Senses": -10
     },
     "notDistinctiveInSomeCulturesOrSocieties": -5
   },
@@ -117,6 +117,128 @@
       "Watched": -10,
       "Mildly Punish": -5,
       "Harshly Punish": 0
+    }
+  },
+  {
+    "name": "negativeReputation",
+    "reference": "6E1 424",
+    "frequency": {
+      "Infrequently": 5,
+      "Frequently": 10,
+      "Very Frequently": 15
+    },
+    "extremeNegativeReputation": 5,
+    "knownOnlyToSmallGroup": -5
+  },
+  {
+    "name": "physicalComplication",
+    "reference": "6E1 425",
+    "frequency": {
+      "Infrequently": 5,
+      "Frequently": 10,
+      "Very Frequently": 15,
+      "All The Time": 20
+    },
+    "degreeOfImpairment": {
+      "Barely": 0,
+      "Slightly": 5,
+      "Greatly": 10,
+      "Fully": 15
+    }
+  },
+  {
+    "name": "psychologicalComplication",
+    "reference": "6E1 425",
+    "frequency": {
+      "Uncommon": 5,
+      "Common": 10,
+      "Very Common": 15
+    },
+    "intensity": {
+      "Moderate": 0,
+      "Strong": 5,
+      "Total": 10
+    }
+  },
+  {
+    "name": "rivalry",
+    "reference": "6E1 426",
+    "situation": {
+      "Professional": 5,
+      "Romantic": 5,
+      "Professional and Romantic": 10
+    },
+    "authority": {
+      "Less Powerful": -5,
+      "More Powerful": 5,
+      "Significantly More Powerful": 10
+    },
+    "rivalIsPlayerCharacter": 5,
+    "harmOrKill": 5,
+    "rivalIsUnaware": -5
+  },
+  {
+    "name": "socialComplication",
+    "reference": "6E1 428",
+    "frequency": {
+      "Infrequently": 5,
+      "Frequently": 10,
+      "Very Frequently": 15
+    },
+    "effects": {
+      "Minor": 0,
+      "Major": 5,
+      "Severe": 10
+    },
+    "notLimitingInSomeCultures": -5
+  },
+  {
+    "name": "susceptibility",
+    "reference": "6E1 429",
+    "frequency": {
+      "Uncommon": 5,
+      "Common": 10,
+      "Very Common": 15
+    },
+    "takeDamage": {
+      "Once": 0,
+      "Segment": 15,
+      "Phase": 10,
+      "Turn": 5,
+      "Minute": 0,
+      "5 Minutes": -5,
+      "20 Minutes": -10,
+      "1 Hour": -15,
+      "6 Hours": -20,
+      "1 Day": -25
+    },
+    "damageAmount": {
+      "1d6": 0,
+      "2d6": 5,
+      "3d6": 10
+    },
+  },
+  {
+    "name": "unluck",
+    "reference": "6E1 430",
+    "amount": {
+      "1d6": 5,
+      "2d6": 10,
+      "3d6": 15,
+      "4d6": 20,
+      "5d6": 25
+    }
+  },
+  {
+    "name": "vulnerability",
+    "reference": "6E1 431",
+    "commonality": {
+      "Uncommon 1.5x Damage": 5,
+      "Uncommon 2x Damage": 10,
+      "Common 1.5x Damage": 10,
+      "Common 2x Damage": 20,
+      "Very Common 1.5x Damage": 15,
+      "Very Common 2x Damage": 30
     }
   }
 ]
