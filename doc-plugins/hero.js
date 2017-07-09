@@ -1,9 +1,6 @@
 /**
  * @overview Converts the `@hero` JSDoc tag into the equivalent `@see` tag.
  * @module doc-plugins/hero
- *
- * @example
- *
  */
 
 function replacer(match, heroNotation, volume, page, description) {
@@ -15,11 +12,17 @@ function replacer(match, heroNotation, volume, page, description) {
     volumeDescription = "Combat and Adventuring"
   }
 
-  return `@see **HERO System 6th Edition Rules** volume ${volume} "${volumeDescription}" page ${page} &mdash; _${description}_`
+  let result = `@see **HERO System 6th Edition Rules** volume ${volume} "${volumeDescription}" page ${page}`
+
+  if (description && description.trim().length > 0) {
+    result += ` &mdash; _${description.trim()}_`
+  }
+
+  return result
 }
 
 exports.handlers = {
   beforeParse: function (e) {
-    e.source = e.source.replace(/@hero (6E([12]) (\d+)) ([^\n]*)/g, replacer)
+    e.source = e.source.replace(/@hero (6E([12]) (\d+))(.*)/g, replacer)
   }
 }
