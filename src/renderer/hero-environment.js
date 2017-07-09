@@ -57,13 +57,16 @@ export default class HeroEnvironment {
   /**
    * Gets static application data.
    *
+   * Converts from an array to a named map for faster access of values.
+   *
    * @param {String} name Name of the piece of data to retrieve.
    * @return {Object} Data
    */
   getData (name) {
     const dataPath = this.getDataPath(name)
+    const data = JSON.parse(fs.readFileSync(dataPath))
 
-    return JSON.parse(fs.readFileSync(dataPath))
+    return this.arrayToNamedMap(data)
   }
 
   /**
@@ -84,6 +87,16 @@ export default class HeroEnvironment {
 
   addDefaultEditors () {
     this.editors.add(CharacterEditor)
+  }
+
+  arrayToNamedMap (data) {
+    let obj = {}
+
+    data.forEach((item) => {
+      obj[item.name] = item
+    })
+
+    return obj
   }
 
   getDataPath (file) {

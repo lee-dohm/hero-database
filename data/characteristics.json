@@ -1,5 +1,6 @@
-{
-  "strength": {
+[
+  {
+    "name": "strength",
     "abbrev": "STR",
     "base": 10,
     "cost": {
@@ -10,7 +11,8 @@
     },
     "primary": true
   },
-  "dexterity": {
+  {
+    "name": "dexterity",
     "abbrev": "DEX",
     "base": 10,
     "cost": {
@@ -21,7 +23,8 @@
     },
     "primary": true
   },
-  "constitution": {
+  {
+    "name": "constitution",
     "abbrev": "CON",
     "base": 10,
     "cost": {
@@ -32,7 +35,8 @@
     },
     "primary": true
   },
-  "intelligence": {
+  {
+    "name": "intelligence",
     "abbrev": "INT",
     "base": 10,
     "cost": {
@@ -43,7 +47,8 @@
     },
     "primary": true
   },
-  "ego": {
+  {
+    "name": "ego",
     "abbrev": "EGO",
     "base": 10,
     "cost": {
@@ -54,7 +59,8 @@
     },
     "primary": true
   },
-  "presence": {
+  {
+    "name": "presence",
     "abbrev": "PRE",
     "base": 10,
     "cost": {
@@ -65,7 +71,8 @@
     },
     "primary": true
   },
-  "offensiveCombatValue": {
+  {
+    "name": "offensiveCombatValue",
     "abbrev": "OCV",
     "base": 3,
     "cost": {
@@ -75,7 +82,8 @@
       "benefit": "Offensive Combat Value"
     }
   },
-  "defensiveCombatValue": {
+  {
+    "name": "defensiveCombatValue",
     "abbrev": "DCV",
     "base": 3,
     "cost": {
@@ -85,7 +93,8 @@
       "benefit": "Defensive Combat Value"
     }
   },
-  "offensiveMentalCombatValue": {
+  {
+    "name": "offensiveMentalCombatValue",
     "abbrev": "OMCV",
     "base": 3,
     "cost": {
@@ -95,7 +104,8 @@
       "benefit": "Offensive Mental Combat Value"
     }
   },
-  "defensiveMentalCombatValue": {
+  {
+    "name": "defensiveMentalCombatValue",
     "abbrev": "DMCV",
     "base": 3,
     "cost": {
@@ -105,7 +115,8 @@
       "benefit": "Defensive Mental Combat Value"
     }
   },
-  "speed": {
+  {
+    "name": "speed",
     "abbrev": "SPD",
     "base": 2,
     "cost": {
@@ -115,7 +126,8 @@
       "benefit": "Speed"
     }
   },
-  "physicalDefense": {
+  {
+    "name": "physicalDefense",
     "abbrev": "PD",
     "base": 2,
     "cost": {
@@ -125,7 +137,8 @@
       "benefit": "Physical Defense"
     }
   },
-  "energyDefense": {
+  {
+    "name": "energyDefense",
     "abbrev": "ED",
     "base": 2,
     "cost": {
@@ -135,7 +148,8 @@
       "benefit": "Energy Defense"
     }
   },
-  "recovery": {
+  {
+    "name": "recovery",
     "abbrev": "REC",
     "base": 4,
     "cost": {
@@ -145,7 +159,8 @@
       "benefit": "Recovery"
     }
   },
-  "endurance": {
+  {
+    "name": "endurance",
     "abbrev": "END",
     "base": 20,
     "cost": {
@@ -155,7 +170,8 @@
       "benefit": "Endurance"
     }
   },
-  "body": {
+  {
+    "name": "body",
     "abbrev": "BODY",
     "base": 10,
     "cost": {
@@ -165,7 +181,8 @@
       "benefit": "Body"
     }
   },
-  "stun": {
+  {
+    "name": "stun",
     "abbrev": "STUN",
     "base": 20,
     "cost": {
@@ -175,4 +192,4 @@
       "benefit": "Stun"
     }
   }
-}
+]
