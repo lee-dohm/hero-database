@@ -12,15 +12,19 @@ I've been a huge fan of [HERO Games][hero-games] and the HERO System since the o
 
 If you like what you see here and want to help in a monetary fashion, go to the [HERO Games store][hero-games] and buy something! (The [Basic Rulebook][basic-rulebook] is only 15USD in PDF format.) I want to see HERO Games last a long, long time :grinning:
 
-## Hero Designer
-
-There is an official product from HERO Games called [Hero Designer][hero-designer] that already does what this application is planned to do and probably more. Hero Database isn't meant to be a competitor to Hero Designer, more of an alternative and an experiment for me.
-
 ## Ruleset
 
 This application is designed to work with the [HERO System 6th Edition rules][sixth-edition].
 
 Where the rules state that something is allowed with "GM permission", the code assumes that it is allowed since a GM will be using this application far more often than a regular player for creating all the non-player characters in the game setting. Optional and house rules will be made possible through the use of configuration files.
+
+### References
+
+While the application, in order to provide its planned capabilities, must provide some implementation of the game system's rules, as much as possible the code, documentation, data files, and help text will refer to the rules themselves for any additional information. In this way I hope to avoid people being able to use Hero Database in lieu of purchasing the rules themselves. References follow the format laid out in `6E1 13 Abbreviations`.
+
+## Hero Designer
+
+There is an official product from HERO Games called [Hero Designer][hero-designer] that already does what this application is planned to do and probably more. Hero Database isn't meant to be a competitor to Hero Designer, more of an alternative and an experiment for me.
 
 ## Copyright
 
