@@ -4,9 +4,9 @@
   "description": "Shared definitions for other Hero Database schemas",
   "definitions": {
     "reference": {
-      "description": "Location in the rulebooks",
+      "description": "Reference to the rulebooks",
       "type": "string",
-      "pattern": "^6E[12] \\d+$"
+      "pattern": "^6E[12] \\d+( .*)?$"
     },
     "selectListInteger": {
       "type": "object",
