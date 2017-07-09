@@ -16,7 +16,7 @@ If you like what you see here and want to help in a monetary fashion, go to the 
 
 This application is designed to work with the [HERO System 6th Edition rules][sixth-edition].
 
-Where the rules state that something is allowed with "GM permission", the code assumes that it is allowed since a GM will be using this application far more often than a regular player for creating all the non-player characters in the game setting. Optional and house rules will be made possible through the use of configuration files.
+Where the rules state that something is allowed with "GM permission", the code assumes that it is allowed since a GM will be using this application far more often than a player for creating all the non-player characters in the game setting. Optional and house rules will be made possible through the use of configuration files.
 
 ### References
 
