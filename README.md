@@ -1,5 +1,6 @@
 # Hero Database
 
+[![Build Status](https://travis-ci.org/lee-dohm/hero-database.svg?branch=master)](https://travis-ci.org/lee-dohm/hero-database)
 [![Standard - JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 
 An application for streamlining the HERO System character creation process and storing all of your characters.
