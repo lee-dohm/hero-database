@@ -5,7 +5,7 @@
   "definitions": {
     "characteristic": {
       "type": "object",
-      "required": ["abbrev", "base", "multiplier", "description"],
+      "required": ["abbrev", "base", "multiplier"],
       "properties": {
         "abbrev": {
           "type": "string"
@@ -15,9 +15,6 @@
         },
         "multiplier": {
           "type": "number"
-        },
-        "description": {
-          "type": "string"
         },
         "primary": {
           "type": "boolean"

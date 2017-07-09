@@ -3,108 +3,91 @@
     "abbrev": "STR",
     "base": 10,
     "multiplier": 1,
-    "description": "Indicates a character's lifting ability and base HTH damage",
     "primary": true
   },
   "dexterity": {
     "abbrev": "DEX",
     "base": 10,
     "multiplier": 2,
-    "description": "Determines who acts first in combat and provides DEX-based Skill Rolls",
     "primary": true
   },
   "constitution": {
     "abbrev": "CON",
     "base": 10,
     "multiplier": 1,
-    "description": "Determines if a character is Stunned in combat and provides CON Rolls",
     "primary": true
   },
   "intelligence": {
     "abbrev": "INT",
     "base": 10,
     "multiplier": 1,
-    "description": "Provides Perception Rolls and INT-based Skill Rolls",
     "primary": true
   },
   "ego": {
     "abbrev": "EGO",
     "base": 10,
     "multiplier": 1,
-    "description": "Determines character's resistance to most Mental Powers, provides EGO Rolls",
     "primary": true
   },
   "presence": {
     "abbrev": "PRE",
     "base": 10,
     "multiplier": 1,
-    "description": "Allows character to make Presence Attacks, provides PRE-based Skill Rolls",
     "primary": true
   },
   "offensiveCombatValue": {
     "abbrev": "OCV",
     "base": 3,
-    "multiplier": 5,
-    "description": "Indicates the character's accuracy in combat"
+    "multiplier": 5
   },
   "defensiveCombatValue": {
     "abbrev": "DCV",
     "base": 3,
-    "multiplier": 5,
-    "description": "Indicates how hard it is to hit the character in combat"
+    "multiplier": 5
   },
   "offensiveMentalCombatValue": {
     "abbrev": "OMCV",
     "base": 3,
-    "multiplier": 3,
-    "description": "Indicates the character's accuracy in Mental combat"
+    "multiplier": 3
   },
   "defensiveMentalCombatValue": {
     "abbrev": "DMCV",
     "base": 3,
-    "multiplier": 3,
-    "description": "Indicates how hard it is to hit the character in Mental combat"
+    "multiplier": 3
   },
   "speed": {
     "abbrev": "SPD",
     "base": 2,
-    "multiplier": 10,
-    "description": "Determines how frequently the character gets to act in each Turn of combat"
+    "multiplier": 10
   },
   "physicalDefense": {
     "abbrev": "PD",
     "base": 2,
-    "multiplier": 1,
-    "description": "Protects the character from Physical attacks (such as punches and clubs)"
+    "multiplier": 1
   },
   "energyDefense": {
     "abbrev": "ED",
     "base": 2,
-    "multiplier": 1,
-    "description": "Protects the character from Energy attacks (such as fire and lasers)"
+    "multiplier": 1
   },
   "recovery": {
     "abbrev": "REC",
     "base": 4,
-    "multiplier": 1,
-    "description": "Indicates how quickly the character recovers from being Knocked Out or injured"
+    "multiplier": 1
   },
   "endurance": {
     "abbrev": "END",
     "base": 20,
-    "multiplier": 0.2,
-    "description": "The \"personal energy\" that \"fuels\" many abilities and powers"
+    "multiplier": 0.2
   },
   "body": {
     "abbrev": "BODY",
     "base": 10,
-    "multiplier": 1,
-    "description": "Indicates how hard it is to kill the character"
+    "multiplier": 1
   },
   "stun": {
     "abbrev": "STUN",
     "base": 20,
-    "multiplier": 0.5,
-    "description": "Indicates how hard it is to Knock Out the character"
+    "multiplier": 0.5
   }
 }
