@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# script/data-lint: Runs a lint process on the data files and their schemas.
+
+set -e
+
+cd "$(dirname "$0")/.."
+
+echo "==> Validating JSON data files..."
+for f in data/*.json; do
+  BASENAME=$(basename $f .json)
+  ./node_modules/.bin/ajv validate -s data/$BASENAME.schema -d data/$BASENAME.json -r data/definitions.schema
+done

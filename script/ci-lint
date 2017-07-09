@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# script/lint: Runs a lint process on the code.
+
+set -e
+
+cd "$(dirname "$0")/.."
+
+script/lint
+script/data-lint
+
+echo "==> Validating licenses of dependencies..."
+./node_modules/.bin/licensee --errors-only

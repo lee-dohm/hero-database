@@ -1,0 +1,17 @@
+#!/bin/sh
+
+# script/build: Build the application.
+
+set -e
+
+cd "$(dirname "$0")/.."
+
+script/bootstrap
+script/ci-lint
+
+export ELECTRON_PATH=./node_modules/.bin/electron
+export HERO_DATABASE_HOME=.
+
+echo "==> Running tests..."
+
+./node_modules/.bin/electron-mocha --renderer
