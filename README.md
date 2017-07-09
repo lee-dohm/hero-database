@@ -22,6 +22,10 @@ Where the rules state that something is allowed with "GM permission", the code a
 
 While the application, in order to provide its planned capabilities, must provide some implementation of the game system's rules, as much as possible the code, documentation, data files, and help text will refer to the rules themselves for any additional information. In this way I hope to avoid people being able to use Hero Database in lieu of purchasing the rules themselves. References follow the format laid out in `6E1 13 Abbreviations`.
 
+### Definitions
+
+For definitions of terms or abbreviations, see `6E1 22 Glossary`.
+
 ## Hero Designer
 
 There is an official product from HERO Games called [Hero Designer][hero-designer] that already does what this application is planned to do and probably more. Hero Database isn't meant to be a competitor to Hero Designer, more of an alternative and an experiment for me.
