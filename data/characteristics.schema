@@ -5,7 +5,7 @@
   "definitions": {
     "characteristic": {
       "type": "object",
-      "required": ["abbrev", "base", "multiplier"],
+      "required": ["abbrev", "base", "cost"],
       "properties": {
         "abbrev": {
           "type": "string"
@@ -13,8 +13,8 @@
         "base": {
           "type": "integer"
         },
-        "multiplier": {
-          "type": "number"
+        "cost": {
+          "$ref": "definitions.schema#/definitions/pointsPerCost"
         },
         "primary": {
           "type": "boolean"

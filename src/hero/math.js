@@ -3,6 +3,28 @@
  */
 export default class HeroMath {
   /**
+   * Calculates the cost of a given value of a characteristic.
+   *
+   * Paying points for characteristics doesn't round the same way as other things since _all
+   * fractions_ (not just from 0.5) should be rounded up to the nearest whole value. Additionally,
+   * characteristics below zero aren't allowed for the purposes of the cost calculation.
+   *
+   * @param {Number} value Value of the characteristic
+   * @param {Object} info Info for the specific characteristic from `data/characteristics.json`
+   * @return {Number} Cost of the given value
+   * @throws {RangeError} When `value` is negative
+   * @hero 6E1 40 Buying less than the full amount
+   * @hero 6E1 47 Reducing Characteristics
+   */
+  static characteristicCost (value, info) {
+    if (value < 0) {
+      throw new RangeError(`Characteristics cannot be negative when calculating cost: ${info.abbrev} ${value}`)
+    }
+
+    return Math.ceil((value - info.base) * info.cost.pointsPer / info.cost.amount)
+  }
+
+  /**
    * Determines the number to roll or less from a characteristic using the standard HERO formula.
    *
    * The standard formula is `9 + (CHAR/5)`.

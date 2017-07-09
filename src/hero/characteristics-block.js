@@ -1,3 +1,4 @@
+import HeroMath from './math'
 import Model from './model'
 
 /**
@@ -67,7 +68,7 @@ export default class CharacteristicsBlock extends Model {
   getCost (char) {
     const info = this.heroEnv.getData('characteristics')
 
-    return (this[char] - info[char].base) * info[char].multiplier
+    return HeroMath.characteristicCost(this[char], info[char])
   }
 
   /**

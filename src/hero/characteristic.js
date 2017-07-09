@@ -28,7 +28,7 @@ export default class Characteristic {
    * Returns the cost of the characteristic in Character Points as a {Number}
    */
   get cost () {
-    return (this.value - this.info.base) * this.info.multiplier
+    return this.character.characteristics.getCost(this.charName)
   }
 
   /**

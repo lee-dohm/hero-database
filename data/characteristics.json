@@ -2,92 +2,177 @@
   "strength": {
     "abbrev": "STR",
     "base": 10,
-    "multiplier": 1,
+    "cost": {
+      "type": "pointsPerAmount",
+      "pointsPer": 1,
+      "amount": 1,
+      "benefit": "Strength"
+    },
     "primary": true
   },
   "dexterity": {
     "abbrev": "DEX",
     "base": 10,
-    "multiplier": 2,
+    "cost": {
+      "type": "pointsPerAmount",
+      "pointsPer": 2,
+      "amount": 1,
+      "benefit": "Dexterity"
+    },
     "primary": true
   },
   "constitution": {
     "abbrev": "CON",
     "base": 10,
-    "multiplier": 1,
+    "cost": {
+      "type": "pointsPerAmount",
+      "pointsPer": 1,
+      "amount": 1,
+      "benefit": "Constitution"
+    },
     "primary": true
   },
   "intelligence": {
     "abbrev": "INT",
     "base": 10,
-    "multiplier": 1,
+    "cost": {
+      "type": "pointsPerAmount",
+      "pointsPer": 1,
+      "amount": 1,
+      "benefit": "Intelligence"
+    },
     "primary": true
   },
   "ego": {
     "abbrev": "EGO",
     "base": 10,
-    "multiplier": 1,
+    "cost": {
+      "type": "pointsPerAmount",
+      "pointsPer": 1,
+      "amount": 1,
+      "benefit": "Ego"
+    },
     "primary": true
   },
   "presence": {
     "abbrev": "PRE",
     "base": 10,
-    "multiplier": 1,
+    "cost": {
+      "type": "pointsPerAmount",
+      "pointsPer": 1,
+      "amount": 1,
+      "benefit": "Presence"
+    },
     "primary": true
   },
   "offensiveCombatValue": {
     "abbrev": "OCV",
     "base": 3,
-    "multiplier": 5
+    "cost": {
+      "type": "pointsPerAmount",
+      "pointsPer": 5,
+      "amount": 1,
+      "benefit": "Offensive Combat Value"
+    }
   },
   "defensiveCombatValue": {
     "abbrev": "DCV",
     "base": 3,
-    "multiplier": 5
+    "cost": {
+      "type": "pointsPerAmount",
+      "pointsPer": 5,
+      "amount": 1,
+      "benefit": "Defensive Combat Value"
+    }
   },
   "offensiveMentalCombatValue": {
     "abbrev": "OMCV",
     "base": 3,
-    "multiplier": 3
+    "cost": {
+      "type": "pointsPerAmount",
+      "pointsPer": 3,
+      "amount": 1,
+      "benefit": "Offensive Mental Combat Value"
+    }
   },
   "defensiveMentalCombatValue": {
     "abbrev": "DMCV",
     "base": 3,
-    "multiplier": 3
+    "cost": {
+      "type": "pointsPerAmount",
+      "pointsPer": 3,
+      "amount": 1,
+      "benefit": "Defensive Mental Combat Value"
+    }
   },
   "speed": {
     "abbrev": "SPD",
     "base": 2,
-    "multiplier": 10
+    "cost": {
+      "type": "pointsPerAmount",
+      "pointsPer": 10,
+      "amount": 1,
+      "benefit": "Speed"
+    }
   },
   "physicalDefense": {
     "abbrev": "PD",
     "base": 2,
-    "multiplier": 1
+    "cost": {
+      "type": "pointsPerAmount",
+      "pointsPer": 1,
+      "amount": 1,
+      "benefit": "Physical Defense"
+    }
   },
   "energyDefense": {
     "abbrev": "ED",
     "base": 2,
-    "multiplier": 1
+    "cost": {
+      "type": "pointsPerAmount",
+      "pointsPer": 1,
+      "amount": 1,
+      "benefit": "Energy Defense"
+    }
   },
   "recovery": {
     "abbrev": "REC",
     "base": 4,
-    "multiplier": 1
+    "cost": {
+      "type": "pointsPerAmount",
+      "pointsPer": 1,
+      "amount": 1,
+      "benefit": "Recovery"
+    }
   },
   "endurance": {
     "abbrev": "END",
     "base": 20,
-    "multiplier": 0.2
+    "cost": {
+      "type": "pointsPerAmount",
+      "pointsPer": 1,
+      "amount": 5,
+      "benefit": "Endurance"
+    }
   },
   "body": {
     "abbrev": "BODY",
     "base": 10,
-    "multiplier": 1
+    "cost": {
+      "type": "pointsPerAmount",
+      "pointsPer": 1,
+      "amount": 1,
+      "benefit": "Body"
+    }
   },
   "stun": {
     "abbrev": "STUN",
     "base": 20,
-    "multiplier": 0.5
+    "cost": {
+      "type": "pointsPerAmount",
+      "pointsPer": 1,
+      "amount": 2,
+      "benefit": "Stun"
+    }
   }
 }

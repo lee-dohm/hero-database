@@ -20,6 +20,8 @@ There is an official product from HERO Games called [Hero Designer][hero-designe
 
 This application is designed to work with the [HERO System 6th Edition rules][sixth-edition].
 
+Where the rules state that something is allowed with "GM permission", the code assumes that it is allowed since a GM will be using this application far more often than a regular player for creating all the non-player characters in the game setting. Optional and house rules will be made possible through the use of configuration files.
+
 ## Copyright
 
 The contents of this repository are copyright &copy; 2016-2017 by [Lee Dohm](http://www.lee-dohm.com). See [LICENSE][license] for details.

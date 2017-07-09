@@ -1,5 +1,6 @@
 import '../support'
 
+import HeroEnvironment from '../../src/renderer/hero-environment'
 import HeroMath from '../../src/hero/math'
 
 describe('HeroMath', function () {
@@ -52,6 +53,38 @@ describe('HeroMath', function () {
 
     it('gives a roll of 12 for a value of 15', function () {
       expect(HeroMath.characteristicRoll(15)).to.equal(12)
+    })
+  })
+
+  describe('characteristicCost', function () {
+    let heroEnv
+    let info
+
+    beforeEach(function () {
+      heroEnv = new HeroEnvironment()
+      info = heroEnv.getData('characteristics')
+    })
+
+    it('returns zero for a base characteristic value', function () {
+      expect(HeroMath.characteristicCost(10, info['strength'])).to.equal(0)
+    })
+
+    it('returns the appropriate amount for a value above the base', function () {
+      expect(HeroMath.characteristicCost(20, info['strength'])).to.equal(10)
+    })
+
+    it('returns a negative cost for values below the base', function () {
+      expect(HeroMath.characteristicCost(5, info['strength'])).to.equal(-5)
+    })
+
+    it('throws an error for a characteristic below 0', function () {
+      expect(() => {
+        HeroMath.characteristicCost(-1, info['strength'])
+      }).to.throw(RangeError)
+    })
+
+    it('rounds up all fractional costs to the nearest whole number of character points', function () {
+      expect(HeroMath.characteristicCost(21, info['endurance'])).to.equal(1)
     })
   })
 })
