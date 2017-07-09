@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "id": "http://www.lee-dohm.com/hero-database/data/definitions.schema",
+  "description": "Shared definitions for other Hero Database schemas",
+  "definitions": {
+    "reference": {
+      "description": "Location in the rulebooks",
+      "type": "string",
+      "pattern": "^6E[12] \\d+$"
+    }
+  }
+}
