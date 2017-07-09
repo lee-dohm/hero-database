@@ -18,7 +18,9 @@ export default class HeroMath {
    */
   static characteristicCost (value, info) {
     if (value < 0) {
-      throw new RangeError(`Characteristics cannot be negative when calculating cost: ${info.abbrev} ${value}`)
+      throw new RangeError(
+        `Characteristics cannot be negative when calculating cost: ${info.abbrev} ${value}`
+      )
     }
 
     return Math.ceil((value - info.base) * info.cost.pointsPer / info.cost.amount)
@@ -56,15 +58,10 @@ export default class HeroMath {
       throw new Error('Direction parameter is required')
     }
 
-    let sign = 1
-
-    if (number < 0) {
-      sign = -1
-    }
-
-    let magnitude = Math.abs(number)
+    const sign = number < 0 ? -1 : 1
+    const magnitude = Math.abs(number)
+    const fracDigit = this.getFirstDecimalDigit(magnitude)
     let integer = Math.floor(magnitude)
-    let fracDigit = this.getFirstDecimalDigit(magnitude)
 
     if (fracDigit > 5) {
       integer += 1
