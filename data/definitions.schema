@@ -158,7 +158,7 @@
       ]
     },
     "icon": {
-      "description": "Icon to display next to the talent in listings",
+      "description": "Icon to display next to the ability in listings",
       "type": "string",
       "enum": ["alert", "stop"]
     }
