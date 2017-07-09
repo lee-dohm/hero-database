@@ -1,6 +1,7 @@
 [
   {
     "name": "strength",
+    "reference": "6E1 41",
     "abbrev": "STR",
     "base": 10,
     "cost": {
@@ -13,6 +14,7 @@
   },
   {
     "name": "dexterity",
+    "reference": "6E1 44",
     "abbrev": "DEX",
     "base": 10,
     "cost": {
@@ -25,6 +27,7 @@
   },
   {
     "name": "constitution",
+    "reference": "6E1 44",
     "abbrev": "CON",
     "base": 10,
     "cost": {
@@ -37,6 +40,7 @@
   },
   {
     "name": "intelligence",
+    "reference": "6E1 44",
     "abbrev": "INT",
     "base": 10,
     "cost": {
@@ -49,6 +53,7 @@
   },
   {
     "name": "ego",
+    "reference": "6E1 44",
     "abbrev": "EGO",
     "base": 10,
     "cost": {
@@ -61,6 +66,7 @@
   },
   {
     "name": "presence",
+    "reference": "6E1 45",
     "abbrev": "PRE",
     "base": 10,
     "cost": {
@@ -73,6 +79,7 @@
   },
   {
     "name": "offensiveCombatValue",
+    "reference": "6E1 45",
     "abbrev": "OCV",
     "base": 3,
     "cost": {
@@ -84,6 +91,7 @@
   },
   {
     "name": "defensiveCombatValue",
+    "reference": "6E1 45",
     "abbrev": "DCV",
     "base": 3,
     "cost": {
@@ -95,6 +103,7 @@
   },
   {
     "name": "offensiveMentalCombatValue",
+    "reference": "6E1 45",
     "abbrev": "OMCV",
     "base": 3,
     "cost": {
@@ -106,6 +115,7 @@
   },
   {
     "name": "defensiveMentalCombatValue",
+    "reference": "6E1 45",
     "abbrev": "DMCV",
     "base": 3,
     "cost": {
@@ -117,6 +127,7 @@
   },
   {
     "name": "speed",
+    "reference": "6E1 45",
     "abbrev": "SPD",
     "base": 2,
     "cost": {
@@ -128,6 +139,7 @@
   },
   {
     "name": "physicalDefense",
+    "reference": "6E1 46",
     "abbrev": "PD",
     "base": 2,
     "cost": {
@@ -139,6 +151,7 @@
   },
   {
     "name": "energyDefense",
+    "reference": "6E1 46",
     "abbrev": "ED",
     "base": 2,
     "cost": {
@@ -150,6 +163,7 @@
   },
   {
     "name": "recovery",
+    "reference": "6E1 46",
     "abbrev": "REC",
     "base": 4,
     "cost": {
@@ -161,6 +175,7 @@
   },
   {
     "name": "endurance",
+    "reference": "6E1 46",
     "abbrev": "END",
     "base": 20,
     "cost": {
@@ -172,6 +187,7 @@
   },
   {
     "name": "body",
+    "reference": "6E1 46",
     "abbrev": "BODY",
     "base": 10,
     "cost": {
@@ -183,6 +199,7 @@
   },
   {
     "name": "stun",
+    "reference": "6E1 46",
     "abbrev": "STUN",
     "base": 20,
     "cost": {

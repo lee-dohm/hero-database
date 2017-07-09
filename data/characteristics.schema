@@ -5,10 +5,13 @@
   "type": "array",
   "items": {
     "type": "object",
-    "required": ["name", "abbrev", "base", "cost"],
+    "required": ["name", "reference", "abbrev", "base", "cost"],
     "properties": {
       "name": {
         "type": "string"
+      },
+      "reference": {
+        "$ref": "definitions.schema#/definitions/reference"
       },
       "abbrev": {
         "type": "string"
