@@ -47,6 +47,7 @@ export default class CharacteristicsBlock extends Model {
    *
    * @param {String} char Name of the characteristic
    * @return {Number} Cost of the characteristic at its current value
+   * @see {@link HeroMath.characteristicCost}
    */
   getCost (char) {
     const info = this.heroEnv.getData('characteristics')
