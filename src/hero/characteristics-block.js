@@ -4,25 +4,8 @@ import Model from './model'
 /**
  * A block that represents information on the characteristics of the character.
  *
- * The characteristics are each available as a property and are:
- *
- * * `strength`
- * * `dexterity`
- * * `constitution`
- * * `intelligence`
- * * `ego`
- * * `presence`
- * * `offensiveCombatValue`
- * * `defensiveCombatValue`
- * * `offensiveMentalCombatValue`
- * * `defensiveMentalCombatValue`
- * * `speed`
- * * `physicalDefense`
- * * `energyDefense`
- * * `recovery`
- * * `endurance`
- * * `body`
- * * `stun`
+ * The characteristics are each available as a property. The list of characteristics is available in
+ * `data/characteristics.json`.
  *
  * @hero 6E1 40 Characteristics
  */
