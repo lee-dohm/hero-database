@@ -13,5 +13,8 @@
       "template": "./node_modules/ink-docstrap/template",
       "readme": "README.md",
       "recurse": true
+    },
+    "markdown": {
+      "smart": true
     }
 }

@@ -3,6 +3,7 @@
  * @module plugins/markdown
  * @author Michael Mathews <micmath@gmail.com>
  * @author Ben Blank <ben.blank@gmail.com>
+ * @author Lee Dohm
  */
 'use strict';
 
@@ -20,9 +21,17 @@ var defaultTags = [
     'see'
 ];
 var hasOwnProp = Object.prototype.hasOwnProperty;
-var parse = require('jsdoc/util/markdown').getParser();
 var tags = [];
 var excludeTags = [];
+var commonmark = require('commonmark');
+var reader = new commonmark.Parser(config);
+var writer = new commonmark.HtmlRenderer(config);
+
+var parse = function (text) {
+  var parsed = reader.parse(text);
+
+  return writer.render(parsed);
+}
 
 function shouldProcessString(tagName, text) {
     var shouldProcess = true;
