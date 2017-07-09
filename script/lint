@@ -12,7 +12,7 @@ echo "==> Linting JavaScript files..."
 echo "==> Validating JSON data files..."
 for f in data/*.json; do
   BASENAME=$(basename $f .json)
-  ./node_modules/.bin/ajv validate -s data/$BASENAME.schema -d data/$BASENAME.json
+  ./node_modules/.bin/ajv validate -s data/$BASENAME.schema -d data/$BASENAME.json -r data/definitions.schema
 done
 
 echo "==> Validating licenses of dependencies..."

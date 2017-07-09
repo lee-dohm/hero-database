@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "id": "http://www.lee-dohm.com/hero-database/data/talents.schema",
+  "description": "Definition of talents",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["name", "reference", "cost"],
+    "properties": {
+      "name": {
+        "description": "Name of the talent",
+        "type": "string"
+      },
+      "reference": {
+        "$ref": "definitions.schema#/definitions/reference"
+      },
+      "cost": {
+        "$ref": "definitions.schema#/definitions/cost"
+      },
+      "icon": {
+        "$ref": "definitions.schema#/definitions/icon"
+      },
+      "extraCostOptions": {
+        "description": "Multiple-selection list of extra cost options",
+        "type": "object",
+        "additionalProperties": {
+          "oneOf": [
+            {
+              "description": "Cost for option",
+              "type": "integer"
+            },
+            {
+              "$ref": "definitions.schema#/definitions/selectListInteger"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

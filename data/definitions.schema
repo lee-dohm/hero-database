@@ -7,6 +7,160 @@
       "description": "Location in the rulebooks",
       "type": "string",
       "pattern": "^6E[12] \\d+$"
+    },
+    "selectListInteger": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "integer"
+      }
+    },
+    "flatCost": {
+      "description": "Cost of character points for an ability",
+      "type": "object",
+      "required": ["type", "points"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["flat"]
+        },
+        "points": {
+          "type": "integer"
+        }
+      }
+    },
+    "selectCost": {
+      "description": "Single selection from a list of options",
+      "type": "object",
+      "required": ["type", "options"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["select"]
+        },
+        "options": {
+          "$ref": "#/definitions/selectListInteger"
+        }
+      }
+    },
+    "pointsPerCost": {
+      "description": "A number of character points per an amount of benefit",
+      "type": "object",
+      "required": ["type", "pointsPer", "amount", "benefit"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["pointsPerAmount"]
+        },
+        "pointsPer": {
+          "type": "integer"
+        },
+        "amount": {
+          "type": "integer"
+        },
+        "benefit": {
+          "type": "string"
+        }
+      }
+    },
+    "skillCost": {
+      "description": "Point cost for base ability and number of points for each increment of the ability",
+      "type": "object",
+      "required": ["type", "basePoints", "pointsPerIncrement"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["skill"]
+        },
+        "characteristicRoll": {
+          "type": "string",
+          "enum": [
+            "base",
+            "strength",
+            "dexterity",
+            "constitution",
+            "intelligence",
+            "ego",
+            "presence",
+            "perception"
+          ]
+        },
+        "basePoints": {
+          "type": "integer"
+        },
+        "pointsPerIncrement": {
+          "type": "integer"
+        }
+      }
+    },
+    "selectPointsPerCost": {
+      "description": "Select between benefits at a number of Character Points per amount of it",
+      "type": "object",
+      "required": ["type", "options"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["selectPointsPerAmount"]
+        },
+        "options": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "required": ["pointsPer", "amount", "benefit"],
+            "properties": {
+              "pointsPer": {
+                "type": "integer"
+              },
+              "amount": {
+                "type": "integer"
+              },
+              "benefit": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "variableCost": {
+      "description": "Enter your own point value",
+      "type": "object",
+      "required": ["type"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["variable"]
+        },
+        "maximum": {
+          "type": "integer"
+        }
+      }
+    },
+    "cost": {
+      "oneOf": [
+        {
+          "$ref": "#/definitions/flatCost"
+        },
+        {
+          "$ref": "#/definitions/selectCost"
+        },
+        {
+          "$ref": "#/definitions/pointsPerCost"
+        },
+        {
+          "$ref": "#/definitions/skillCost"
+        },
+        {
+          "$ref": "#/definitions/selectPointsPerCost"
+        },
+        {
+          "$ref": "#/definitions/variableCost"
+        }
+      ]
+    },
+    "icon": {
+      "description": "Icon to display next to the talent in listings",
+      "type": "string",
+      "enum": ["alert", "stop"]
     }
   }
 }

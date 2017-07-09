@@ -1,0 +1,303 @@
+[
+  {
+    "name": "absoluteRangeSense",
+    "reference": "6E1 110",
+    "cost": {
+      "type": "flat",
+      "points": 3
+    }
+  },
+  {
+    "name": "absoluteTimeSense",
+    "reference": "6E1 110",
+    "cost": {
+      "type": "flat",
+      "points": 3
+    }
+  },
+  {
+    "name": "ambidexterity",
+    "reference": "6E1 110",
+    "cost": {
+      "type": "select",
+      "options": {
+        "Off-Hand Penalty -2": 1,
+        "Off-Hand Penalty -1": 2,
+        "No Off-Hand Penalty": 3
+      }
+    }
+  },
+  {
+    "name": "animalFriendship",
+    "reference": "6E1 110",
+    "cost": {
+      "type": "flat",
+      "points": 20
+    }
+  },
+  {
+    "name": "bumpOfDirection",
+    "reference": "6E1 110",
+    "cost": {
+      "type": "flat",
+      "points": 3
+    }
+  },
+  {
+    "name": "combatLuck",
+    "reference": "6E1 110",
+    "cost": {
+      "type": "pointsPerAmount",
+      "pointsPer": 6,
+      "amount": 3,
+      "benefit": "points of Resistant Defense"
+    }
+  },
+  {
+    "name": "combatSense",
+    "reference": "6E1 111",
+    "cost": {
+      "type": "skill",
+      "characteristicRoll": "intelligence",
+      "basePoints": 15,
+      "pointsPerIncrement": 1
+    },
+    "extraCostOptions": {
+      "Make Ability a Sense": 2
+    }
+  },
+  {
+    "name": "dangerSense",
+    "reference": "6E1 111",
+    "icon": "stop",
+    "cost": {
+      "type": "skill",
+      "characteristicRoll": "perception",
+      "basePoints": 15,
+      "pointsPerIncrement": 1
+    },
+    "extraCostOptions": {
+      "Functions as a Sense": 2,
+      "Dangers Detected": {
+        "Perceive Dangers in Combat": 0,
+        "Perceive Dangers Out of Combat": 5,
+        "Perceive Dangers Always": 10
+      },
+      "Area Covered": {
+        "Self": 0,
+        "Immediate Vicinity": 5,
+        "General Area": 10,
+        "Danger to Anyone": 15
+      },
+      "Intuitional": -5
+    }
+  },
+  {
+    "name": "deadlyBlow",
+    "reference": "6E1 113",
+    "icon": "alert",
+    "cost": {
+      "type": "selectPointsPerAmount",
+      "options": {
+        "Very Limited": {
+          "pointsPer": 12,
+          "amount": 3,
+          "benefit": "DC"
+        },
+        "Limited": {
+          "pointsPer": 16,
+          "amount": 3,
+          "benefit": "DC"
+        },
+        "Broad": {
+          "pointsPer": 19,
+          "amount": 3,
+          "benefit": "DC"
+        }
+      }
+    }
+  },
+  {
+    "name": "doubleJointed",
+    "reference": "6E1 113",
+    "cost": {
+      "type": "flat",
+      "points": 4
+    }
+  },
+  {
+    "name": "eideticMemory",
+    "reference": "6E1 113",
+    "cost": {
+      "type": "flat",
+      "points": 5
+    }
+  },
+  {
+    "name": "environmentalMovement",
+    "reference": "6E1 113",
+    "cost": {
+      "type": "select",
+      "options": {
+        "2-point environment": 2,
+        "4-point environment": 4,
+        "6-point environment": 6
+      }
+    }
+  },
+  {
+    "name": "lightningCalculator",
+    "reference": "6E1 114",
+    "cost": {
+      "type": "flat",
+      "points": 3
+    }
+  },
+  {
+    "name": "lightningReflexes",
+    "reference": "6E1 114",
+    "cost": {
+      "type": "selectPointsPerAmount",
+      "options": {
+        "All Actions": {
+          "pointsPer": 1,
+          "amount": 1,
+          "benefit": "DEX bonus to act first"
+        },
+        "All HTH Attacks": {
+          "pointsPer": 1,
+          "amount": 2,
+          "benefit": "DEX bonus to act first"
+        },
+        "All Ranged Attacks": {
+          "pointsPer": 1,
+          "amount": 2,
+          "benefit": "DEX bonus to act first"
+        },
+        "Large Group of Actions": {
+          "pointsPer": 1,
+          "amount": 3,
+          "benefit": "DEX bonus to act first"
+        },
+        "Small Group of Actions": {
+          "pointsPer": 1,
+          "amount": 4,
+          "benefit": "DEX bonus to act first"
+        },
+        "Single Action": {
+          "pointsPer": 1,
+          "amount": 5,
+          "benefit": "DEX bonus to act first"
+        }
+      }
+    }
+  },
+  {
+    "name": "lightSleep",
+    "reference": "6E1 114",
+    "cost": {
+      "type": "flat",
+      "points": 3
+    }
+  },
+  {
+    "name": "offHandDefense",
+    "reference": "6E1 114",
+    "cost": {
+      "type": "flat",
+      "points": 2
+    }
+  },
+  {
+    "name": "perfectPitch",
+    "reference": "6E1 114",
+    "cost": {
+      "type": "flat",
+      "points": 3
+    }
+  },
+  {
+    "name": "resistance",
+    "reference": "6E1 114",
+    "cost": {
+      "type": "pointsPerAmount",
+      "pointsPer": 1,
+      "amount": 1,
+      "benefit": "+1 EGO Roll"
+    }
+  },
+  {
+    "name": "simulateDeath",
+    "reference": "6E1 115",
+    "cost": {
+      "type": "skill",
+      "characteristicRoll": "ego",
+      "basePoints": 3,
+      "pointsPerIncrement": 1
+    }
+  },
+  {
+    "name": "speedReading",
+    "reference": "6E1 115",
+    "cost": {
+      "type": "skill",
+      "basePoints": 4,
+      "pointsPerIncrement": 2
+    }
+  },
+  {
+    "name": "strikingAppearance",
+    "reference": "6E1 115",
+    "cost": {
+      "type": "selectPointsPerAmount",
+      "options": {
+        "All Characters": {
+          "pointsPer": 3,
+          "amount": 1,
+          "benefit": "bonus to Interaction Rolls and Presence Attacks"
+        },
+        "Specific Group": {
+          "pointsPer": 2,
+          "amount": 1,
+          "benefit": "bonus to Interaction Rolls and Presence Attacks"
+        }
+      }
+    }
+  },
+  {
+    "name": "universalTranslator",
+    "reference": "6E1 116",
+    "icon": "stop",
+    "cost": {
+      "type": "skill",
+      "characteristicRoll": "intelligence",
+      "basePoints": 20,
+      "pointsPerIncrement": 1
+    }
+  },
+  {
+    "name": "weaponMaster",
+    "reference": "6E1 113",
+    "icon": "alert",
+    "cost": {
+      "type": "selectPointsPerAmount",
+      "options": {
+        "Very Limited": {
+          "pointsPer": 12,
+          "amount": 3,
+          "benefit": "DC"
+        },
+        "Limited": {
+          "pointsPer": 20,
+          "amount": 3,
+          "benefit": "DC"
+        },
+        "Broad": {
+          "pointsPer": 24,
+          "amount": 3,
+          "benefit": "DC"
+        }
+      }
+    }
+  }
+]
