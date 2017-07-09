@@ -19,7 +19,7 @@ export default class HeroMath {
   static characteristicCost (value, info) {
     if (value < 0) {
       throw new RangeError(
-        `Characteristics cannot be negative when calculating cost: ${info.abbrev} ${value}`
+        `Characteristics cannot be negative when calculating cost: ${info.name} = ${value}`
       )
     }
 
