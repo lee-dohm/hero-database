@@ -3,6 +3,20 @@
  */
 export default class HeroMath {
   /**
+   * Calculates the active cost of an ability based on the base cost plus advantages.
+   *
+   * @param {Number} baseCost Base cost of the ability
+   * @param {Array<Number>} advantages List of advantages applied
+   * @return {Number} Active cost of the ability
+   * @hero 6E1 313 Buying Power Advantages
+   */
+  static activeCost (baseCost, advantages) {
+    const totalAdvantage = advantages.reduce((sum, value) => { return sum + value }, 0)
+
+    return this.round(baseCost * (1 + totalAdvantage), 'down')
+  }
+
+  /**
    * Calculates the cost of a given value of a characteristic.
    *
    * Paying points for characteristics doesn't round the same way as other things since _all
@@ -37,6 +51,20 @@ export default class HeroMath {
    */
   static characteristicRoll (charValue) {
     return 9 + this.round(charValue / 5, 'up')
+  }
+
+  /**
+   * Calculates the real cost of an ability based on the active cost minus the set of limitations.
+   *
+   * @param {Number} activeCost Active cost of the ability
+   * @param {Array<Number>} limitations List of limitations applied
+   * @return {Number} Real cost of the ability
+   * @hero 6E1 365 How Limitations Affect A Power's Cost
+   */
+  static realCost (activeCost, limitations) {
+    const totalLimitation = limitations.reduce((sum, value) => { return sum + value }, 0)
+
+    return this.round(activeCost / (1 + totalLimitation), 'down')
   }
 
   /**

@@ -87,4 +87,48 @@ describe('HeroMath', function () {
       expect(HeroMath.characteristicCost(21, info['endurance'])).to.equal(1)
     })
   })
+
+  describe('activeCost', function () {
+    it('returns the same as base cost if there are no advantages applied', function () {
+      expect(HeroMath.activeCost(30, [])).to.equal(30)
+    })
+
+    it('returns one plus the sum of the advantages multiplied by the base cost', function () {
+      expect(HeroMath.activeCost(30, [0.25, 0.25, 0.25, 0.25])).to.equal(60)
+    })
+
+    it('rounds half points down', function () {
+      expect(HeroMath.activeCost(30, [0.25])).to.equal(37)
+    })
+
+    it('rounds fractions above half up', function () {
+      expect(HeroMath.activeCost(55, [0.25])).to.equal(69)
+    })
+
+    it('rounds fractions below half down', function () {
+      expect(HeroMath.activeCost(9, [0.25])).to.equal(11)
+    })
+  })
+
+  describe('realCost', function () {
+    it('returns the same as the active cost if there are no limitations applied', function () {
+      expect(HeroMath.realCost(30, [])).to.equal(30)
+    })
+
+    it('returns the active cost divided by one plus the sum of the limitations', function () {
+      expect(HeroMath.realCost(30, [0.25, 0.25, 0.25, 0.25])).to.equal(15)
+    })
+
+    it('rounds half points down', function () {
+      expect(HeroMath.realCost(25, [1])).to.equal(12)
+    })
+
+    it('rounds fractions above half up', function () {
+      expect(HeroMath.realCost(51, [0.25])).to.equal(41)
+    })
+
+    it('rounds fractions below half down', function () {
+      expect(HeroMath.realCost(53, [0.25])).to.equal(42)
+    })
+  })
 })
