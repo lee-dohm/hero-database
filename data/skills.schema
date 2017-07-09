@@ -1,5 +1,6 @@
 {
-  "id": "/data/skills.schema",
+  "$schema": "http://json-schema.org/schema#",
+  "id": "http://www.lee-dohm.com/hero-database/data/skills.schema",
   "description": "Definition of skills",
   "definitions": {
     "nullableInteger": {

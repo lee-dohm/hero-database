@@ -1,5 +1,6 @@
 {
-  "id": "/data/character-type-guidelines.schema",
+  "$schema": "http://json-schema.org/schema#",
+  "id": "http://www.lee-dohm.com/hero-database/data/character-type-guidelines.schema",
   "description": "Guidelines for the character types allowable in a campaign",
   "definitions": {
     "limit": {

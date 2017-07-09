@@ -1,5 +1,6 @@
 {
-  "id": "/data/complications.schema",
+  "$schema": "http://json-schema.org/schema#",
+  "id": "http://www.lee-dohm.com/hero-database/data/complications.schema",
   "description": "Definition of complications",
   "type": "array",
   "items": {
@@ -11,9 +12,7 @@
         "type": "string"
       },
       "reference": {
-        "description": "Location in the rulebook",
-        "type": "string",
-        "pattern": "^6E[12] \\d+$"
+        "$ref": "definitions.schema#/definitions/reference"
       },
       "abbreviation": {
         "description": "Abbreviated name of the complication",

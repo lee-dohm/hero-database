@@ -1,5 +1,6 @@
 {
-  "id": "/data/characteristics.schema",
+  "$schema": "http://json-schema.org/schema#",
+  "id": "http://www.lee-dohm.com/hero-database/data/characteristics.schema",
   "description": "Definition of characteristics",
   "definitions": {
     "characteristic": {
