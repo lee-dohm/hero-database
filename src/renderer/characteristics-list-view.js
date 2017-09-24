@@ -72,6 +72,7 @@ export default class CharacteristicsListView {
   }
 
   renderCharacteristic (name) {
+    console.log(`Render characteristic ${name}`)
     return (
       <CharacteristicView
         info={this.info[name]}

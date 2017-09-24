@@ -31,7 +31,7 @@ export default class CharacteristicView {
         <div className='col-3'>{this.info.abbrev}</div>
         <div className='col-3'>{this.value}</div>
         <div className='col-1'>x</div>
-        <div className='col-1'>{this.info.multiplier}</div>
+        <div className='col-1'>{this.info.cost.pointsPer / this.info.cost.amount}</div>
         <div className='col-1'>=</div>
         <div className='col-3'>Cost</div>
       </div>
